@@ -21,6 +21,7 @@
 		2D7F2A721937714B00E004AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D7F2A541937714B00E004AE /* UIKit.framework */; };
 		2D7F2A7A1937714B00E004AE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D7F2A781937714B00E004AE /* InfoPlist.strings */; };
 		2D7F2A7C1937714B00E004AE /* moni_teTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7F2A7B1937714B00E004AE /* moni_teTests.m */; };
+		2D7F2A871937734D00E004AE /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7F2A861937734D00E004AE /* AsyncUdpSocket.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		2D7F2A771937714B00E004AE /* moni_teTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "moni_teTests-Info.plist"; sourceTree = "<group>"; };
 		2D7F2A791937714B00E004AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2D7F2A7B1937714B00E004AE /* moni_teTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = moni_teTests.m; sourceTree = "<group>"; };
+		2D7F2A851937734D00E004AE /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		2D7F2A861937734D00E004AE /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 		2D7F2A561937714B00E004AE /* moni_te */ = {
 			isa = PBXGroup;
 			children = (
+				2D7F2A851937734D00E004AE /* AsyncUdpSocket.h */,
+				2D7F2A861937734D00E004AE /* AsyncUdpSocket.m */,
 				2D7F2A5F1937714B00E004AE /* AppDelegate.h */,
 				2D7F2A601937714B00E004AE /* AppDelegate.m */,
 				2D7F2A621937714B00E004AE /* Main.storyboard */,
@@ -252,6 +257,7 @@
 				2D7F2A671937714B00E004AE /* ViewController.m in Sources */,
 				2D7F2A611937714B00E004AE /* AppDelegate.m in Sources */,
 				2D7F2A5D1937714B00E004AE /* main.m in Sources */,
+				2D7F2A871937734D00E004AE /* AsyncUdpSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,9 +382,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "moni_te/moni_te-Prefix.pch";
 				INFOPLIST_FILE = "moni_te/moni_te-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -389,9 +397,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "moni_te/moni_te-Prefix.pch";
 				INFOPLIST_FILE = "moni_te/moni_te-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
