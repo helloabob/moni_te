@@ -9,17 +9,35 @@
 #import "ViewController.h"
 #import "AsyncUdpSocket.h"
 
-NSString  *host2=@"192.168.0.101";
+typedef enum {
+    CarTypeNormal=1,
+    CarTypeAIR,
+    CarTypeV3,
+    CarTypeBoard,
+}CarType;
+
+//NSString  *host2=@"192.168.0.101";
+NSString *host2=@"192.168.1.11";
 int port2=8008;
 
 @interface ViewController (){
     AsyncUdpSocket *socket;
-    int state;
+    CarType state;
+    BOOL canActive;
 }
 
 @end
 
 @implementation ViewController
+
+-(void)dealloc{
+    socket.delegate=nil;
+    [socket close];
+    [socket release];
+    kRemoveNotif(UIApplicationDidEnterBackgroundNotification);
+    kRemoveNotif(UIApplicationDidBecomeActiveNotification);
+    [super dealloc];
+}
 
 - (void)viewDidLoad
 {
@@ -29,34 +47,59 @@ int port2=8008;
     socket=[[AsyncUdpSocket alloc]initWithDelegate:self];
     [socket bindToPort:8008 error:nil];
     [socket receiveWithTimeout:-1 tag:1];
+    canActive=NO;
     
-    UIButton *btn=[[UIButton alloc]initWithFrame:CGRectMake(50, 50, 100, 40)];
-    [btn setTitle:@"test1" forState:UIControlStateNormal];
-    btn.tag=1;
+    UIButton *btn=[[UIButton alloc]initWithFrame:CGRectMake(50, 50, 220, 40)];
+    btn.layer.cornerRadius=10;
+    [btn setTitle:@"DEV_NOR_CAR" forState:UIControlStateNormal];
+    btn.tag=CarTypeNormal;
     btn.backgroundColor = [UIColor colorWithRed:0 green:0.6 blue:0 alpha:1];
     [btn addTarget:self action:@selector(test:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
     
-    btn=[[UIButton alloc]initWithFrame:CGRectMake(50, 150, 100, 40)];
-    [btn setTitle:@"test2" forState:UIControlStateNormal];
-    btn.tag=2;
+    btn=[[UIButton alloc]initWithFrame:CGRectMake(50, 150, 220, 40)];
+    btn.layer.cornerRadius=10;
+    [btn setTitle:@"DEV_AIR_CAR" forState:UIControlStateNormal];
+    btn.tag=CarTypeAIR;
     btn.backgroundColor = [UIColor colorWithRed:0 green:0.6 blue:0 alpha:1];
     [btn addTarget:self action:@selector(test:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
     
-    btn=[[UIButton alloc]initWithFrame:CGRectMake(50, 250, 100, 40)];
-    [btn setTitle:@"test3" forState:UIControlStateNormal];
-    btn.tag=3;
+    btn=[[UIButton alloc]initWithFrame:CGRectMake(50, 250, 220, 40)];
+    btn.layer.cornerRadius=10;
+    [btn setTitle:@"DEV_BOARD" forState:UIControlStateNormal];
+    btn.tag=CarTypeBoard;
     btn.backgroundColor = [UIColor colorWithRed:0 green:0.6 blue:0 alpha:1];
     [btn addTarget:self action:@selector(test:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
     
-    btn=[[UIButton alloc]initWithFrame:CGRectMake(50, 350, 100, 40)];
-    [btn setTitle:@"test4" forState:UIControlStateNormal];
-    btn.tag=4;
+    btn=[[UIButton alloc]initWithFrame:CGRectMake(50, 350, 220, 40)];
+    btn.layer.cornerRadius=10;
+    [btn setTitle:@"DEV_V3_CAR" forState:UIControlStateNormal];
+    btn.tag=CarTypeV3;
     btn.backgroundColor = [UIColor colorWithRed:0 green:0.6 blue:0 alpha:1];
     [btn addTarget:self action:@selector(test:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
+    
+    kAddObserver(@selector(didEnterBackground), UIApplicationDidEnterBackgroundNotification);
+    kAddObserver(@selector(didBecomeActive), UIApplicationDidBecomeActiveNotification);
+}
+
+-(void)didEnterBackground{
+    canActive=YES;
+    socket.delegate=nil;
+    [socket close];
+    [socket release];
+    socket=nil;
+}
+-(void)didBecomeActive{
+    if (canActive==NO) {
+        return;
+    }
+    socket=[[AsyncUdpSocket alloc]initWithDelegate:self];
+    [socket bindToPort:port2 error:nil];
+    [socket receiveWithTimeout:-1 tag:1];
+    canActive=NO;
 }
 
 -(void)test:(UIButton *)btn{
@@ -70,7 +113,7 @@ int port2=8008;
 {
     NSLog(@"data:%@",data);
     unsigned char *dt=data.bytes;
-    if (state==1) {
+    if (state==CarTypeNormal) {
         if (data.length==1&&dt[0]==0x2b) {
             unsigned char a=0xd8;
             NSData *data=[NSData dataWithBytes:&a length:1];
@@ -78,7 +121,7 @@ int port2=8008;
         }else if(data.length==13){
             [socket sendData:[self genTest1:data] toHost:host port:port withTimeout:5 tag:state];
         }
-    }else if (state==2) {
+    }else if (state==CarTypeAIR) {
         if (data.length==1&&dt[0]==0x2c) {
             unsigned char a=0xd8;
             NSData *data=[NSData dataWithBytes:&a length:1];
@@ -86,7 +129,7 @@ int port2=8008;
         }else if(data.length==9){
             [socket sendData:[self genTest2:data] toHost:host port:port withTimeout:5 tag:state];
         }
-    }else if (state==3) {
+    }else if (state==CarTypeV3) {
         if (data.length==1&&dt[0]==0x2a) {
             unsigned char a=0xd8;
             NSData *data=[NSData dataWithBytes:&a length:1];
@@ -94,7 +137,7 @@ int port2=8008;
         }else if(data.length==33){
             [socket sendData:[self genTest3:data] toHost:host port:port withTimeout:5 tag:state];
         }
-    }else if (state==4) {
+    }else if (state==CarTypeBoard) {
         if (data.length==1&&dt[0]==0x2d) {
             unsigned char a=0xd8;
             NSData *data=[NSData dataWithBytes:&a length:1];
@@ -121,10 +164,10 @@ int port2=8008;
 }
 
 -(NSData *)genTest3:(NSData *)data{
-    unsigned char addons[33];
+    unsigned char addons[29];
     addons[0]=0xa4;
     addons[1]=0xe8;
-    addons[2]=0xee;
+    addons[2]=0xec;
     addons[3]=0xef;
     addons[4]=0xe7;
     addons[5]=0xea;
@@ -150,11 +193,18 @@ int port2=8008;
     addons[25]=0xad;
     addons[26]=0xa5;
     addons[27]=0xe0;
-    addons[28]=0xe1;
-//    addons[29]=0xe4;
-//    addons[30]=0xea;
-//    addons[31]=0xe9;
-    return [self saveData:data withConfig:addons];
+    addons[28]=0xe2;
+//    addons[27]=0xff;  //unknwon
+//    addons[28]=0xff;  //unknwon
+//    addons[29]=0xe0;
+//    addons[30]=0xe2;
+//    addons[31]=0xff;  //unknwon
+//    addons[32]=0xff;  //unknwon
+    NSMutableData *dd=[NSMutableData data];
+    unsigned char *tmp=data.bytes;
+    [dd appendBytes:&tmp[0] length:27];
+    [dd appendBytes:&tmp[29] length:2];
+    return [self saveData:dd withConfig:addons];
 }
 
 -(NSData *)genTest2:(NSData *)data{
@@ -181,8 +231,8 @@ int port2=8008;
     addons[5]=0xe6;
     addons[6]=0xe7;
     addons[7]=0xe8;
-    addons[8]=0xe9;
-    addons[9]=0xea;
+    addons[8]=0xea;
+    addons[9]=0xeb;
     addons[10]=0xa1;
     NSMutableData *dd=[NSMutableData data];
     unsigned char *tmp=data.bytes;
@@ -199,6 +249,7 @@ int port2=8008;
         [result appendBytes:&addons[i] length:1];
         [result appendBytes:&tmp[i] length:1];
     }
+    NSLog(@"send:%@",result);
     return result;
 }
 

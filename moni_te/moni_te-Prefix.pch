@@ -13,4 +13,22 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+#import "UIBaseImageView.h"
+#import "UIBaseButton.h"
+#import "Global.h"
+#endif
+
+#define IsIOS7System  [[UIDevice currentDevice].systemVersion floatValue]>=7.0
+#define IsiPhone5  [UIScreen mainScreen].bounds.size.height>480
+
+#define kAddObserver(a,b) [[NSNotificationCenter defaultCenter] addObserver:self selector:a name:b object:nil];
+
+#define kPostNotif(a,b) [[NSNotificationCenter defaultCenter] postNotificationName:a object:b userInfo:nil];
+
+#define kRemoveNotif(a) [[NSNotificationCenter defaultCenter] removeObserver:self name:a object:nil]
+
+#define LocalizableString(a) [NSString stringWithFormat:@"%@_%d",a,[Global language]]
+
+#if 1
+#define NSLog(...) {}
 #endif
