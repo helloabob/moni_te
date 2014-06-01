@@ -7,7 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-
+typedef enum {
+    CarTypeNormal=1,    //BEAST
+    CarTypeAIR,         //GECKO
+    CarTypeV3,          //TURBO
+    CarTypeBoard,       //SEAL
+}CarType;
+@protocol NetUtilsDelegate <NSObject>
+-(void)didReceiveData:(NSData *)data;
+-(void)didNotReceive;
+@end
 @interface NetUtils : NSObject
 + (instancetype)sharedInstance;
+@property(nonatomic,assign)id delegate;
+-(void)sendData:(NSData *)data withDelegate:(id)delegate;
 @end

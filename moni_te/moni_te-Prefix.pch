@@ -16,6 +16,7 @@
 #import "UIBaseImageView.h"
 #import "UIBaseButton.h"
 #import "Global.h"
+#import "NetUtils.h"
 #endif
 
 #define IsIOS7System  [[UIDevice currentDevice].systemVersion floatValue]>=7.0
@@ -29,6 +30,6 @@
 
 #define LocalizableString(a) [NSString stringWithFormat:@"%@_%d",a,[Global language]]
 
-#if 1
+#if 0
 #define NSLog(...) {}
 #endif

@@ -15,11 +15,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [Global setLanguage:1];
+    [Global setLanguage:2];
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     self.window.backgroundColor = [UIColor blackColor];
     application.statusBarStyle=1;
-    ViewController *demo = [[[ViewController alloc] init] autorelease];
+    UIViewController *demo = [[[LoadingViewController alloc] init] autorelease];
     UINavigationController *nav = [[[UINavigationController alloc] initWithRootViewController:demo] autorelease];
     nav.navigationBarHidden=YES;
     self.window.rootViewController = nav;

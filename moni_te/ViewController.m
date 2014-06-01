@@ -9,15 +9,8 @@
 #import "ViewController.h"
 #import "AsyncUdpSocket.h"
 
-typedef enum {
-    CarTypeNormal=1,
-    CarTypeAIR,
-    CarTypeV3,
-    CarTypeBoard,
-}CarType;
-
-//NSString  *host2=@"192.168.0.101";
-NSString *host2=@"192.168.1.11";
+NSString  *host2=@"192.168.0.101";
+//NSString *host2=@"192.168.1.11";
 int port2=8008;
 
 @interface ViewController (){
@@ -89,14 +82,14 @@ int port2=8008;
     canActive=YES;
 //    socket.delegate=nil;
     [socket close];
-//    [socket release];
-//    socket=nil;
+    [socket release];
+    socket=nil;
 }
 -(void)didBecomeActive{
     if (canActive==NO) {
         return;
     }
-//    socket=[[AsyncUdpSocket alloc]initWithDelegate:self];
+    socket=[[AsyncUdpSocket alloc]initWithDelegate:self];
     [socket bindToPort:port2 error:nil];
     [socket receiveWithTimeout:-1 tag:1];
     canActive=NO;

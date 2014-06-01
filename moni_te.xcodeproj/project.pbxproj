@@ -55,6 +55,20 @@
 		2DABD6E51938C56C00F27ED3 /* UIBaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DABD6E41938C56C00F27ED3 /* UIBaseButton.m */; };
 		2DABD6E919396DEE00F27ED3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DABD6E719396DEE00F27ED3 /* Icon.png */; };
 		2DABD6EA19396DEE00F27ED3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DABD6E819396DEE00F27ED3 /* Icon@2x.png */; };
+		2DE22A46193B049300DC39DC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE22A43193B049300DC39DC /* Default-568h@2x.png */; };
+		2DE22A47193B049300DC39DC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE22A44193B049300DC39DC /* Default.png */; };
+		2DE22A48193B049300DC39DC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE22A45193B049300DC39DC /* Default@2x.png */; };
+		2DE22A53193B09AD00DC39DC /* buttonquit_off_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE22A49193B09AD00DC39DC /* buttonquit_off_1.png */; };
+		2DE22A54193B09AD00DC39DC /* buttonquit_off_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE22A4A193B09AD00DC39DC /* buttonquit_off_2.png */; };
+		2DE22A55193B09AD00DC39DC /* buttonquit_on_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE22A4B193B09AD00DC39DC /* buttonquit_on_1.png */; };
+		2DE22A56193B09AD00DC39DC /* buttonquit_on_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE22A4C193B09AD00DC39DC /* buttonquit_on_2.png */; };
+		2DE22A57193B09AD00DC39DC /* buttonyes_off_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE22A4D193B09AD00DC39DC /* buttonyes_off_1.png */; };
+		2DE22A58193B09AD00DC39DC /* buttonyes_off_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE22A4E193B09AD00DC39DC /* buttonyes_off_2.png */; };
+		2DE22A59193B09AD00DC39DC /* buttonyes_on_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE22A4F193B09AD00DC39DC /* buttonyes_on_1.png */; };
+		2DE22A5A193B09AD00DC39DC /* buttonyes_on_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE22A50193B09AD00DC39DC /* buttonyes_on_2.png */; };
+		2DE22A5B193B09AD00DC39DC /* connectfailalert_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE22A51193B09AD00DC39DC /* connectfailalert_1.png */; };
+		2DE22A5C193B09AD00DC39DC /* connectfailalert_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE22A52193B09AD00DC39DC /* connectfailalert_2.png */; };
+		2DE22A5F193B654B00DC39DC /* ExitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE22A5E193B654B00DC39DC /* ExitViewController.m */; };
 		5A5A79E9193AF1BD00C103B1 /* NetUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5A79E8193AF1BD00C103B1 /* NetUtils.m */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +144,21 @@
 		2DABD6E41938C56C00F27ED3 /* UIBaseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBaseButton.m; sourceTree = "<group>"; };
 		2DABD6E719396DEE00F27ED3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		2DABD6E819396DEE00F27ED3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		2DE22A43193B049300DC39DC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		2DE22A44193B049300DC39DC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		2DE22A45193B049300DC39DC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		2DE22A49193B09AD00DC39DC /* buttonquit_off_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonquit_off_1.png; sourceTree = "<group>"; };
+		2DE22A4A193B09AD00DC39DC /* buttonquit_off_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonquit_off_2.png; sourceTree = "<group>"; };
+		2DE22A4B193B09AD00DC39DC /* buttonquit_on_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonquit_on_1.png; sourceTree = "<group>"; };
+		2DE22A4C193B09AD00DC39DC /* buttonquit_on_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonquit_on_2.png; sourceTree = "<group>"; };
+		2DE22A4D193B09AD00DC39DC /* buttonyes_off_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonyes_off_1.png; sourceTree = "<group>"; };
+		2DE22A4E193B09AD00DC39DC /* buttonyes_off_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonyes_off_2.png; sourceTree = "<group>"; };
+		2DE22A4F193B09AD00DC39DC /* buttonyes_on_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonyes_on_1.png; sourceTree = "<group>"; };
+		2DE22A50193B09AD00DC39DC /* buttonyes_on_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonyes_on_2.png; sourceTree = "<group>"; };
+		2DE22A51193B09AD00DC39DC /* connectfailalert_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connectfailalert_1.png; sourceTree = "<group>"; };
+		2DE22A52193B09AD00DC39DC /* connectfailalert_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connectfailalert_2.png; sourceTree = "<group>"; };
+		2DE22A5D193B654B00DC39DC /* ExitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExitViewController.h; sourceTree = "<group>"; };
+		2DE22A5E193B654B00DC39DC /* ExitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExitViewController.m; sourceTree = "<group>"; };
 		5A5A79E7193AF1BD00C103B1 /* NetUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetUtils.h; sourceTree = "<group>"; };
 		5A5A79E8193AF1BD00C103B1 /* NetUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -248,6 +277,8 @@
 				2D115428193AB5960073D1AB /* SettingControlView.m */,
 				5A5A79E7193AF1BD00C103B1 /* NetUtils.h */,
 				5A5A79E8193AF1BD00C103B1 /* NetUtils.m */,
+				2DE22A5D193B654B00DC39DC /* ExitViewController.h */,
+				2DE22A5E193B654B00DC39DC /* ExitViewController.m */,
 			);
 			path = moni_te;
 			sourceTree = "<group>";
@@ -255,6 +286,9 @@
 		2D7F2A571937714B00E004AE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2DE22A43193B049300DC39DC /* Default-568h@2x.png */,
+				2DE22A44193B049300DC39DC /* Default.png */,
+				2DE22A45193B049300DC39DC /* Default@2x.png */,
 				2DABD6E719396DEE00F27ED3 /* Icon.png */,
 				2DABD6E819396DEE00F27ED3 /* Icon@2x.png */,
 				2D7F2A581937714B00E004AE /* moni_te-Info.plist */,
@@ -298,6 +332,16 @@
 		2DA8A7E7193A1108002E68D9 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				2DE22A49193B09AD00DC39DC /* buttonquit_off_1.png */,
+				2DE22A4A193B09AD00DC39DC /* buttonquit_off_2.png */,
+				2DE22A4B193B09AD00DC39DC /* buttonquit_on_1.png */,
+				2DE22A4C193B09AD00DC39DC /* buttonquit_on_2.png */,
+				2DE22A4D193B09AD00DC39DC /* buttonyes_off_1.png */,
+				2DE22A4E193B09AD00DC39DC /* buttonyes_off_2.png */,
+				2DE22A4F193B09AD00DC39DC /* buttonyes_on_1.png */,
+				2DE22A50193B09AD00DC39DC /* buttonyes_on_2.png */,
+				2DE22A51193B09AD00DC39DC /* connectfailalert_1.png */,
+				2DE22A52193B09AD00DC39DC /* connectfailalert_2.png */,
 				2D11542E193ABB770073D1AB /* FlashBackImage.png */,
 				2DA8A7E8193A1108002E68D9 /* BlueBackImage.png */,
 			);
@@ -391,11 +435,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DE22A5C193B09AD00DC39DC /* connectfailalert_2.png in Resources */,
+				2DE22A5B193B09AD00DC39DC /* connectfailalert_1.png in Resources */,
 				2DABD6E919396DEE00F27ED3 /* Icon.png in Resources */,
 				2D7F2A691937714B00E004AE /* Images.xcassets in Resources */,
 				2D11543D193ABEA00073D1AB /* readsetting_on_1.png in Resources */,
 				2D11543B193ABEA00073D1AB /* readsetting_off_1.png in Resources */,
+				2DE22A47193B049300DC39DC /* Default.png in Resources */,
 				2D115451193AC3D80073D1AB /* toolbarexit_on_2.png in Resources */,
+				2DE22A53193B09AD00DC39DC /* buttonquit_off_1.png in Resources */,
 				2D11543C193ABEA00073D1AB /* readsetting_off_2.png in Resources */,
 				2DA8A7F4193A2407002E68D9 /* TURBO.png in Resources */,
 				2D11544D193AC3D80073D1AB /* toolbarcenter.png in Resources */,
@@ -403,9 +451,14 @@
 				2DA8A7F3193A2407002E68D9 /* SEAL.png in Resources */,
 				2DA8A7E9193A1108002E68D9 /* BlueBackImage.png in Resources */,
 				2D115452193AC3D80073D1AB /* toolbarlanguage_off.png in Resources */,
+				2DE22A56193B09AD00DC39DC /* buttonquit_on_2.png in Resources */,
+				2DE22A5A193B09AD00DC39DC /* buttonyes_on_2.png in Resources */,
 				2D115442193ABEA00073D1AB /* sendsetting_on_2.png in Resources */,
 				2DA8A7F1193A2407002E68D9 /* BEAST.png in Resources */,
 				2D115440193ABEA00073D1AB /* sendsetting_off_2.png in Resources */,
+				2DE22A48193B049300DC39DC /* Default@2x.png in Resources */,
+				2DE22A57193B09AD00DC39DC /* buttonyes_off_1.png in Resources */,
+				2DE22A59193B09AD00DC39DC /* buttonyes_on_1.png in Resources */,
 				2DA8A7EB193A14DA002E68D9 /* Localizable.strings in Resources */,
 				2D11543F193ABEA00073D1AB /* sendsetting_off_1.png in Resources */,
 				2D115453193AC3D80073D1AB /* toolbarlanguage_on.png in Resources */,
@@ -413,12 +466,16 @@
 				2D11544F193AC3D80073D1AB /* toolbarexit_off_2.png in Resources */,
 				2D7F2A5B1937714B00E004AE /* InfoPlist.strings in Resources */,
 				2D115441193ABEA00073D1AB /* sendsetting_on_1.png in Resources */,
+				2DE22A54193B09AD00DC39DC /* buttonquit_off_2.png in Resources */,
 				2D11542F193ABB770073D1AB /* FlashBackImage.png in Resources */,
+				2DE22A46193B049300DC39DC /* Default-568h@2x.png in Resources */,
 				2DA8A7F2193A2407002E68D9 /* GECKO.png in Resources */,
 				2D7F2A641937714B00E004AE /* Main.storyboard in Resources */,
 				2D115450193AC3D80073D1AB /* toolbarexit_on_1.png in Resources */,
+				2DE22A55193B09AD00DC39DC /* buttonquit_on_1.png in Resources */,
 				2D115444193ABEA00073D1AB /* settingcontrol_2.png in Resources */,
 				2D11543E193ABEA00073D1AB /* readsetting_on_2.png in Resources */,
+				2DE22A58193B09AD00DC39DC /* buttonyes_off_2.png in Resources */,
 				2DABD6EA19396DEE00F27ED3 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +497,7 @@
 			files = (
 				2D115429193AB5960073D1AB /* SettingControlView.m in Sources */,
 				5A5A79E9193AF1BD00C103B1 /* NetUtils.m in Sources */,
+				2DE22A5F193B654B00DC39DC /* ExitViewController.m in Sources */,
 				2D7F2A671937714B00E004AE /* ViewController.m in Sources */,
 				2DABD6E21938C4A800F27ED3 /* UIBaseImageView.m in Sources */,
 				2DABD6DF1938C17900F27ED3 /* BaseViewController.m in Sources */,

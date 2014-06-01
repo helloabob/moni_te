@@ -29,9 +29,6 @@
         
         [self renderImage];
         
-        
-        
-        
     }
     return self;
 }

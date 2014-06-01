@@ -8,6 +8,13 @@
 
 #import "BaseViewController.h"
 
-@interface LoadingViewController : BaseViewController
+@interface ConnectionFailedAlertView : UIBaseImageView
+@property(nonatomic,assign)id delegate;
+- (id)initWithFrame:(CGRect)frame withDelegate:(id)delegate;
+@end
+@protocol ConnectionFailedAlertViewDelegate <NSObject>
+-(void)reconnect;
+@end
 
+@interface LoadingViewController : BaseViewController
 @end

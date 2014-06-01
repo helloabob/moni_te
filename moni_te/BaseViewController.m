@@ -11,6 +11,7 @@
 @interface BaseViewController (){
     UIView *bottomToolbar;
     UIBaseButton *baseButton;
+    UIView *maskView;
 }
 
 @end
@@ -30,23 +31,26 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _backImageView=[[[UIImageView alloc]initWithFrame:CGRectMake(0, IsIOS7System?20:0, 320, IsiPhone5?548:460)]autorelease];
+    UIView *viewBack=[[[UIView alloc]initWithFrame:CGRectMake(0, IsIOS7System?20:0, 320, IsiPhone5?548:460)]autorelease];
+    [self.view addSubview:viewBack];
+//    _backImageView=[[[UIImageView alloc]initWithFrame:CGRectMake(0, IsIOS7System?20:0, 320, IsiPhone5?548:460)]autorelease];
+    _backImageView=[[[UIImageView alloc]initWithFrame:viewBack.bounds]autorelease];
     _backImageView.image=[UIImage imageNamed:@"BlueBackImage"];
-    [self.view addSubview:_backImageView];
+    [viewBack addSubview:_backImageView];
     
 //    _contentView=[[[UIView alloc]initWithFrame:_backImageView.frame]autorelease];
 //    [self.view addSubview:_contentView];
     _contentView=[[[UIView alloc]initWithFrame:_backImageView.bounds]autorelease];
-    [_backImageView addSubview:_contentView];
+    [viewBack addSubview:_contentView];
     
     bottomToolbar=[[[UIView alloc]initWithFrame:CGRectMake(4, _backImageView.bounds.size.height-34, 312, 30)]autorelease];
-    [_backImageView addSubview:bottomToolbar];
+    [viewBack addSubview:bottomToolbar];
     
     UIImageView *toolbarcenter=[[[UIImageView alloc]initWithFrame:CGRectMake(bottomToolbar.bounds.size.width/2-115, 0, 230, 30)]autorelease];
     toolbarcenter.image=[UIImage imageNamed:@"toolbarcenter"];
     [bottomToolbar addSubview:toolbarcenter];
     
-    baseButton=[[[UIBaseButton alloc]initWithFrame:CGRectMake(0, -4, 89, 38)]autorelease];
+    baseButton=[[[UIBaseButton alloc]initWithFrame:CGRectMake(0, 0, 80, 30)]autorelease];
     baseButton.offImageName=@"toolbarexit_off";
     baseButton.onImageName=@"toolbarexit_on";
     [baseButton renderImage];
@@ -55,10 +59,26 @@
     UIButton *btn=[[[UIButton alloc]initWithFrame:CGRectMake(bottomToolbar.bounds.size.width-80, 0, 80, 30)]autorelease];
     [btn setImage:[UIImage imageNamed:@"toolbarlanguage_off"] forState:UIControlStateNormal];
     [btn setImage:[UIImage imageNamed:@"toolbarlanguage_on"] forState:UIControlStateHighlighted];
+    [btn addTarget:self action:@selector(changeLanguage) forControlEvents:UIControlEventTouchUpInside];
     [bottomToolbar addSubview:btn];
+    
+    
+    maskView=[[UIView alloc]initWithFrame:_backImageView.bounds];
+    
+}
+-(void)changeLanguage{
+//    Global set
+    
 }
 -(void)renderImage{
     [baseButton renderImage];
+}
+-(void)setBottomBarHidden:(BOOL)BottomBarHidden{
+    if (BottomBarHidden==YES) {
+        bottomToolbar.hidden=YES;
+    }else{
+        bottomToolbar.hidden=NO;
+    }
 }
 
 - (void)didReceiveMemoryWarning
