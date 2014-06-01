@@ -19,7 +19,7 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     self.window.backgroundColor = [UIColor blackColor];
     application.statusBarStyle=1;
-    LoadingViewController *demo = [[[LoadingViewController alloc] init] autorelease];
+    ViewController *demo = [[[ViewController alloc] init] autorelease];
     UINavigationController *nav = [[[UINavigationController alloc] initWithRootViewController:demo] autorelease];
     nav.navigationBarHidden=YES;
     self.window.rootViewController = nav;

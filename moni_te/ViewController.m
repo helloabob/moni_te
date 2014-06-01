@@ -87,16 +87,16 @@ int port2=8008;
 
 -(void)didEnterBackground{
     canActive=YES;
-    socket.delegate=nil;
+//    socket.delegate=nil;
     [socket close];
-    [socket release];
-    socket=nil;
+//    [socket release];
+//    socket=nil;
 }
 -(void)didBecomeActive{
     if (canActive==NO) {
         return;
     }
-    socket=[[AsyncUdpSocket alloc]initWithDelegate:self];
+//    socket=[[AsyncUdpSocket alloc]initWithDelegate:self];
     [socket bindToPort:port2 error:nil];
     [socket receiveWithTimeout:-1 tag:1];
     canActive=NO;

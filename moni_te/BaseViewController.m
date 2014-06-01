@@ -10,6 +10,7 @@
 
 @interface BaseViewController (){
     UIView *bottomToolbar;
+    UIBaseButton *baseButton;
 }
 
 @end
@@ -39,18 +40,25 @@
     [_backImageView addSubview:_contentView];
     
     bottomToolbar=[[[UIView alloc]initWithFrame:CGRectMake(4, _backImageView.bounds.size.height-34, 312, 30)]autorelease];
-//    bottomToolbar.backgroundColor=[UIColor brownColor];
     [_backImageView addSubview:bottomToolbar];
-    UIImageView *toolbarcenter=[[[UIImageView alloc]initWithFrame:CGRectMake(_backImageView.bounds.size.width/2-131, 0, 262, 30)]autorelease];
+    
+    UIImageView *toolbarcenter=[[[UIImageView alloc]initWithFrame:CGRectMake(bottomToolbar.bounds.size.width/2-115, 0, 230, 30)]autorelease];
     toolbarcenter.image=[UIImage imageNamed:@"toolbarcenter"];
     [bottomToolbar addSubview:toolbarcenter];
     
-    UIBaseButton *baseButton=[[[UIBaseButton alloc]initWithFrame:CGRectMake(0, 0, 74, 30)]autorelease];
+    baseButton=[[[UIBaseButton alloc]initWithFrame:CGRectMake(0, -4, 89, 38)]autorelease];
     baseButton.offImageName=@"toolbarexit_off";
     baseButton.onImageName=@"toolbarexit_on";
     [baseButton renderImage];
     [bottomToolbar addSubview:baseButton];
     
+    UIButton *btn=[[[UIButton alloc]initWithFrame:CGRectMake(bottomToolbar.bounds.size.width-80, 0, 80, 30)]autorelease];
+    [btn setImage:[UIImage imageNamed:@"toolbarlanguage_off"] forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:@"toolbarlanguage_on"] forState:UIControlStateHighlighted];
+    [bottomToolbar addSubview:btn];
+}
+-(void)renderImage{
+    [baseButton renderImage];
 }
 
 - (void)didReceiveMemoryWarning

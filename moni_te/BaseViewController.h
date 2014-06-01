@@ -12,4 +12,5 @@
 @property(nonatomic,retain)UIImageView *backImageView;
 @property(nonatomic,retain)UIView *contentView;
 @property(nonatomic,assign)BOOL BottomBarHidden;
+-(void)renderImage;
 @end

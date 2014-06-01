@@ -55,6 +55,7 @@
 		2DABD6E51938C56C00F27ED3 /* UIBaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DABD6E41938C56C00F27ED3 /* UIBaseButton.m */; };
 		2DABD6E919396DEE00F27ED3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DABD6E719396DEE00F27ED3 /* Icon.png */; };
 		2DABD6EA19396DEE00F27ED3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DABD6E819396DEE00F27ED3 /* Icon@2x.png */; };
+		5A5A79E9193AF1BD00C103B1 /* NetUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5A79E8193AF1BD00C103B1 /* NetUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,8 @@
 		2DABD6E41938C56C00F27ED3 /* UIBaseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBaseButton.m; sourceTree = "<group>"; };
 		2DABD6E719396DEE00F27ED3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		2DABD6E819396DEE00F27ED3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		5A5A79E7193AF1BD00C103B1 /* NetUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetUtils.h; sourceTree = "<group>"; };
+		5A5A79E8193AF1BD00C103B1 /* NetUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +246,8 @@
 				2D115425193AB40E0073D1AB /* BEASTViewController.m */,
 				2D115427193AB5960073D1AB /* SettingControlView.h */,
 				2D115428193AB5960073D1AB /* SettingControlView.m */,
+				5A5A79E7193AF1BD00C103B1 /* NetUtils.h */,
+				5A5A79E8193AF1BD00C103B1 /* NetUtils.m */,
 			);
 			path = moni_te;
 			sourceTree = "<group>";
@@ -434,6 +439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D115429193AB5960073D1AB /* SettingControlView.m in Sources */,
+				5A5A79E9193AF1BD00C103B1 /* NetUtils.m in Sources */,
 				2D7F2A671937714B00E004AE /* ViewController.m in Sources */,
 				2DABD6E21938C4A800F27ED3 /* UIBaseImageView.m in Sources */,
 				2DABD6DF1938C17900F27ED3 /* BaseViewController.m in Sources */,
