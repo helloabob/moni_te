@@ -18,10 +18,17 @@
     }
     return self;
 }
-
--(void)setCurrentImageIndex:(int)currentImageIndex{
-    self.image=[UIImage imageNamed:self.arrayImageNames[currentImageIndex]];
+-(void)renderImage{self.image=[UIImage imageNamed:LocalizableString(self.commonImageName)];
+    for (id sub in self.subviews) {
+        if ([sub respondsToSelector:@selector(renderImage)]) {
+            [sub renderImage];
+        }
+    }
 }
+
+//-(void)setCurrentImageIndex:(int)currentImageIndex{
+//    self.image=[UIImage imageNamed:self.arrayImageNames[currentImageIndex]];
+//}
 
 /*
 // Only override drawRect: if you perform custom drawing.

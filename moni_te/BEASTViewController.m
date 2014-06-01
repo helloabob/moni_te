@@ -1,21 +1,21 @@
 //
-//  LoadingViewController.m
+//  BEASTViewController.m
 //  moni_te
 //
-//  Created by wangbo on 5/31/14.
+//  Created by wangbo on 6/1/14.
 //  Copyright (c) 2014 wb. All rights reserved.
 //
 
-#import "LoadingViewController.h"
 #import "BEASTViewController.h"
+#import "SettingControlView.h"
 
-@interface LoadingViewController (){
-    int state;
+@interface BEASTViewController (){
+    UIImageView *logo;
 }
 
 @end
 
-@implementation LoadingViewController
+@implementation BEASTViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,22 +30,21 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    state=0;
     
+    self.backImageView.image=[UIImage imageNamed:@"BlueBackImage"];
     
-    UILabel *lblConnecting=[[[UILabel alloc]initWithFrame:CGRectMake(0, self.contentView.bounds.size.height/2-20, 320, 40)]autorelease];
-    lblConnecting.font=[UIFont boldSystemFontOfSize:16];
-    lblConnecting.textAlignment=NSTextAlignmentCenter;
-    lblConnecting.textColor=[UIColor whiteColor];
-    lblConnecting.text=NSLocalizedString(LocalizableString(@"connecting"), nil);
-    [self.contentView addSubview:lblConnecting];
+    logo=[[[UIImageView alloc]initWithFrame:CGRectMake(50, self.contentView.bounds.size.height/2-48, 220, 81)]autorelease];
+    logo.image=[UIImage imageNamed:@"BEAST"];
+    [self.contentView addSubview:logo];
+    [self performSelector:@selector(enter) withObject:nil afterDelay:1];
     
-    [self performSelector:@selector(onSuccess) withObject:nil afterDelay:1];
 }
 
--(void)onSuccess{
-    BEASTViewController *vc=[[[BEASTViewController alloc]init]autorelease];
-    [self.navigationController pushViewController:vc animated:NO];
+-(void)enter{
+    [logo removeFromSuperview];
+    self.backImageView.image=[UIImage imageNamed:@"FlashBackImage"];
+    SettingControlView *scv=[[[SettingControlView alloc]initWithFrame:CGRectMake(10, self.contentView.bounds.size.height-100-80, 300, 100)]autorelease];
+    [self.contentView addSubview:scv];
 }
 
 - (void)didReceiveMemoryWarning

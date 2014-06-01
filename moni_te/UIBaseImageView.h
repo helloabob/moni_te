@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UIBaseImageView : UIImageView
-@property(nonatomic,retain)NSArray *arrayImageNames;
-@property(nonatomic,assign)int currentImageIndex;
+@property(nonatomic,retain)NSString *commonImageName;
+-(void)renderImage;
 @end

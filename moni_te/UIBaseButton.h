@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIBaseButton : UIButton
-
+@property(nonatomic,retain)NSString *offImageName;
+@property(nonatomic,retain)NSString *onImageName;
+-(void)renderImage;
 @end

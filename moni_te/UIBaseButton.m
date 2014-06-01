@@ -18,7 +18,7 @@
     }
     return self;
 }
-
+-(void)renderImage{[self setImage:[UIImage imageNamed:LocalizableString(self.offImageName)] forState:UIControlStateNormal];[self setImage:[UIImage imageNamed:LocalizableString(self.onImageName)] forState:UIControlStateHighlighted];}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

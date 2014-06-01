@@ -8,7 +8,9 @@
 
 #import "BaseViewController.h"
 
-@interface BaseViewController ()
+@interface BaseViewController (){
+    UIView *bottomToolbar;
+}
 
 @end
 
@@ -31,9 +33,23 @@
     _backImageView.image=[UIImage imageNamed:@"BlueBackImage"];
     [self.view addSubview:_backImageView];
     
-    _contentView=[[[UIView alloc]initWithFrame:_backImageView.frame]autorelease];
-    [self.view addSubview:_contentView];
+//    _contentView=[[[UIView alloc]initWithFrame:_backImageView.frame]autorelease];
+//    [self.view addSubview:_contentView];
+    _contentView=[[[UIView alloc]initWithFrame:_backImageView.bounds]autorelease];
+    [_backImageView addSubview:_contentView];
     
+    bottomToolbar=[[[UIView alloc]initWithFrame:CGRectMake(4, _backImageView.bounds.size.height-34, 312, 30)]autorelease];
+//    bottomToolbar.backgroundColor=[UIColor brownColor];
+    [_backImageView addSubview:bottomToolbar];
+    UIImageView *toolbarcenter=[[[UIImageView alloc]initWithFrame:CGRectMake(_backImageView.bounds.size.width/2-131, 0, 262, 30)]autorelease];
+    toolbarcenter.image=[UIImage imageNamed:@"toolbarcenter"];
+    [bottomToolbar addSubview:toolbarcenter];
+    
+    UIBaseButton *baseButton=[[[UIBaseButton alloc]initWithFrame:CGRectMake(0, 0, 74, 30)]autorelease];
+    baseButton.offImageName=@"toolbarexit_off";
+    baseButton.onImageName=@"toolbarexit_on";
+    [baseButton renderImage];
+    [bottomToolbar addSubview:baseButton];
     
 }
 
