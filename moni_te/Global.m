@@ -11,8 +11,12 @@
 static int __language;
 
 @implementation Global
-+(void)setLanguage:(int)lang{
-    __language=lang;
++(BOOL)setLanguage:(int)lang{
+    if (lang!=__language) {
+        __language=lang;
+        return YES;
+    }
+    return NO;
 }
 +(int)language{
     return __language;

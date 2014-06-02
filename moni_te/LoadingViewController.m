@@ -48,7 +48,11 @@
 @end
 
 @implementation LoadingViewController
-
+-(void)renderImage{
+    [super renderImage];
+    [cfav renderImage];
+    lblConnecting.text=NSLocalizedString(LocalizableString(@"connecting"), nil);
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -140,6 +144,7 @@
         lblConnecting.font=[UIFont boldSystemFontOfSize:16];
         lblConnecting.textAlignment=NSTextAlignmentCenter;
         lblConnecting.textColor=[UIColor whiteColor];
+        lblConnecting.backgroundColor=[UIColor clearColor];
     }
     lblConnecting.text=NSLocalizedString(LocalizableString(@"connecting"), nil);
     [self.contentView addSubview:lblConnecting];

@@ -7,11 +7,14 @@
 //
 
 #import "BaseViewController.h"
+#import "ExitViewController.h"
+#import "SettingControlView.h"
 
 @interface BaseViewController (){
     UIView *bottomToolbar;
     UIBaseButton *baseButton;
-    UIView *maskView;
+//    UIView *maskView;
+    SettingControlView *scv;
 }
 
 @end
@@ -53,6 +56,7 @@
     baseButton=[[[UIBaseButton alloc]initWithFrame:CGRectMake(0, 0, 80, 30)]autorelease];
     baseButton.offImageName=@"toolbarexit_off";
     baseButton.onImageName=@"toolbarexit_on";
+    [baseButton addTarget:self action:@selector(onExit) forControlEvents:UIControlEventTouchUpInside];
     [baseButton renderImage];
     [bottomToolbar addSubview:baseButton];
     
@@ -63,22 +67,32 @@
     [bottomToolbar addSubview:btn];
     
     
-    maskView=[[UIView alloc]initWithFrame:_backImageView.bounds];
+//    maskView=[[UIView alloc]initWithFrame:_backImageView.bounds];
     
+    scv=[[[SettingControlView alloc]initWithFrame:CGRectMake(10, self.contentView.bounds.size.height-100-60, 300, 100)]autorelease];
+    scv.hidden=YES;
+    [self.contentView addSubview:scv];
+    
+}
+-(void)onExit{
+    ExitViewController *vc=[[[ExitViewController alloc]init]autorelease];
+    vc.isExit=YES;
+    [self.navigationController pushViewController:vc animated:NO];
 }
 -(void)changeLanguage{
 //    Global set
-    
+    ExitViewController *vc=[[[ExitViewController alloc]init]autorelease];
+    [self.navigationController pushViewController:vc animated:NO];
 }
 -(void)renderImage{
     [baseButton renderImage];
+    [scv renderImage];
+}
+-(void)setSettingControlViewHidden:(BOOL)SettingControlViewHidden{
+    scv.hidden=SettingControlViewHidden;
 }
 -(void)setBottomBarHidden:(BOOL)BottomBarHidden{
-    if (BottomBarHidden==YES) {
-        bottomToolbar.hidden=YES;
-    }else{
-        bottomToolbar.hidden=NO;
-    }
+    bottomToolbar.hidden=BottomBarHidden;
 }
 
 - (void)didReceiveMemoryWarning

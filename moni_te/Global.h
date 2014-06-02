@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface Global : NSObject
-+(void)setLanguage:(int)lang;
++(BOOL)setLanguage:(int)lang;
 +(int)language;
 @end

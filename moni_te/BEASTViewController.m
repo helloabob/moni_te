@@ -32,9 +32,7 @@
     // Do any additional setup after loading the view.
     
     self.backImageView.image=[UIImage imageNamed:@"FlashBackImage"];
-
-    SettingControlView *scv=[[[SettingControlView alloc]initWithFrame:CGRectMake(10, self.contentView.bounds.size.height-100-60, 300, 100)]autorelease];
-    [self.contentView addSubview:scv];
+    self.SettingControlViewHidden=NO;
     
 //    logo=[[[UIImageView alloc]initWithFrame:CGRectMake(50, self.contentView.bounds.size.height/2-48, 220, 81)]autorelease];
 //    logo.image=[UIImage imageNamed:@"BEAST"];
