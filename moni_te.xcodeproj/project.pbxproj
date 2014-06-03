@@ -54,6 +54,7 @@
 		2D7F2A7A1937714B00E004AE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D7F2A781937714B00E004AE /* InfoPlist.strings */; };
 		2D7F2A7C1937714B00E004AE /* moni_teTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7F2A7B1937714B00E004AE /* moni_teTests.m */; };
 		2D7F2A871937734D00E004AE /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7F2A861937734D00E004AE /* AsyncUdpSocket.m */; };
+		2D84B98E193DFDC7006A1FE5 /* beast.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D84B98D193DFDC7006A1FE5 /* beast.plist */; };
 		2DA8A7E2193A0EE0002E68D9 /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8A7E1193A0EE0002E68D9 /* LoadingViewController.m */; };
 		2DA8A7E5193A0F7E002E68D9 /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8A7E4193A0F7E002E68D9 /* Global.m */; };
 		2DA8A7E9193A1108002E68D9 /* BlueBackImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DA8A7E8193A1108002E68D9 /* BlueBackImage.png */; };
@@ -150,6 +151,7 @@
 		2D7F2A7B1937714B00E004AE /* moni_teTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = moni_teTests.m; sourceTree = "<group>"; };
 		2D7F2A851937734D00E004AE /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
 		2D7F2A861937734D00E004AE /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		2D84B98D193DFDC7006A1FE5 /* beast.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = beast.plist; sourceTree = "<group>"; };
 		2DA8A7E0193A0EE0002E68D9 /* LoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingViewController.h; sourceTree = "<group>"; };
 		2DA8A7E1193A0EE0002E68D9 /* LoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingViewController.m; sourceTree = "<group>"; };
 		2DA8A7E3193A0F7E002E68D9 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				2D7F2A5C1937714B00E004AE /* main.m */,
 				2D7F2A5E1937714B00E004AE /* moni_te-Prefix.pch */,
 				2DA8A7EA193A14DA002E68D9 /* Localizable.strings */,
+				2D84B98D193DFDC7006A1FE5 /* beast.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				2D115441193ABEA00073D1AB /* sendsetting_on_1.png in Resources */,
 				2DE22A54193B09AD00DC39DC /* buttonquit_off_2.png in Resources */,
 				2D11542F193ABB770073D1AB /* FlashBackImage.png in Resources */,
+				2D84B98E193DFDC7006A1FE5 /* beast.plist in Resources */,
 				2DE22A46193B049300DC39DC /* Default-568h@2x.png in Resources */,
 				2DA8A7F2193A2407002E68D9 /* GECKO.png in Resources */,
 				2D7F2A641937714B00E004AE /* Main.storyboard in Resources */,

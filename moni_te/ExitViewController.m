@@ -33,7 +33,7 @@
     return self;
 }
 -(void)popUp{if([_delegate respondsToSelector:@selector(popUp)])[_delegate popUp];}
--(void)quit{NSLog(@"quit");}
+-(void)quit{abort();}
 @end
 
 @interface ExitViewController ()

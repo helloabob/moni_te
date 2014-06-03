@@ -34,7 +34,7 @@
     return self;
 }
 -(void)reconnect{if([_delegate respondsToSelector:@selector(reconnect)])[_delegate reconnect];}
--(void)quit{NSLog(@"quit");}
+-(void)quit{abort();}
 @end
 
 @interface LoadingViewController (){
