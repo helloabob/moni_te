@@ -8,6 +8,7 @@
 
 #import "BEASTViewController.h"
 #import "SettingControlView.h"
+#import "ParamButtonView.h"
 
 @interface BEASTViewController (){
     UIImageView *logo;
@@ -33,6 +34,11 @@
     
     self.backImageView.image=[UIImage imageNamed:@"FlashBackImage"];
     self.SettingControlViewHidden=NO;
+    
+    ParamButtonView *pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(50, 50, 100, 65) withImageName:@"runningmode"]autorelease];
+    [self.contentView addSubview:pbv];
+    pbv.valueString=@"Forward with pause then Reverse";
+    
     
 //    logo=[[[UIImageView alloc]initWithFrame:CGRectMake(50, self.contentView.bounds.size.height/2-48, 220, 81)]autorelease];
 //    logo.image=[UIImage imageNamed:@"BEAST"];

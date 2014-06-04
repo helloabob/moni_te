@@ -83,6 +83,10 @@
 		2DE22A5C193B09AD00DC39DC /* connectfailalert_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE22A52193B09AD00DC39DC /* connectfailalert_2.png */; };
 		2DE22A5F193B654B00DC39DC /* ExitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE22A5E193B654B00DC39DC /* ExitViewController.m */; };
 		5A5A79E9193AF1BD00C103B1 /* NetUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5A79E8193AF1BD00C103B1 /* NetUtils.m */; };
+		5ABBAB38193EA9BD00F3CBFA /* paramicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ABBAB35193EA9BD00F3CBFA /* paramicon.png */; };
+		5ABBAB39193EA9BD00F3CBFA /* runningmode_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ABBAB36193EA9BD00F3CBFA /* runningmode_1.png */; };
+		5ABBAB3A193EA9BD00F3CBFA /* runningmode_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ABBAB37193EA9BD00F3CBFA /* runningmode_2.png */; };
+		5ABBAB3D193EB4DA00F3CBFA /* ParamButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABBAB3C193EB4DA00F3CBFA /* ParamButtonView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,6 +191,11 @@
 		2DE22A5E193B654B00DC39DC /* ExitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExitViewController.m; sourceTree = "<group>"; };
 		5A5A79E7193AF1BD00C103B1 /* NetUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetUtils.h; sourceTree = "<group>"; };
 		5A5A79E8193AF1BD00C103B1 /* NetUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetUtils.m; sourceTree = "<group>"; };
+		5ABBAB35193EA9BD00F3CBFA /* paramicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paramicon.png; sourceTree = "<group>"; };
+		5ABBAB36193EA9BD00F3CBFA /* runningmode_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = runningmode_1.png; sourceTree = "<group>"; };
+		5ABBAB37193EA9BD00F3CBFA /* runningmode_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = runningmode_2.png; sourceTree = "<group>"; };
+		5ABBAB3B193EB4DA00F3CBFA /* ParamButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParamButtonView.h; sourceTree = "<group>"; };
+		5ABBAB3C193EB4DA00F3CBFA /* ParamButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParamButtonView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,6 +331,8 @@
 				5A5A79E8193AF1BD00C103B1 /* NetUtils.m */,
 				2DE22A5D193B654B00DC39DC /* ExitViewController.h */,
 				2DE22A5E193B654B00DC39DC /* ExitViewController.m */,
+				5ABBAB3B193EB4DA00F3CBFA /* ParamButtonView.h */,
+				5ABBAB3C193EB4DA00F3CBFA /* ParamButtonView.m */,
 			);
 			path = moni_te;
 			sourceTree = "<group>";
@@ -365,6 +376,7 @@
 		2DA8A7E6193A1108002E68D9 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				5ABBAB34193EA9BD00F3CBFA /* beast */,
 				2D174258193C046500FA81D4 /* quitalert */,
 				2D115445193AC3D80073D1AB /* toolbar */,
 				2D115430193ABEA00073D1AB /* settingcontrol */,
@@ -404,6 +416,16 @@
 				2DA8A7F0193A2407002E68D9 /* TURBO.png */,
 			);
 			path = loading;
+			sourceTree = "<group>";
+		};
+		5ABBAB34193EA9BD00F3CBFA /* beast */ = {
+			isa = PBXGroup;
+			children = (
+				5ABBAB35193EA9BD00F3CBFA /* paramicon.png */,
+				5ABBAB36193EA9BD00F3CBFA /* runningmode_1.png */,
+				5ABBAB37193EA9BD00F3CBFA /* runningmode_2.png */,
+			);
+			path = beast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,7 +513,10 @@
 				2D11543D193ABEA00073D1AB /* readsetting_on_1.png in Resources */,
 				2D11543B193ABEA00073D1AB /* readsetting_off_1.png in Resources */,
 				2DE22A47193B049300DC39DC /* Default.png in Resources */,
+				5ABBAB3A193EA9BD00F3CBFA /* runningmode_2.png in Resources */,
 				2D115451193AC3D80073D1AB /* toolbarexit_on_2.png in Resources */,
+				5ABBAB39193EA9BD00F3CBFA /* runningmode_1.png in Resources */,
+				5ABBAB38193EA9BD00F3CBFA /* paramicon.png in Resources */,
 				2DE22A53193B09AD00DC39DC /* buttonquit_off_1.png in Resources */,
 				2D11543C193ABEA00073D1AB /* readsetting_off_2.png in Resources */,
 				2D174270193C423500FA81D4 /* buttonen.png in Resources */,
@@ -567,6 +592,7 @@
 				2D115426193AB40E0073D1AB /* BEASTViewController.m in Sources */,
 				2DA8A7E5193A0F7E002E68D9 /* Global.m in Sources */,
 				2D7F2A871937734D00E004AE /* AsyncUdpSocket.m in Sources */,
+				5ABBAB3D193EB4DA00F3CBFA /* ParamButtonView.m in Sources */,
 				2DA8A7E2193A0EE0002E68D9 /* LoadingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

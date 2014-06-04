@@ -33,7 +33,8 @@
     [socket bindToPort:8008 error:nil];
     threadshold=2;
     port2=8008;
-    self.host2=@"192.168.0.101";
+//    self.host2=@"192.168.0.101";
+    self.host2=@"131.252.90.162";
 }
 -(void)sendData:(NSData *)data withDelegate:(id)delegate{
     if (socket==nil) {
