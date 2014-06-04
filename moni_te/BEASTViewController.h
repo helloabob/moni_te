@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface BEASTViewController : BaseViewController
+@interface BEASTViewController : BaseViewController<UIActionSheetDelegate>
 
 @end

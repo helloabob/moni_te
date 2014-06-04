@@ -12,14 +12,18 @@
     UIImageView *titleImageView;
     NSString *_titleImageName;
     UILabel *lblValue;
+    NSTimer *_timer;
+    int lbl_width;
+    id _delegate;
 }
 
-- (id)initWithFrame:(CGRect)frame withImageName:(NSString *)imageName
+- (id)initWithFrame:(CGRect)frame withImageName:(NSString *)imageName withDelegate:(id)delegate
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
         
+        _delegate=delegate;
         _titleImageName=[[NSString alloc] initWithString:imageName];
         
         UIImageView *imageView=[[[UIImageView alloc]initWithFrame:self.bounds]autorelease];
@@ -27,21 +31,66 @@
         [self addSubview:imageView];
         
         titleImageView=[[[UIImageView alloc]initWithFrame:CGRectMake(17, 13, 66, 14)]autorelease];
+        titleImageView.contentMode=UIViewContentModeScaleAspectFit;
         [self addSubview:titleImageView];
         
-        lblValue=[[[UILabel alloc]initWithFrame:CGRectMake(0, 40, self.bounds.size.width, 25)]autorelease];
+        UIView *innerView=[[[UIView alloc]initWithFrame:CGRectMake(10, 35, self.bounds.size.width-20, 25)]autorelease];
+        [self addSubview:innerView];
+        innerView.layer.masksToBounds=YES;
+        
+        lblValue=[[[UILabel alloc]initWithFrame:innerView.bounds]autorelease];
         lblValue.textColor=[UIColor whiteColor];
         lblValue.textAlignment=NSTextAlignmentCenter;
         lblValue.font=[UIFont systemFontOfSize:12];
-        [self addSubview:lblValue];
+        lbl_width=lblValue.bounds.size.width;
+        [innerView addSubview:lblValue];
         
         [self renderImage];
+        
+        UIButton *btn=[[[UIButton alloc]initWithFrame:self.bounds]autorelease];
+        btn.backgroundColor=[UIColor clearColor];
+        [btn addTarget:self action:@selector(btnTapped) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:btn];
     }
     return self;
 }
-
+-(void)btnTapped{
+    if (_delegate&&[_delegate respondsToSelector:@selector(viewDidTapped:)]) {
+        [_delegate viewDidTapped:self];
+    }
+}
 -(void)setValueString:(NSString *)valueString{
-    lblValue.text=valueString;
+//    if (lblValue.text==valueString) {
+//        return;
+//    }
+//    dispatch_async(dispatch_get_main_queue(), ^(){
+        lblValue.text=valueString;
+        [lblValue.layer removeAllAnimations];
+        CGSize textSize = [lblValue.text sizeWithFont:lblValue.font];
+        
+        if (textSize.width > lbl_width) {
+            
+            CGRect lframe = lblValue.frame;
+            lframe.size.width = textSize.width;
+            lblValue.frame = lframe;
+            
+            float offset = textSize.width - lbl_width;
+            [UIView animateWithDuration:3.0
+                                  delay:0
+                                options:UIViewAnimationOptionRepeat //动画重复的主开关
+             |UIViewAnimationOptionAutoreverse //动画重复自动反向，需要和上面这个一起用
+             |UIViewAnimationOptionCurveLinear //动画的时间曲线，滚动字幕线性比较合理
+                             animations:^{
+                                 lblValue.transform = CGAffineTransformMakeTranslation(-offset, 0);
+                             }
+                             completion:^(BOOL finished) {
+                                 
+                             }
+             ];
+        }else{
+            lblValue.textAlignment=NSTextAlignmentCenter;
+        }
+//    });
 }
 
 -(void)renderImage{

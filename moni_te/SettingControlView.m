@@ -8,7 +8,10 @@
 
 #import "SettingControlView.h"
 
-@implementation SettingControlView
+@implementation SettingControlView{
+    UIBaseButton *read;
+    UIBaseButton *set;
+}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -22,15 +25,22 @@
         btn.offImageName=@"readsetting_off";
         btn.onImageName=@"readsetting_on";
         [self addSubview:btn];
+        read=btn;
         btn=[[[UIBaseButton alloc]initWithFrame:CGRectMake(180, 60, 100, 21)]autorelease];
         btn.offImageName=@"sendsetting_off";
         btn.onImageName=@"sendsetting_on";
         [self addSubview:btn];
+        set=btn;
         
         [self renderImage];
         
     }
     return self;
+}
+
+-(void)addTarget:(id)target actionRead:(SEL)aread actionSet:(SEL)aset{
+    [read addTarget:target action:aread forControlEvents:UIControlEventTouchUpInside];
+    [set addTarget:target action:aset forControlEvents:UIControlEventTouchUpInside];
 }
 
 

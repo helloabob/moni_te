@@ -33,8 +33,8 @@
     [socket bindToPort:8008 error:nil];
     threadshold=2;
     port2=8008;
-//    self.host2=@"192.168.0.101";
-    self.host2=@"131.252.90.162";
+    self.host2=@"192.168.0.101";
+//    self.host2=@"131.252.90.162";
 }
 -(void)sendData:(NSData *)data withDelegate:(id)delegate{
     if (socket==nil) {
@@ -49,6 +49,9 @@
 
 /**/
 - (void)onUdpSocket:(AsyncUdpSocket *)sock didNotReceiveDataWithTag:(long)tag dueToError:(NSError *)error{
+    if (_delegate==nil) {
+        return;
+    }
     if (resend_count<threadshold) {
         resend_count++;
         [socket sendData:_mdata toHost:_host2 port:port2 withTimeout:1 tag:1];

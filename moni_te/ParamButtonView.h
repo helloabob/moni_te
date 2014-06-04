@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ParamButtonView : UIView
-- (id)initWithFrame:(CGRect)frame withImageName:(NSString *)imageName;
+- (id)initWithFrame:(CGRect)frame withImageName:(NSString *)imageName withDelegate:(id)delegate;
 @property(nonatomic,retain)NSString *valueString;
 -(void)renderImage;
 @end

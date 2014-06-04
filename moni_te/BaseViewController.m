@@ -69,9 +69,16 @@
     
 //    maskView=[[UIView alloc]initWithFrame:_backImageView.bounds];
     
-    scv=[[[SettingControlView alloc]initWithFrame:CGRectMake(10, self.contentView.bounds.size.height-100-60, 300, 100)]autorelease];
+    scv=[[[SettingControlView alloc]initWithFrame:CGRectMake(10, self.contentView.bounds.size.height-100-50, 300, 100)]autorelease];
     scv.hidden=YES;
+    [scv addTarget:self actionRead:@selector(onRead) actionSet:@selector(onSet)];
     [self.contentView addSubview:scv];
+    
+}
+-(void)onRead{
+    
+}
+-(void)onSet{
     
 }
 -(void)onExit{
@@ -87,6 +94,11 @@
 -(void)renderImage{
     [baseButton renderImage];
     [scv renderImage];
+    for (id view in self.contentView.subviews) {
+        if ([view respondsToSelector:@selector(renderImage)]) {
+            [view renderImage];
+        }
+    }
 }
 -(void)setSettingControlViewHidden:(BOOL)SettingControlViewHidden{
     scv.hidden=SettingControlViewHidden;

@@ -9,5 +9,5 @@
 #import "UIBaseImageView.h"
 
 @interface SettingControlView : UIBaseImageView
-
+-(void)addTarget:(id)target actionRead:(SEL)aread actionSet:(SEL)aset;
 @end
