@@ -20,6 +20,7 @@ static unsigned char result[11];
     TSLocateView *locateView;
 }
 @property(nonatomic,retain)NSDictionary *dict;
+@property(nonatomic,retain)NSArray *keyArray;
 
 @end
 
@@ -38,8 +39,6 @@ static unsigned char result[11];
     
     unsigned char *tmp=data.bytes;
     result[0]=tmp[0];
-    //temp here.
-//    result[0]=0x2a;
     result[1]=tmp[2];
     result[2]=tmp[3];
     result[3]=tmp[4];
@@ -52,32 +51,12 @@ static unsigned char result[11];
     result[10]=tmp[12];
     
     ParamButtonView *pbv=nil;
-    pbv=(ParamButtonView *)[self.contentView viewWithTag:1];
-    pbv.valueString=[self valueForKey:result[1] AtDictionary:self.dict[@"RunningMode"]];
-    pbv=(ParamButtonView *)[self.contentView viewWithTag:2];
-    pbv.valueString=[self valueForKey:result[4] AtDictionary:self.dict[@"MotorTiming"]];
-    pbv=(ParamButtonView *)[self.contentView viewWithTag:3];
-    pbv.valueString=[self valueForKey:result[5] AtDictionary:self.dict[@"InitialAcceleration"]];
-    pbv=(ParamButtonView *)[self.contentView viewWithTag:4];
-    pbv.valueString=[self valueForKey:result[9] AtDictionary:self.dict[@"MotorRotation"]];
-    pbv=(ParamButtonView *)[self.contentView viewWithTag:5];
-    pbv.valueString=[self valueForKey:result[7] AtDictionary:self.dict[@"ThrottlePercentReverse"]];
-    pbv=(ParamButtonView *)[self.contentView viewWithTag:6];
-    pbv.valueString=[self valueForKey:result[6] AtDictionary:self.dict[@"ThrottleLimit"]];
-    pbv=(ParamButtonView *)[self.contentView viewWithTag:7];
-    pbv.valueString=[self valueForKey:result[8] AtDictionary:self.dict[@"NeutralRange"]];
-    pbv=(ParamButtonView *)[self.contentView viewWithTag:8];
-    pbv.valueString=[self valueForKey:result[2] AtDictionary:self.dict[@"PercentageBraking"]];
-    pbv=(ParamButtonView *)[self.contentView viewWithTag:9];
-    pbv.valueString=[self valueForKey:result[3] AtDictionary:self.dict[@"PercentageDragBrake"]];
-    pbv=(ParamButtonView *)[self.contentView viewWithTag:10];
-    pbv.valueString=[self valueForKey:result[0] AtDictionary:self.dict[@"CutOffVoltage"]];
-    
+    for (int i=0; i<10; i++) {
+        pbv=(ParamButtonView *)[self.contentView viewWithTag:(i+1)];
+        pbv.valueString=[self valueForKey:result[i] AtDictionary:self.dict[_keyArray[i]]];
+    }
 }
--(NSString *)valueForKey:(unsigned char)key AtDictionary:(NSDictionary *)dic{
-    static int a=1;
-    NSLog(@"d:%d",a++);
-    NSString *values=dic[@"KeysRange"];
+-(NSArray *)convertStringToArray:(NSString *)values{
     NSArray *array=nil;
     if ([values rangeOfString:@","].length==0) {
         if ([values rangeOfString:@"-"].length>0) {
@@ -95,6 +74,10 @@ static unsigned char result[11];
     }else{
         array=[values componentsSeparatedByString:@","];
     }
+    return array;
+}
+-(NSString *)valueForKey:(unsigned char)key AtDictionary:(NSDictionary *)dic{
+    NSArray *array=[self convertStringToArray:dic[@"KeysRange"]];
     int index=-1;
     for (int i=0; i<array.count; i++) {
         if ([array[i] intValue]==key) {
@@ -106,26 +89,8 @@ static unsigned char result[11];
         index=[dic[@"DefaultKey"] intValue];
     }
     if (index>-1) {
-        values=dic[@"ValuesRange"];
-        NSArray *array=nil;
-        if ([values rangeOfString:@","].length==0) {
-            if ([values rangeOfString:@"-"].length>0) {
-                NSArray *arr=[values componentsSeparatedByString:@"-"];
-                int start=[arr[0] intValue];
-                int end=[arr[1] intValue];
-                NSMutableArray *ar=[NSMutableArray array];
-                for (int i=start; i<=end; i++) {
-                    [ar addObject:[NSString stringWithFormat:@"%d",i]];
-                }
-                array=[NSArray arrayWithArray:ar];
-            }else{
-                return nil;
-            }
-        }else{
-            array=[values componentsSeparatedByString:@","];
-        }
-        NSLog(@"dic:%@ and key:%02x and result:%@",dic,key, array[index]);
-        return array[index];
+        NSArray *arr=[self convertStringToArray:dic[@"ValuesRange"]];
+        return arr[index];
     }
     return nil;
 }
@@ -162,70 +127,61 @@ static unsigned char result[11];
     
     unsigned char a=0xd8;
     [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:&a length:1] withDelegate:self];
-    
-    
+    self.keyArray=@[@"CutOffVoltage",@"RunningMode",@"PercentageBraking",@"PercentageDragBrake",@"MotorTiming",@"InitialAcceleration",@"ThrottleLimit",@"ThrottlePercentReverse",@"NeutralRange",@"MotorRotation"];
     self.dict=[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"beast" ofType:@"plist"]];
     
     self.backImageView.image=[UIImage imageNamed:@"FlashBackImage"];
     self.SettingControlViewHidden=NO;
     
     ParamButtonView *pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110, 30, 100, 65) withImageName:@"runningmode" withDelegate:self]autorelease];
-    pbv.tag=1;
+    pbv.tag=2;
     [self.contentView addSubview:pbv];
     pbv.valueString=@"Forward/Reverse";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5, 100, 100, 65) withImageName:@"mt" withDelegate:self]autorelease];
-    pbv.tag=2;
+    pbv.tag=5;
     [self.contentView addSubview:pbv];
     pbv.valueString=@"Normal";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110, 100, 100, 65) withImageName:@"ic" withDelegate:self]autorelease];
-    pbv.tag=3;
+    pbv.tag=6;
     [self.contentView addSubview:pbv];
     pbv.valueString=@"High";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(215, 100, 100, 65) withImageName:@"mr" withDelegate:self]autorelease];
-    pbv.tag=4;
+    pbv.tag=10;
     [self.contentView addSubview:pbv];
     pbv.valueString=@"Normal";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5, 170, 100, 65) withImageName:@"tpr" withDelegate:self]autorelease];
-    pbv.tag=5;
+    pbv.tag=8;
     [self.contentView addSubview:pbv];
     pbv.valueString=@"60%";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110, 170, 100, 65) withImageName:@"tl" withDelegate:self]autorelease];
-    pbv.tag=6;
+    pbv.tag=7;
     [self.contentView addSubview:pbv];
     pbv.valueString=@"50%";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(215, 170, 100, 65) withImageName:@"nr" withDelegate:self]autorelease];
-    pbv.tag=7;
+    pbv.tag=9;
     [self.contentView addSubview:pbv];
     pbv.valueString=@"4%";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5, 240, 100, 65) withImageName:@"pb" withDelegate:self]autorelease];
-    pbv.tag=8;
+    pbv.tag=3;
     [self.contentView addSubview:pbv];
     pbv.valueString=@"50%";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110, 240, 100, 65) withImageName:@"pdb" withDelegate:self]autorelease];
-    pbv.tag=9;
+    pbv.tag=4;
     [self.contentView addSubview:pbv];
     pbv.valueString=@"0%";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(215, 240, 100, 65) withImageName:@"cov" withDelegate:self]autorelease];
-    pbv.tag=10;
+    pbv.tag=1;
     [self.contentView addSubview:pbv];
     pbv.valueString=@"3.0V/Cell";
-    
-    NSLog(@"loaded");
-    
-//    logo=[[[UIImageView alloc]initWithFrame:CGRectMake(50, self.contentView.bounds.size.height/2-48, 220, 81)]autorelease];
-//    logo.image=[UIImage imageNamed:@"BEAST"];
-//    [self.contentView addSubview:logo];
-//    [self performSelector:@selector(enter) withObject:nil afterDelay:1];
-    
 }
 -(void)viewDidTapped:(ParamButtonView *)sender{
     
@@ -235,61 +191,11 @@ static unsigned char result[11];
     g_pbv=sender;
     g_tag=sender.tag;
     NSDictionary *tmp=nil;
-    switch (sender.tag) {
-        case 1:
-            tmp=_dict[@"RunningMode"];
-            break;
-        case 2:
-            tmp=_dict[@"MotorTiming"];
-            break;
-        case 3:
-            tmp=_dict[@"InitialAcceleration"];
-            break;
-        case 4:
-            tmp=_dict[@"MotorRotation"];
-            break;
-        case 5:
-            tmp=_dict[@"ThrottlePercentReverse"];
-            break;
-        case 6:
-            tmp=_dict[@"ThrottleLimit"];
-            break;
-        case 7:
-            tmp=_dict[@"NeutralRange"];
-            break;
-        case 8:
-            tmp=_dict[@"PercentageBraking"];
-            break;
-        case 9:
-            tmp=_dict[@"PercentageDragBrake"];
-            break;
-        case 10:
-            tmp=_dict[@"CutOffVoltage"];
-            break;
-        default:
-            break;
-    }
+    tmp=_dict[_keyArray[sender.tag-1]];
     if (tmp==nil) {
         return;
     }
-    NSString *values=tmp[@"ValuesRange"];
-    NSArray *array=nil;
-    if ([values rangeOfString:@","].length==0) {
-        if ([values rangeOfString:@"-"].length>0) {
-            NSArray *arr=[values componentsSeparatedByString:@"-"];
-            int start=[arr[0] intValue];
-            int end=[arr[1] intValue];
-            NSMutableArray *ar=[NSMutableArray array];
-            for (int i=start; i<=end; i++) {
-                [ar addObject:[NSString stringWithFormat:@"%d",i]];
-            }
-            array=[NSArray arrayWithArray:ar];
-        }else{
-            return;
-        }
-    }else{
-        array=[values componentsSeparatedByString:@","];
-    }
+    NSArray *array=[self convertStringToArray:tmp[@"ValuesRange"]];
     
     if (locateView!=nil) {
         [locateView hidePicker];
@@ -309,79 +215,14 @@ static unsigned char result[11];
         NSLog(@"Select");
         TSLocateView *tv=(TSLocateView *)actionSheet;
         NSDictionary *tmp=nil;
-        switch (g_tag) {
-            case 1:
-                tmp=_dict[@"RunningMode"];
-                result[1]=[self dataFromDict:tmp AtIndex:tv.selectedIndex];
-                break;
-            case 2:
-                tmp=_dict[@"MotorTiming"];
-                result[4]=[self dataFromDict:tmp AtIndex:tv.selectedIndex];
-                break;
-            case 3:
-                tmp=_dict[@"InitialAcceleration"];
-                result[5]=[self dataFromDict:tmp AtIndex:tv.selectedIndex];
-                break;
-            case 4:
-                tmp=_dict[@"MotorRotation"];
-                result[9]=[self dataFromDict:tmp AtIndex:tv.selectedIndex];
-                break;
-            case 5:
-                tmp=_dict[@"ThrottlePercentReverse"];
-                result[7]=[self dataFromDict:tmp AtIndex:tv.selectedIndex];
-                break;
-            case 6:
-                tmp=_dict[@"ThrottleLimit"];
-                result[6]=[self dataFromDict:tmp AtIndex:tv.selectedIndex];
-                break;
-            case 7:
-                tmp=_dict[@"NeutralRange"];
-                result[8]=[self dataFromDict:tmp AtIndex:tv.selectedIndex];
-                break;
-            case 8:
-                tmp=_dict[@"PercentageBraking"];
-                result[2]=[self dataFromDict:tmp AtIndex:tv.selectedIndex];
-                break;
-            case 9:
-                tmp=_dict[@"PercentageDragBrake"];
-                result[3]=[self dataFromDict:tmp AtIndex:tv.selectedIndex];
-                break;
-            case 10:
-                tmp=_dict[@"CutOffVoltage"];
-                result[0]=[self dataFromDict:tmp AtIndex:tv.selectedIndex];
-                break;
-            default:
-                break;
-        }
-        
-//        int index=tv.selectedIndex;
+        tmp=_dict[_keyArray[g_tag-1]];
         g_pbv.valueString=tv.provinces[tv.selectedIndex];
-        
-//        ParamButtonView *pbv=(ParamButtonView *)[self.contentView viewWithTag:g_tag];
-//        pbv.valueString=tmp[]
     }
     g_pbv=nil;
     g_tag=0;
 }
 -(unsigned char)dataFromDict:(NSDictionary *)dic AtIndex:(int)index{
-    NSString *values=dic[@"KeysRange"];
-    NSArray *array=nil;
-    if ([values rangeOfString:@","].length==0) {
-        if ([values rangeOfString:@"-"].length>0) {
-            NSArray *arr=[values componentsSeparatedByString:@"-"];
-            int start=[arr[0] intValue];
-            int end=[arr[1] intValue];
-            NSMutableArray *ar=[NSMutableArray array];
-            for (int i=start; i<=end; i++) {
-                [ar addObject:[NSString stringWithFormat:@"%d",i]];
-            }
-            array=[NSArray arrayWithArray:ar];
-        }else{
-            return 0x00;
-        }
-    }else{
-        array=[values componentsSeparatedByString:@","];
-    }
+    NSArray *array=[self convertStringToArray:dic[@"KeysRange"]];
     int ret=[array[index] intValue];
     unsigned char a=ret;
     return a;
