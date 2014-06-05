@@ -11,4 +11,6 @@
 @interface Global : NSObject
 +(BOOL)setLanguage:(int)lang;
 +(int)language;
++(NSArray *)convertStringToArray:(NSDictionary *)dict forKey:(NSString *)key;
++(NSString *)valueForKey:(unsigned char)key AtDictionary:(NSDictionary *)dic;
 @end

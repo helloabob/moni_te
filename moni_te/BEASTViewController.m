@@ -19,8 +19,6 @@ static unsigned char result[11];
     UIImageView *logo;
     TSLocateView *locateView;
 }
-@property(nonatomic,retain)NSDictionary *dict;
-@property(nonatomic,retain)NSArray *keyArray;
 
 @end
 
@@ -53,46 +51,8 @@ static unsigned char result[11];
     ParamButtonView *pbv=nil;
     for (int i=0; i<10; i++) {
         pbv=(ParamButtonView *)[self.contentView viewWithTag:(i+1)];
-        pbv.valueString=[self valueForKey:result[i] AtDictionary:self.dict[_keyArray[i]]];
+        pbv.valueString=[Global valueForKey:result[i] AtDictionary:self.dict[self.keyArray[i]]];
     }
-}
--(NSArray *)convertStringToArray:(NSString *)values{
-    NSArray *array=nil;
-    if ([values rangeOfString:@","].length==0) {
-        if ([values rangeOfString:@"-"].length>0) {
-            NSArray *arr=[values componentsSeparatedByString:@"-"];
-            int start=[arr[0] intValue];
-            int end=[arr[1] intValue];
-            NSMutableArray *ar=[NSMutableArray array];
-            for (int i=start; i<=end; i++) {
-                [ar addObject:[NSString stringWithFormat:@"%d",i]];
-            }
-            array=[NSArray arrayWithArray:ar];
-        }else{
-            return nil;
-        }
-    }else{
-        array=[values componentsSeparatedByString:@","];
-    }
-    return array;
-}
--(NSString *)valueForKey:(unsigned char)key AtDictionary:(NSDictionary *)dic{
-    NSArray *array=[self convertStringToArray:dic[@"KeysRange"]];
-    int index=-1;
-    for (int i=0; i<array.count; i++) {
-        if ([array[i] intValue]==key) {
-            index=i;
-            break;
-        }
-    }
-    if (index==-1) {
-        index=[dic[@"DefaultKey"] intValue];
-    }
-    if (index>-1) {
-        NSArray *arr=[self convertStringToArray:dic[@"ValuesRange"]];
-        return arr[index];
-    }
-    return nil;
 }
 -(void)onRead{
     unsigned char a=0xd8;
@@ -191,11 +151,11 @@ static unsigned char result[11];
     g_pbv=sender;
     g_tag=sender.tag;
     NSDictionary *tmp=nil;
-    tmp=_dict[_keyArray[sender.tag-1]];
+    tmp=self.dict[self.keyArray[sender.tag-1]];
     if (tmp==nil) {
         return;
     }
-    NSArray *array=[self convertStringToArray:tmp[@"ValuesRange"]];
+    NSArray *array=[Global convertStringToArray:tmp forKey:@"ValuesRange"];
     
     if (locateView!=nil) {
         [locateView hidePicker];
@@ -210,28 +170,22 @@ static unsigned char result[11];
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if(buttonIndex == 0) {
-        NSLog(@"Cancel");
     }else {
-        NSLog(@"Select");
         TSLocateView *tv=(TSLocateView *)actionSheet;
         NSDictionary *tmp=nil;
-        tmp=_dict[_keyArray[g_tag-1]];
+        tmp=self.dict[self.keyArray[g_tag-1]];
         g_pbv.valueString=tv.provinces[tv.selectedIndex];
+        result[g_tag-1]=[self dataFromDict:tmp AtIndex:tv.selectedIndex];
     }
     g_pbv=nil;
     g_tag=0;
 }
 -(unsigned char)dataFromDict:(NSDictionary *)dic AtIndex:(int)index{
-    NSArray *array=[self convertStringToArray:dic[@"KeysRange"]];
+    NSArray *array=[Global convertStringToArray:dic forKey:@"KeysRange"];
     int ret=[array[index] intValue];
     unsigned char a=ret;
     return a;
 }
-
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-}
-
 -(void)enter{
     [logo removeFromSuperview];
     self.backImageView.image=[UIImage imageNamed:@"FlashBackImage"];
