@@ -8,6 +8,7 @@
 
 #import "LoadingViewController.h"
 #import "BEASTViewController.h"
+#import "GECKOViewController.h"
 
 @implementation ConnectionFailedAlertView
 - (id)initWithFrame:(CGRect)frame withDelegate:(id)delegate
@@ -100,10 +101,15 @@
 }
 -(void)nextPage{
     NSLog(@"next_page");
+    UIViewController *vc=nil;
+    NSString *className=nil;
     if (carType==CarTypeNormal) {
-        BEASTViewController *vc=[[[BEASTViewController alloc]init]autorelease];
-        [self.navigationController pushViewController:vc animated:NO];
+        className=@"BEASTViewController";
+    }else if(carType==CarTypeAIR){
+        className=@"GECKOViewController";
     }
+    vc=[[[NSClassFromString(className) alloc]init]autorelease];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 -(void)didNotReceive{
     NSLog(@"failed");

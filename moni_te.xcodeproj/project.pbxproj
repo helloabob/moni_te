@@ -124,6 +124,9 @@
 		2DE22A5B193B09AD00DC39DC /* connectfailalert_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE22A51193B09AD00DC39DC /* connectfailalert_1.png */; };
 		2DE22A5C193B09AD00DC39DC /* connectfailalert_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE22A52193B09AD00DC39DC /* connectfailalert_2.png */; };
 		2DE22A5F193B654B00DC39DC /* ExitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE22A5E193B654B00DC39DC /* ExitViewController.m */; };
+		2DEF526C194342FF00D4C9B5 /* UITabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DEF526B194342FF00D4C9B5 /* UITabView.m */; };
+		2DEF526F19435B3400D4C9B5 /* GECKOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DEF526E19435B3400D4C9B5 /* GECKOViewController.m */; };
+		2DEF5271194366B800D4C9B5 /* gecko.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF5270194366B800D4C9B5 /* gecko.plist */; };
 		5A5A79E9193AF1BD00C103B1 /* NetUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5A79E8193AF1BD00C103B1 /* NetUtils.m */; };
 		5ABBAB38193EA9BD00F3CBFA /* paramicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ABBAB35193EA9BD00F3CBFA /* paramicon.png */; };
 		5ABBAB39193EA9BD00F3CBFA /* runningmode_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ABBAB36193EA9BD00F3CBFA /* runningmode_1.png */; };
@@ -274,6 +277,11 @@
 		2DE22A52193B09AD00DC39DC /* connectfailalert_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connectfailalert_2.png; sourceTree = "<group>"; };
 		2DE22A5D193B654B00DC39DC /* ExitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExitViewController.h; sourceTree = "<group>"; };
 		2DE22A5E193B654B00DC39DC /* ExitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExitViewController.m; sourceTree = "<group>"; };
+		2DEF526A194342FF00D4C9B5 /* UITabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITabView.h; sourceTree = "<group>"; };
+		2DEF526B194342FF00D4C9B5 /* UITabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITabView.m; sourceTree = "<group>"; };
+		2DEF526D19435B3400D4C9B5 /* GECKOViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GECKOViewController.h; sourceTree = "<group>"; };
+		2DEF526E19435B3400D4C9B5 /* GECKOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GECKOViewController.m; sourceTree = "<group>"; };
+		2DEF5270194366B800D4C9B5 /* gecko.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gecko.plist; sourceTree = "<group>"; };
 		5A5A79E7193AF1BD00C103B1 /* NetUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetUtils.h; sourceTree = "<group>"; };
 		5A5A79E8193AF1BD00C103B1 /* NetUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetUtils.m; sourceTree = "<group>"; };
 		5ABBAB35193EA9BD00F3CBFA /* paramicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paramicon.png; sourceTree = "<group>"; };
@@ -421,6 +429,10 @@
 				2DE22A5E193B654B00DC39DC /* ExitViewController.m */,
 				5ABBAB3B193EB4DA00F3CBFA /* ParamButtonView.h */,
 				5ABBAB3C193EB4DA00F3CBFA /* ParamButtonView.m */,
+				2DEF526A194342FF00D4C9B5 /* UITabView.h */,
+				2DEF526B194342FF00D4C9B5 /* UITabView.m */,
+				2DEF526D19435B3400D4C9B5 /* GECKOViewController.h */,
+				2DEF526E19435B3400D4C9B5 /* GECKOViewController.m */,
 			);
 			path = moni_te;
 			sourceTree = "<group>";
@@ -428,6 +440,7 @@
 		2D7F2A571937714B00E004AE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2DEF5270194366B800D4C9B5 /* gecko.plist */,
 				2DE22A43193B049300DC39DC /* Default-568h@2x.png */,
 				2DE22A44193B049300DC39DC /* Default.png */,
 				2DE22A45193B049300DC39DC /* Default@2x.png */,
@@ -662,6 +675,7 @@
 				2DA251F4193F5BEF001D87A6 /* cov_2.png in Resources */,
 				2D115451193AC3D80073D1AB /* toolbarexit_on_2.png in Resources */,
 				5ABBAB39193EA9BD00F3CBFA /* runningmode_1.png in Resources */,
+				2DEF5271194366B800D4C9B5 /* gecko.plist in Resources */,
 				2D8568B91940C1EB0048F43B /* general_on_2.png in Resources */,
 				2DA251F3193F5BEF001D87A6 /* cov_1.png in Resources */,
 				5ABBAB38193EA9BD00F3CBFA /* paramicon.png in Resources */,
@@ -771,6 +785,7 @@
 				2D7F2A671937714B00E004AE /* ViewController.m in Sources */,
 				2DABD6E21938C4A800F27ED3 /* UIBaseImageView.m in Sources */,
 				2DABD6DF1938C17900F27ED3 /* BaseViewController.m in Sources */,
+				2DEF526C194342FF00D4C9B5 /* UITabView.m in Sources */,
 				2DA251DF193F5771001D87A6 /* TSLocateView.m in Sources */,
 				2DABD6E51938C56C00F27ED3 /* UIBaseButton.m in Sources */,
 				2D7F2A611937714B00E004AE /* AppDelegate.m in Sources */,
@@ -779,6 +794,7 @@
 				2DA8A7E5193A0F7E002E68D9 /* Global.m in Sources */,
 				2D7F2A871937734D00E004AE /* AsyncUdpSocket.m in Sources */,
 				5ABBAB3D193EB4DA00F3CBFA /* ParamButtonView.m in Sources */,
+				2DEF526F19435B3400D4C9B5 /* GECKOViewController.m in Sources */,
 				2DA8A7E2193A0EE0002E68D9 /* LoadingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
