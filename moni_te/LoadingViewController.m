@@ -107,9 +107,11 @@
         className=@"BEASTViewController";
     }else if(carType==CarTypeAIR){
         className=@"GECKOViewController";
+    }else if(carType==CarTypeBoard){
+        className=@"SEALViewController";
     }
     vc=[[[NSClassFromString(className) alloc]init]autorelease];
-    [self.navigationController pushViewController:vc animated:YES];
+    [self.navigationController pushViewController:vc animated:NO];
 }
 -(void)didNotReceive{
     NSLog(@"failed");

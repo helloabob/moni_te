@@ -21,6 +21,12 @@ static int __language;
 +(int)language{
     return __language;
 }
++(unsigned char)dataFromDict:(NSDictionary *)dic AtIndex:(int)index{
+    NSArray *array=[self convertStringToArray:dic forKey:@"KeysRange"];
+    int ret=[array[index] intValue];
+    unsigned char a=ret;
+    return a;
+}
 +(NSString *)valueForKey:(unsigned char)key AtDictionary:(NSDictionary *)dic{
     NSArray *array=[self convertStringToArray:dic forKey:@"KeysRange"];
     int index=-1;

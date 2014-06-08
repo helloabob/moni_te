@@ -47,23 +47,70 @@
         btn.onBackImageName=@"header_on";
         btn.imageView.contentMode=UIViewContentModeScaleAspectFit;
         btn.imageEdgeInsets=UIEdgeInsetsMake(2, 4, 4, 4);
+        btn.tag=2000+i;
+        [btn addTarget:self action:@selector(tabClicked:) forControlEvents:UIControlEventTouchUpInside];
         [tabMenuBar addSubview:btn];
         if (i<numberOfTabs-1) {
             UIImageView *split=[[[UIImageView alloc]initWithFrame:CGRectMake(CGRectGetMaxX(btn.frame), 0, 1, 38)]autorelease];
             split.image=[UIImage imageNamed:@"header_split"];
             [tabMenuBar addSubview:split];
         }
+        
+        
+        UIView *view=[[[UIView alloc]initWithFrame:panel.bounds]autorelease];
+        view.tag=2000+i;
+        view.hidden=YES;
+        [panel addSubview:view];
+        
         if (i==0) {
-            btn.selected=YES;
+//            btn.selected=YES;
+            [self tabClicked:btn];
         }
     }
     tabMenuBar.center=CGPointMake(self.bounds.size.width/2, 19);
     [self renderImage];
+    
+}
+-(UIView *)viewForIndex:(int)index{
+    int tag=index+2000;
+    return [panel viewWithTag:tag];
+}
+-(void)tabClicked:(UIButton *)sender{
+    BOOL canContinue=YES;
+    if (_delegate&&[_delegate respondsToSelector:@selector(tabDidClicked:)]) {
+        canContinue=[_delegate tabDidClicked:sender.tag-2000];
+    }
+    if (canContinue==NO) {
+        return;
+    }
+    for (UIButton *btn in tabMenuBar.subviews) {
+        if ([btn isKindOfClass:[UIButton class]]) {
+            btn.selected=NO;
+        }
+    }
+    sender.selected=YES;
+    for (UIView *view in panel.subviews) {
+        if (view.tag==sender.tag) {
+            view.hidden=NO;
+        }else{
+            view.hidden=YES;
+        }
+    }
+    if (_delegate&&[_delegate respondsToSelector:@selector(viewDidChanged:)]) {
+        [_delegate viewDidChanged:sender.tag-2000];
+    }
 }
 -(void)renderImage{
     for (id view in tabMenuBar.subviews) {
         if ([view respondsToSelector:@selector(renderImage)]) {
             [view renderImage];
+        }
+    }
+    for (UIView *view in panel.subviews) {
+        for (id sub in view.subviews) {
+            if ([sub respondsToSelector:@selector(renderImage)]) {
+                [sub renderImage];
+            }
         }
     }
 }

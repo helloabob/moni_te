@@ -175,16 +175,10 @@ static unsigned char result[11];
         NSDictionary *tmp=nil;
         tmp=self.dict[self.keyArray[g_tag-1]];
         g_pbv.valueString=tv.provinces[tv.selectedIndex];
-        result[g_tag-1]=[self dataFromDict:tmp AtIndex:tv.selectedIndex];
+        result[g_tag-1]=[Global dataFromDict:tmp AtIndex:tv.selectedIndex];
     }
     g_pbv=nil;
     g_tag=0;
-}
--(unsigned char)dataFromDict:(NSDictionary *)dic AtIndex:(int)index{
-    NSArray *array=[Global convertStringToArray:dic forKey:@"KeysRange"];
-    int ret=[array[index] intValue];
-    unsigned char a=ret;
-    return a;
 }
 -(void)enter{
     [logo removeFromSuperview];

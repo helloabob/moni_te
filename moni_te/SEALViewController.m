@@ -1,28 +1,28 @@
 //
-//  GECKOViewController.m
+//  SEALViewController.m
 //  moni_te
 //
-//  Created by wangbo on 6/7/14.
+//  Created by wangbo on 6/8/14.
 //  Copyright (c) 2014 wb. All rights reserved.
 //
 
-#import "GECKOViewController.h"
+#import "SEALViewController.h"
 #import "ParamButtonView.h"
 #import "TSLocateView.h"
 
 
 static int g_tag;
 static ParamButtonView *g_pbv;
-static unsigned char result[9];
+static unsigned char result[8];
 
-@interface GECKOViewController (){
+@interface SEALViewController (){
     TSLocateView *locateView;
     UITabView *tabView;
 }
 
 @end
 
-@implementation GECKOViewController
+@implementation SEALViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,10 +45,9 @@ static unsigned char result[9];
     result[5]=tmp[5];
     result[6]=tmp[6];
     result[7]=tmp[7];
-    result[8]=tmp[8];
     
     ParamButtonView *pbv=nil;
-    for (int i=0; i<9; i++) {
+    for (int i=0; i<8; i++) {
         pbv=(ParamButtonView *)[[tabView viewForIndex:1] viewWithTag:(i+1000)];
         pbv.valueString=[Global valueForKey:result[i] AtDictionary:self.dict[self.keyArray[i]]];
     }
@@ -61,7 +60,7 @@ static unsigned char result[9];
     
     unsigned char a=0xd8;
     [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:&a length:1] withDelegate:self];
-    self.keyArray=@[@"BrakeType",@"BatteryType",@"CutOffVoltageThreshold",@"LowVoltageCutOffType",@"StartUpStrength",@"MotorTiming",@"SBECVoltageOutput",@"MotorRotation",@"GovernorMode"];
+    self.keyArray=@[@"BrakeType",@"BatteryType",@"CutOffVoltageThreshold",@"LowVoltageCutOffType",@"StartUpStrength",@"MotorTiming",@"SBECVoltageOutput",@"MotorRotation"];
     self.dict=[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"gecko" ofType:@"plist"]];
     
     self.backImageView.image=[UIImage imageNamed:@"FlashBackImage"];
@@ -88,35 +87,35 @@ static unsigned char result[9];
     
     /*tab 2*/
     view=[tabView viewForIndex:1];
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5-4, 100-41, 100, 65) withImageName:@"brake" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5-4, 170-41, 100, 65) withImageName:@"brake" withDelegate:self]autorelease];
     pbv.tag=1000;
     [view addSubview:pbv];
     pbv.valueString=@"Brake Off";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110-4, 100-41, 100, 65) withImageName:@"battery" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110-4, 170-41, 100, 65) withImageName:@"battery" withDelegate:self]autorelease];
     pbv.tag=1001;
     [view addSubview:pbv];
     pbv.valueString=@"LiPo";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(215-4, 100-41, 100, 65) withImageName:@"covt" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(215-4, 170-41, 100, 65) withImageName:@"covt" withDelegate:self]autorelease];
     pbv.tag=1002;
     [view addSubview:pbv];
     pbv.valueString=@"3.0V/60%";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5-4, 170-41, 100, 65) withImageName:@"mt" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110-4, 100-41, 100, 65) withImageName:@"mt" withDelegate:self]autorelease];
     pbv.tag=1005;
     [view addSubview:pbv];
     pbv.valueString=@"Auto";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110-4, 170-41, 100, 65) withImageName:@"svo" withDelegate:self]autorelease];
-    pbv.tag=1006;
-    [view addSubview:pbv];
-    pbv.valueString=@"5.0V";
-    
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(215-4, 170-41, 100, 65) withImageName:@"gm" withDelegate:self]autorelease];
-    pbv.tag=1008;
-    [view addSubview:pbv];
-    pbv.valueString=@"RPM OFF";
+//    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110-4, 170-41, 100, 65) withImageName:@"svo" withDelegate:self]autorelease];
+//    pbv.tag=1006;
+//    [view addSubview:pbv];
+//    pbv.valueString=@"5.0V";
+//    
+//    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(215-4, 170-41, 100, 65) withImageName:@"gm" withDelegate:self]autorelease];
+//    pbv.tag=1008;
+//    [view addSubview:pbv];
+//    pbv.valueString=@"RPM OFF";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5-4, 240-41, 100, 65) withImageName:@"mr" withDelegate:self]autorelease];
     pbv.tag=1007;
@@ -176,7 +175,7 @@ static unsigned char result[9];
     [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:&a length:1] withDelegate:self];
 }
 -(void)onSet{
-    unsigned char addons[9];
+    unsigned char addons[8];
     addons[0]=0xe2;
     addons[1]=0xe3;
     addons[2]=0xe4;
@@ -185,13 +184,12 @@ static unsigned char result[9];
     addons[5]=0xe5;
     addons[6]=0xe6;
     addons[7]=0xe8;
-    addons[8]=0xe7;
-    unsigned char ret[18];
-    for (int i=0; i<9; i++) {
+    unsigned char ret[16];
+    for (int i=0; i<8; i++) {
         ret[i*2]=addons[i];
         ret[i*2+1]=result[i];
     }
-    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:ret length:18] withDelegate:nil];
+    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:ret length:16] withDelegate:nil];
 }
 -(void)viewDidChanged:(int)index{
     if (index==0) {
@@ -223,14 +221,14 @@ static unsigned char result[9];
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

@@ -106,6 +106,7 @@
 }
 -(void)setSettingControlViewHidden:(BOOL)SettingControlViewHidden{
     scv.hidden=SettingControlViewHidden;
+    [self.contentView bringSubviewToFront:scv];
 }
 -(void)setBottomBarHidden:(BOOL)BottomBarHidden{
     bottomToolbar.hidden=BottomBarHidden;

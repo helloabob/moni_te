@@ -127,6 +127,28 @@
 		2DEF526C194342FF00D4C9B5 /* UITabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DEF526B194342FF00D4C9B5 /* UITabView.m */; };
 		2DEF526F19435B3400D4C9B5 /* GECKOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DEF526E19435B3400D4C9B5 /* GECKOViewController.m */; };
 		2DEF5271194366B800D4C9B5 /* gecko.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF5270194366B800D4C9B5 /* gecko.plist */; };
+		2DEF527919442C6300D4C9B5 /* device_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF527319442C6300D4C9B5 /* device_1.png */; };
+		2DEF527A19442C6300D4C9B5 /* device_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF527419442C6300D4C9B5 /* device_2.png */; };
+		2DEF527B19442C6300D4C9B5 /* hardware_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF527519442C6300D4C9B5 /* hardware_1.png */; };
+		2DEF527C19442C6300D4C9B5 /* hardware_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF527619442C6300D4C9B5 /* hardware_2.png */; };
+		2DEF527D19442C6300D4C9B5 /* software_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF527719442C6300D4C9B5 /* software_1.png */; };
+		2DEF527E19442C6300D4C9B5 /* software_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF527819442C6300D4C9B5 /* software_2.png */; };
+		2DEF528D1944325700D4C9B5 /* battery_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF527F1944325700D4C9B5 /* battery_1.png */; };
+		2DEF528E1944325700D4C9B5 /* battery_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF52801944325700D4C9B5 /* battery_2.png */; };
+		2DEF528F1944325700D4C9B5 /* brake_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF52811944325700D4C9B5 /* brake_1.png */; };
+		2DEF52901944325700D4C9B5 /* brake_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF52821944325700D4C9B5 /* brake_2.png */; };
+		2DEF52911944325700D4C9B5 /* covt_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF52831944325700D4C9B5 /* covt_1.png */; };
+		2DEF52921944325700D4C9B5 /* covt_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF52841944325700D4C9B5 /* covt_2.png */; };
+		2DEF52931944325700D4C9B5 /* gm_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF52851944325700D4C9B5 /* gm_1.png */; };
+		2DEF52941944325700D4C9B5 /* gm_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF52861944325700D4C9B5 /* gm_2.png */; };
+		2DEF52951944325700D4C9B5 /* lvcot_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF52871944325700D4C9B5 /* lvcot_1.png */; };
+		2DEF52961944325700D4C9B5 /* lvcot_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF52881944325700D4C9B5 /* lvcot_2.png */; };
+		2DEF52971944325700D4C9B5 /* sts_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF52891944325700D4C9B5 /* sts_1.png */; };
+		2DEF52981944325700D4C9B5 /* sts_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF528A1944325700D4C9B5 /* sts_2.png */; };
+		2DEF52991944325700D4C9B5 /* svo_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF528B1944325700D4C9B5 /* svo_1.png */; };
+		2DEF529A1944325700D4C9B5 /* svo_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF528C1944325700D4C9B5 /* svo_2.png */; };
+		2DEF529D19443F0100D4C9B5 /* SEALViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DEF529C19443F0100D4C9B5 /* SEALViewController.m */; };
+		2DEF52A01944A5EC00D4C9B5 /* blackarea.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF529F1944A5EC00D4C9B5 /* blackarea.png */; };
 		5A5A79E9193AF1BD00C103B1 /* NetUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5A79E8193AF1BD00C103B1 /* NetUtils.m */; };
 		5ABBAB38193EA9BD00F3CBFA /* paramicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ABBAB35193EA9BD00F3CBFA /* paramicon.png */; };
 		5ABBAB39193EA9BD00F3CBFA /* runningmode_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ABBAB36193EA9BD00F3CBFA /* runningmode_1.png */; };
@@ -282,6 +304,29 @@
 		2DEF526D19435B3400D4C9B5 /* GECKOViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GECKOViewController.h; sourceTree = "<group>"; };
 		2DEF526E19435B3400D4C9B5 /* GECKOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GECKOViewController.m; sourceTree = "<group>"; };
 		2DEF5270194366B800D4C9B5 /* gecko.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gecko.plist; sourceTree = "<group>"; };
+		2DEF527319442C6300D4C9B5 /* device_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = device_1.png; sourceTree = "<group>"; };
+		2DEF527419442C6300D4C9B5 /* device_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = device_2.png; sourceTree = "<group>"; };
+		2DEF527519442C6300D4C9B5 /* hardware_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hardware_1.png; sourceTree = "<group>"; };
+		2DEF527619442C6300D4C9B5 /* hardware_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hardware_2.png; sourceTree = "<group>"; };
+		2DEF527719442C6300D4C9B5 /* software_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = software_1.png; sourceTree = "<group>"; };
+		2DEF527819442C6300D4C9B5 /* software_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = software_2.png; sourceTree = "<group>"; };
+		2DEF527F1944325700D4C9B5 /* battery_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = battery_1.png; sourceTree = "<group>"; };
+		2DEF52801944325700D4C9B5 /* battery_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = battery_2.png; sourceTree = "<group>"; };
+		2DEF52811944325700D4C9B5 /* brake_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brake_1.png; sourceTree = "<group>"; };
+		2DEF52821944325700D4C9B5 /* brake_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brake_2.png; sourceTree = "<group>"; };
+		2DEF52831944325700D4C9B5 /* covt_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = covt_1.png; sourceTree = "<group>"; };
+		2DEF52841944325700D4C9B5 /* covt_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = covt_2.png; sourceTree = "<group>"; };
+		2DEF52851944325700D4C9B5 /* gm_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gm_1.png; sourceTree = "<group>"; };
+		2DEF52861944325700D4C9B5 /* gm_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gm_2.png; sourceTree = "<group>"; };
+		2DEF52871944325700D4C9B5 /* lvcot_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lvcot_1.png; sourceTree = "<group>"; };
+		2DEF52881944325700D4C9B5 /* lvcot_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lvcot_2.png; sourceTree = "<group>"; };
+		2DEF52891944325700D4C9B5 /* sts_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sts_1.png; sourceTree = "<group>"; };
+		2DEF528A1944325700D4C9B5 /* sts_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sts_2.png; sourceTree = "<group>"; };
+		2DEF528B1944325700D4C9B5 /* svo_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = svo_1.png; sourceTree = "<group>"; };
+		2DEF528C1944325700D4C9B5 /* svo_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = svo_2.png; sourceTree = "<group>"; };
+		2DEF529B19443F0100D4C9B5 /* SEALViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEALViewController.h; sourceTree = "<group>"; };
+		2DEF529C19443F0100D4C9B5 /* SEALViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEALViewController.m; sourceTree = "<group>"; };
+		2DEF529F1944A5EC00D4C9B5 /* blackarea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackarea.png; sourceTree = "<group>"; };
 		5A5A79E7193AF1BD00C103B1 /* NetUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetUtils.h; sourceTree = "<group>"; };
 		5A5A79E8193AF1BD00C103B1 /* NetUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetUtils.m; sourceTree = "<group>"; };
 		5ABBAB35193EA9BD00F3CBFA /* paramicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paramicon.png; sourceTree = "<group>"; };
@@ -433,6 +478,8 @@
 				2DEF526B194342FF00D4C9B5 /* UITabView.m */,
 				2DEF526D19435B3400D4C9B5 /* GECKOViewController.h */,
 				2DEF526E19435B3400D4C9B5 /* GECKOViewController.m */,
+				2DEF529B19443F0100D4C9B5 /* SEALViewController.h */,
+				2DEF529C19443F0100D4C9B5 /* SEALViewController.m */,
 			);
 			path = moni_te;
 			sourceTree = "<group>";
@@ -513,6 +560,8 @@
 		2DA8A7E6193A1108002E68D9 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				2DEF529E1944A5EC00D4C9B5 /* turbo */,
+				2DEF527219442C6300D4C9B5 /* gecko */,
 				2D85689E1940C1EB0048F43B /* header */,
 				2DA25205193F6442001D87A6 /* picker */,
 				5ABBAB34193EA9BD00F3CBFA /* beast */,
@@ -555,6 +604,41 @@
 				2DA8A7F0193A2407002E68D9 /* TURBO.png */,
 			);
 			path = loading;
+			sourceTree = "<group>";
+		};
+		2DEF527219442C6300D4C9B5 /* gecko */ = {
+			isa = PBXGroup;
+			children = (
+				2DEF527F1944325700D4C9B5 /* battery_1.png */,
+				2DEF52801944325700D4C9B5 /* battery_2.png */,
+				2DEF52811944325700D4C9B5 /* brake_1.png */,
+				2DEF52821944325700D4C9B5 /* brake_2.png */,
+				2DEF52831944325700D4C9B5 /* covt_1.png */,
+				2DEF52841944325700D4C9B5 /* covt_2.png */,
+				2DEF52851944325700D4C9B5 /* gm_1.png */,
+				2DEF52861944325700D4C9B5 /* gm_2.png */,
+				2DEF52871944325700D4C9B5 /* lvcot_1.png */,
+				2DEF52881944325700D4C9B5 /* lvcot_2.png */,
+				2DEF52891944325700D4C9B5 /* sts_1.png */,
+				2DEF528A1944325700D4C9B5 /* sts_2.png */,
+				2DEF528B1944325700D4C9B5 /* svo_1.png */,
+				2DEF528C1944325700D4C9B5 /* svo_2.png */,
+				2DEF527319442C6300D4C9B5 /* device_1.png */,
+				2DEF527419442C6300D4C9B5 /* device_2.png */,
+				2DEF527519442C6300D4C9B5 /* hardware_1.png */,
+				2DEF527619442C6300D4C9B5 /* hardware_2.png */,
+				2DEF527719442C6300D4C9B5 /* software_1.png */,
+				2DEF527819442C6300D4C9B5 /* software_2.png */,
+			);
+			path = gecko;
+			sourceTree = "<group>";
+		};
+		2DEF529E1944A5EC00D4C9B5 /* turbo */ = {
+			isa = PBXGroup;
+			children = (
+				2DEF529F1944A5EC00D4C9B5 /* blackarea.png */,
+			);
+			path = turbo;
 			sourceTree = "<group>";
 		};
 		5ABBAB34193EA9BD00F3CBFA /* beast */ = {
@@ -681,6 +765,7 @@
 				5ABBAB38193EA9BD00F3CBFA /* paramicon.png in Resources */,
 				2DE22A53193B09AD00DC39DC /* buttonquit_off_1.png in Resources */,
 				2D11543C193ABEA00073D1AB /* readsetting_off_2.png in Resources */,
+				2DEF528E1944325700D4C9B5 /* battery_2.png in Resources */,
 				2DA2520F193F6442001D87A6 /* btn_020.press@2x.png in Resources */,
 				2D174270193C423500FA81D4 /* buttonen.png in Resources */,
 				2D174267193C046500FA81D4 /* buttonpos_off_1.png in Resources */,
@@ -688,22 +773,32 @@
 				2DA8A7F4193A2407002E68D9 /* TURBO.png in Resources */,
 				2D17426B193C046500FA81D4 /* quitalert_1.png in Resources */,
 				2D8568B81940C1EB0048F43B /* general_on_1.png in Resources */,
+				2DEF52931944325700D4C9B5 /* gm_1.png in Resources */,
 				2D11544D193AC3D80073D1AB /* toolbarcenter.png in Resources */,
 				2DA25203193F5BEF001D87A6 /* tpr_1.png in Resources */,
 				2DA25213193F6442001D87A6 /* btn_021@2x.png in Resources */,
 				2D11544E193AC3D80073D1AB /* toolbarexit_off_1.png in Resources */,
 				2D174268193C046500FA81D4 /* buttonpos_off_2.png in Resources */,
+				2DEF527C19442C6300D4C9B5 /* hardware_2.png in Resources */,
+				2DEF527B19442C6300D4C9B5 /* hardware_1.png in Resources */,
 				2DA25212193F6442001D87A6 /* btn_021.press@2x.png in Resources */,
 				2D8568B11940C1EB0048F43B /* default_on_2.png in Resources */,
 				2DA25200193F5BEF001D87A6 /* pdb_2.png in Resources */,
 				2DA8A7F3193A2407002E68D9 /* SEAL.png in Resources */,
 				2D8568BC1940C1EB0048F43B /* header_split.png in Resources */,
+				2DEF527919442C6300D4C9B5 /* device_1.png in Resources */,
 				2D8568AE1940C1EB0048F43B /* default_off_1.png in Resources */,
+				2DEF52921944325700D4C9B5 /* covt_2.png in Resources */,
 				2DA8A7E9193A1108002E68D9 /* BlueBackImage.png in Resources */,
 				2D8568B01940C1EB0048F43B /* default_on_1.png in Resources */,
 				2DA251FC193F5BEF001D87A6 /* nr_2.png in Resources */,
 				2D8568AF1940C1EB0048F43B /* default_off_2.png in Resources */,
+				2DEF527E19442C6300D4C9B5 /* software_2.png in Resources */,
+				2DEF52991944325700D4C9B5 /* svo_1.png in Resources */,
+				2DEF52981944325700D4C9B5 /* sts_2.png in Resources */,
 				2D115452193AC3D80073D1AB /* toolbarlanguage_off.png in Resources */,
+				2DEF52941944325700D4C9B5 /* gm_2.png in Resources */,
+				2DEF527D19442C6300D4C9B5 /* software_1.png in Resources */,
 				2D8568B21940C1EB0048F43B /* firmware_off_1.png in Resources */,
 				2DE22A56193B09AD00DC39DC /* buttonquit_on_2.png in Resources */,
 				2D17426C193C046500FA81D4 /* quitalert_2.png in Resources */,
@@ -714,14 +809,18 @@
 				2DA251F5193F5BEF001D87A6 /* ic_1.png in Resources */,
 				2DA8A7F1193A2407002E68D9 /* BEAST.png in Resources */,
 				2D8568B61940C1EB0048F43B /* general_off_1.png in Resources */,
+				2DEF528D1944325700D4C9B5 /* battery_1.png in Resources */,
 				2D115440193ABEA00073D1AB /* sendsetting_off_2.png in Resources */,
+				2DEF52911944325700D4C9B5 /* covt_1.png in Resources */,
 				2DA251FB193F5BEF001D87A6 /* nr_1.png in Resources */,
 				2DE22A48193B049300DC39DC /* Default@2x.png in Resources */,
 				2DA251F8193F5BEF001D87A6 /* mr_2.png in Resources */,
+				2DEF52901944325700D4C9B5 /* brake_2.png in Resources */,
 				2DE22A57193B09AD00DC39DC /* buttonyes_off_1.png in Resources */,
 				2DA25202193F5BEF001D87A6 /* tl_2.png in Resources */,
 				2DA2520D193F6442001D87A6 /* bg_023@2x.png in Resources */,
 				2DE22A59193B09AD00DC39DC /* buttonyes_on_1.png in Resources */,
+				2DEF52951944325700D4C9B5 /* lvcot_1.png in Resources */,
 				2D174269193C046500FA81D4 /* buttonpos_on_1.png in Resources */,
 				2DA8A7EB193A14DA002E68D9 /* Localizable.strings in Resources */,
 				2D11543F193ABEA00073D1AB /* sendsetting_off_1.png in Resources */,
@@ -735,24 +834,30 @@
 				2D7F2A5B1937714B00E004AE /* InfoPlist.strings in Resources */,
 				2DA251FF193F5BEF001D87A6 /* pdb_1.png in Resources */,
 				2D115441193ABEA00073D1AB /* sendsetting_on_1.png in Resources */,
+				2DEF52A01944A5EC00D4C9B5 /* blackarea.png in Resources */,
 				2DA251FD193F5BEF001D87A6 /* pb_1.png in Resources */,
 				2DE22A54193B09AD00DC39DC /* buttonquit_off_2.png in Resources */,
 				2D8568B51940C1EB0048F43B /* firmware_on_2.png in Resources */,
 				2D11542F193ABB770073D1AB /* FlashBackImage.png in Resources */,
 				2D84B98E193DFDC7006A1FE5 /* beast.plist in Resources */,
+				2DEF528F1944325700D4C9B5 /* brake_1.png in Resources */,
 				2D8568B31940C1EB0048F43B /* firmware_off_2.png in Resources */,
 				2D8568B71940C1EB0048F43B /* general_off_2.png in Resources */,
 				2DE22A46193B049300DC39DC /* Default-568h@2x.png in Resources */,
 				2DA8A7F2193A2407002E68D9 /* GECKO.png in Resources */,
 				2DA251E0193F5771001D87A6 /* TSLocateView.xib in Resources */,
 				2DA251FA193F5BEF001D87A6 /* mt_2.png in Resources */,
+				2DEF527A19442C6300D4C9B5 /* device_2.png in Resources */,
+				2DEF52971944325700D4C9B5 /* sts_1.png in Resources */,
 				2D7F2A641937714B00E004AE /* Main.storyboard in Resources */,
 				2D115450193AC3D80073D1AB /* toolbarexit_on_1.png in Resources */,
 				2D174266193C046500FA81D4 /* buttonneg_on_2.png in Resources */,
 				2D8568BA1940C1EB0048F43B /* header_off.png in Resources */,
 				2D174263193C046500FA81D4 /* buttonneg_off_1.png in Resources */,
 				2DA251FE193F5BEF001D87A6 /* pb_2.png in Resources */,
+				2DEF529A1944325700D4C9B5 /* svo_2.png in Resources */,
 				2DE22A55193B09AD00DC39DC /* buttonquit_on_1.png in Resources */,
+				2DEF52961944325700D4C9B5 /* lvcot_2.png in Resources */,
 				2D174264193C046500FA81D4 /* buttonneg_off_2.png in Resources */,
 				2D115444193ABEA00073D1AB /* settingcontrol_2.png in Resources */,
 				2D11543E193ABEA00073D1AB /* readsetting_on_2.png in Resources */,
@@ -782,6 +887,7 @@
 				2D115429193AB5960073D1AB /* SettingControlView.m in Sources */,
 				5A5A79E9193AF1BD00C103B1 /* NetUtils.m in Sources */,
 				2DE22A5F193B654B00DC39DC /* ExitViewController.m in Sources */,
+				2DEF529D19443F0100D4C9B5 /* SEALViewController.m in Sources */,
 				2D7F2A671937714B00E004AE /* ViewController.m in Sources */,
 				2DABD6E21938C4A800F27ED3 /* UIBaseImageView.m in Sources */,
 				2DABD6DF1938C17900F27ED3 /* BaseViewController.m in Sources */,

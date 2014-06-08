@@ -144,7 +144,7 @@ int port2=8008;
 }
 
 -(NSData *)genTest4:(NSData *)data{
-    unsigned char addons[33];
+    unsigned char addons[8];
     addons[0]=0xe2;
     addons[1]=0xe3;
     addons[2]=0xe4;

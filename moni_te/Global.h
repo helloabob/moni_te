@@ -13,4 +13,5 @@
 +(int)language;
 +(NSArray *)convertStringToArray:(NSDictionary *)dict forKey:(NSString *)key;
 +(NSString *)valueForKey:(unsigned char)key AtDictionary:(NSDictionary *)dic;
++(unsigned char)dataFromDict:(NSDictionary *)dic AtIndex:(int)index;
 @end

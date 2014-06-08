@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol UITabViewDelegate <NSObject>
+-(BOOL)tabDidClicked:(int)index;
+-(void)viewDidChanged:(int)index;
+@end
+
 @interface UITabView : UIView
+@property(nonatomic,assign)id delegate;
 @property(nonatomic,assign)int numberOfTabs;
-@property(nonatomic,retain)NSArray *tabs;
+-(UIView *)viewForIndex:(int)index;
 @end
