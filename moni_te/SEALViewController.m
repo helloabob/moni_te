@@ -43,11 +43,11 @@ static unsigned char result[8];
     result[3]=tmp[3];
     result[4]=tmp[4];
     result[5]=tmp[5];
-    result[6]=tmp[6];
-    result[7]=tmp[7];
+//    result[6]=tmp[6];
+    result[6]=tmp[7];
     
     ParamButtonView *pbv=nil;
-    for (int i=0; i<8; i++) {
+    for (int i=0; i<7; i++) {
         pbv=(ParamButtonView *)[[tabView viewForIndex:1] viewWithTag:(i+1000)];
         pbv.valueString=[Global valueForKey:result[i] AtDictionary:self.dict[self.keyArray[i]]];
     }
@@ -60,7 +60,9 @@ static unsigned char result[8];
     
     unsigned char a=0xd8;
     [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:&a length:1] withDelegate:self];
-    self.keyArray=@[@"BrakeType",@"BatteryType",@"CutOffVoltageThreshold",@"LowVoltageCutOffType",@"StartUpStrength",@"MotorTiming",@"SBECVoltageOutput",@"MotorRotation"];
+//    remove BEC Voltage Output
+//    self.keyArray=@[@"BrakeType",@"BatteryType",@"CutOffVoltageThreshold",@"LowVoltageCutOffType",@"StartUpStrength",@"MotorTiming",@"SBECVoltageOutput",@"MotorRotation"];
+    self.keyArray=@[@"BrakeType",@"BatteryType",@"CutOffVoltageThreshold",@"LowVoltageCutOffType",@"StartUpStrength",@"MotorTiming",@"MotorRotation"];
     self.dict=[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"gecko" ofType:@"plist"]];
     
     self.backImageView.image=[UIImage imageNamed:@"FlashBackImage"];
@@ -118,7 +120,7 @@ static unsigned char result[8];
 //    pbv.valueString=@"RPM OFF";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5-4, 240-41, 100, 65) withImageName:@"mr" withDelegate:self]autorelease];
-    pbv.tag=1007;
+    pbv.tag=1006;
     [view addSubview:pbv];
     pbv.valueString=@"Forward";
     
@@ -175,21 +177,22 @@ static unsigned char result[8];
     [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:&a length:1] withDelegate:self];
 }
 -(void)onSet{
-    unsigned char addons[8];
+    int send_length=7;
+    unsigned char addons[send_length];
     addons[0]=0xe2;
     addons[1]=0xe3;
     addons[2]=0xe4;
     addons[3]=0xea;
     addons[4]=0xe9;
     addons[5]=0xe5;
-    addons[6]=0xe6;
-    addons[7]=0xe8;
-    unsigned char ret[16];
-    for (int i=0; i<8; i++) {
+//    addons[6]=0xe6;
+    addons[6]=0xe8;
+    unsigned char ret[send_length*2];
+    for (int i=0; i<send_length; i++) {
         ret[i*2]=addons[i];
         ret[i*2+1]=result[i];
     }
-    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:ret length:16] withDelegate:nil];
+    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:ret length:send_length*2] withDelegate:nil];
 }
 -(void)viewDidChanged:(int)index{
     if (index==0) {

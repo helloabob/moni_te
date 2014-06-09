@@ -33,10 +33,11 @@
     threadshold=2;
     port2=8008;
 //    self.host2=@"192.168.1.11";
-    self.host2=@"192.168.0.101";
-//    self.host2=@"131.252.90.96";
+//    self.host2=@"192.168.0.101";
+    self.host2=@"131.252.90.39";
 }
 -(void)sendData:(NSData *)data withDelegate:(id)delegate{
+    NSLog(@"sent:%@",data);
     if (socket==nil) {
         [self initSocket];
     }
@@ -64,7 +65,7 @@
 }
 - (BOOL)onUdpSocket:(AsyncUdpSocket *)sock didReceiveData:(NSData *)data withTag:(long)tag fromHost:(NSString *)host port:(UInt16)port
 {
-    NSLog(@"data:%@",data);
+    NSLog(@"rec:%@",data);
     if (_delegate&&[_delegate respondsToSelector:@selector(didReceiveData:)]) {
         [_delegate didReceiveData:data];
     }
