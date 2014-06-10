@@ -54,6 +54,9 @@
     }
     return self;
 }
+-(void)setValueWithArray:(unsigned char *)data{
+    
+}
 -(void)btnTapped{
     if (_delegate&&[_delegate respondsToSelector:@selector(viewDidTapped:)]) {
         [_delegate viewDidTapped:self];

@@ -10,6 +10,8 @@
 #import "ExitViewController.h"
 #import "SettingControlView.h"
 
+static int old_y;
+
 @interface BaseViewController (){
     UIView *bottomToolbar;
     UIBaseButton *baseButton;
@@ -76,13 +78,17 @@
     
     scv=[[[SettingControlView alloc]initWithFrame:CGRectMake(10, self.contentView.bounds.size.height-100-50, 300, 100)]autorelease];
     scv.hidden=YES;
+    old_y=scv.center.y;
     [scv addTarget:self actionRead:@selector(onRead) actionSet:@selector(onSet)];
     [self.contentView addSubview:scv];
     
-    blackArea=[[[UIImageView alloc]initWithFrame:CGRectMake(10, 40, 300, 166)]autorelease];
+    blackArea=[[[UIImageView alloc]initWithFrame:CGRectMake(10, 40, 300, 115)]autorelease];
     blackArea.image=[UIImage imageNamed:@"blackarea"];
     blackArea.hidden=YES;
     [self.contentView addSubview:blackArea];
+}
+-(void)changeSettingY:(int)y{
+    scv.center=CGPointMake(scv.center.x, old_y+y);
 }
 -(void)onRead{
     

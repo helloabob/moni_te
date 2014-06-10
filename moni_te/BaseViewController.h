@@ -17,4 +17,5 @@
 @property(nonatomic,retain)NSDictionary *dict;
 @property(nonatomic,retain)NSArray *keyArray;
 -(void)renderImage;
+-(void)changeSettingY:(int)y;
 @end

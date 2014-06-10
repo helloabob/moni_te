@@ -12,4 +12,9 @@
 - (id)initWithFrame:(CGRect)frame withImageName:(NSString *)imageName withDelegate:(id)delegate;
 @property(nonatomic,retain)NSString *valueString;
 -(void)renderImage;
+/*TURBO*/
+@property(nonatomic,retain)NSDictionary *info;
+@property(nonatomic,assign)unsigned char value;
+@property(nonatomic,assign)unsigned char precode;
+-(void)setValueWithArray:(unsigned char *)data;
 @end

@@ -14,6 +14,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    NSString *str=@"2d";
+    unsigned char a=strtoul([str UTF8String], 0, 16);
+    NSLog(@"%d",a);
+    
     // Override point for customization after application launch.
     [Global setLanguage:1];
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];

@@ -2,23 +2,38 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>BrakeType</key>
+	<key>runmode</key>
 	<dict>
 		<key>DefaultKey</key>
 		<string>0</string>
 		<key>ValuesRange</key>
-		<string>Brake Off,Soft Brake,Mid Brake,Hard Brake</string>
+		<string>Forword/Brake,Forward/Brake/Reverse,Forward/Reverse</string>
+		<key>KeysRange</key>
+		<string>0-2</string>
+		<key>PreCode</key>
+		<string>0xa4</string>
+	</dict>
+	<key>threversespd</key>
+	<dict>
+		<key>DefaultKey</key>
+		<string>0</string>
+		<key>ValuesRange</key>
+		<string>25%,50%,75%,100%</string>
 		<key>KeysRange</key>
 		<string>0-3</string>
+		<key>PreCode</key>
+		<string>0xe8</string>
 	</dict>
-	<key>BatteryType</key>
+	<key>voltagecutoff</key>
 	<dict>
 		<key>DefaultKey</key>
 		<string>1</string>
 		<key>ValuesRange</key>
-		<string>NiCd/NiMH,LiPo,LiFe</string>
+		<string>Disable,Auto,3.0V-11.1V</string>
 		<key>KeysRange</key>
-		<string>0-2</string>
+		<string>0-111</string>
+		<key>PreCode</key>
+		<string>0xec</string>
 	</dict>
 	<key>CutOffVoltageThreshold</key>
 	<dict>
