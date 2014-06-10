@@ -9,6 +9,8 @@
 #import "LoadingViewController.h"
 #import "BEASTViewController.h"
 #import "GECKOViewController.h"
+#import "SEALViewController.h"
+#import "TURBOViewController.h"
 
 @implementation ConnectionFailedAlertView
 - (id)initWithFrame:(CGRect)frame withDelegate:(id)delegate
@@ -108,6 +110,8 @@
         className=@"GECKOViewController";
     }else if(carType==CarTypeBoard){
         className=@"SEALViewController";
+    }else if(carType==CarTypeV3){
+        className=@"TURBOViewController";
     }
     vc=[[[NSClassFromString(className) alloc]init]autorelease];
     [self.navigationController pushViewController:vc animated:NO];

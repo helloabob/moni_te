@@ -150,6 +150,27 @@
 		2DEF529D19443F0100D4C9B5 /* SEALViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DEF529C19443F0100D4C9B5 /* SEALViewController.m */; };
 		2DEF52A01944A5EC00D4C9B5 /* blackarea.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF529F1944A5EC00D4C9B5 /* blackarea.png */; };
 		5A5A79E9193AF1BD00C103B1 /* NetUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5A79E8193AF1BD00C103B1 /* NetUtils.m */; };
+		5AA76DB9194696E300572D74 /* TURBOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA76DB8194696E300572D74 /* TURBOViewController.m */; };
+		5AA76DCE1946C9C800572D74 /* boost_off_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DBA1946C9C800572D74 /* boost_off_1.png */; };
+		5AA76DCF1946C9C800572D74 /* boost_off_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DBB1946C9C800572D74 /* boost_off_2.png */; };
+		5AA76DD01946C9C800572D74 /* boost_on_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DBC1946C9C800572D74 /* boost_on_1.png */; };
+		5AA76DD11946C9C800572D74 /* boost_on_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DBD1946C9C800572D74 /* boost_on_2.png */; };
+		5AA76DD21946C9C800572D74 /* brake_off_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DBE1946C9C800572D74 /* brake_off_1.png */; };
+		5AA76DD31946C9C800572D74 /* brake_off_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DBF1946C9C800572D74 /* brake_off_2.png */; };
+		5AA76DD41946C9C800572D74 /* brake_on_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DC01946C9C800572D74 /* brake_on_1.png */; };
+		5AA76DD51946C9C800572D74 /* brake_on_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DC11946C9C800572D74 /* brake_on_2.png */; };
+		5AA76DD61946C9C800572D74 /* data_off_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DC21946C9C800572D74 /* data_off_1.png */; };
+		5AA76DD71946C9C800572D74 /* data_off_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DC31946C9C800572D74 /* data_off_2.png */; };
+		5AA76DD81946C9C800572D74 /* data_on_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DC41946C9C800572D74 /* data_on_1.png */; };
+		5AA76DD91946C9C800572D74 /* data_on_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DC51946C9C800572D74 /* data_on_2.png */; };
+		5AA76DDA1946C9C800572D74 /* throttle_off_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DC61946C9C800572D74 /* throttle_off_1.png */; };
+		5AA76DDB1946C9C800572D74 /* throttle_off_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DC71946C9C800572D74 /* throttle_off_2.png */; };
+		5AA76DDC1946C9C800572D74 /* throttle_on_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DC81946C9C800572D74 /* throttle_on_1.png */; };
+		5AA76DDD1946C9C800572D74 /* throttle_on_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DC91946C9C800572D74 /* throttle_on_2.png */; };
+		5AA76DDE1946C9C800572D74 /* turbo_off_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DCA1946C9C800572D74 /* turbo_off_1.png */; };
+		5AA76DDF1946C9C800572D74 /* turbo_off_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DCB1946C9C800572D74 /* turbo_off_2.png */; };
+		5AA76DE01946C9C800572D74 /* turbo_on_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DCC1946C9C800572D74 /* turbo_on_1.png */; };
+		5AA76DE11946C9C800572D74 /* turbo_on_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DCD1946C9C800572D74 /* turbo_on_2.png */; };
 		5ABBAB38193EA9BD00F3CBFA /* paramicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ABBAB35193EA9BD00F3CBFA /* paramicon.png */; };
 		5ABBAB39193EA9BD00F3CBFA /* runningmode_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ABBAB36193EA9BD00F3CBFA /* runningmode_1.png */; };
 		5ABBAB3A193EA9BD00F3CBFA /* runningmode_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ABBAB37193EA9BD00F3CBFA /* runningmode_2.png */; };
@@ -329,6 +350,28 @@
 		2DEF529F1944A5EC00D4C9B5 /* blackarea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackarea.png; sourceTree = "<group>"; };
 		5A5A79E7193AF1BD00C103B1 /* NetUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetUtils.h; sourceTree = "<group>"; };
 		5A5A79E8193AF1BD00C103B1 /* NetUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetUtils.m; sourceTree = "<group>"; };
+		5AA76DB7194696E300572D74 /* TURBOViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TURBOViewController.h; sourceTree = "<group>"; };
+		5AA76DB8194696E300572D74 /* TURBOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TURBOViewController.m; sourceTree = "<group>"; };
+		5AA76DBA1946C9C800572D74 /* boost_off_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boost_off_1.png; sourceTree = "<group>"; };
+		5AA76DBB1946C9C800572D74 /* boost_off_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boost_off_2.png; sourceTree = "<group>"; };
+		5AA76DBC1946C9C800572D74 /* boost_on_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boost_on_1.png; sourceTree = "<group>"; };
+		5AA76DBD1946C9C800572D74 /* boost_on_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boost_on_2.png; sourceTree = "<group>"; };
+		5AA76DBE1946C9C800572D74 /* brake_off_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brake_off_1.png; sourceTree = "<group>"; };
+		5AA76DBF1946C9C800572D74 /* brake_off_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brake_off_2.png; sourceTree = "<group>"; };
+		5AA76DC01946C9C800572D74 /* brake_on_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brake_on_1.png; sourceTree = "<group>"; };
+		5AA76DC11946C9C800572D74 /* brake_on_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brake_on_2.png; sourceTree = "<group>"; };
+		5AA76DC21946C9C800572D74 /* data_off_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = data_off_1.png; sourceTree = "<group>"; };
+		5AA76DC31946C9C800572D74 /* data_off_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = data_off_2.png; sourceTree = "<group>"; };
+		5AA76DC41946C9C800572D74 /* data_on_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = data_on_1.png; sourceTree = "<group>"; };
+		5AA76DC51946C9C800572D74 /* data_on_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = data_on_2.png; sourceTree = "<group>"; };
+		5AA76DC61946C9C800572D74 /* throttle_off_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = throttle_off_1.png; sourceTree = "<group>"; };
+		5AA76DC71946C9C800572D74 /* throttle_off_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = throttle_off_2.png; sourceTree = "<group>"; };
+		5AA76DC81946C9C800572D74 /* throttle_on_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = throttle_on_1.png; sourceTree = "<group>"; };
+		5AA76DC91946C9C800572D74 /* throttle_on_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = throttle_on_2.png; sourceTree = "<group>"; };
+		5AA76DCA1946C9C800572D74 /* turbo_off_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turbo_off_1.png; sourceTree = "<group>"; };
+		5AA76DCB1946C9C800572D74 /* turbo_off_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turbo_off_2.png; sourceTree = "<group>"; };
+		5AA76DCC1946C9C800572D74 /* turbo_on_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turbo_on_1.png; sourceTree = "<group>"; };
+		5AA76DCD1946C9C800572D74 /* turbo_on_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turbo_on_2.png; sourceTree = "<group>"; };
 		5ABBAB35193EA9BD00F3CBFA /* paramicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paramicon.png; sourceTree = "<group>"; };
 		5ABBAB36193EA9BD00F3CBFA /* runningmode_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = runningmode_1.png; sourceTree = "<group>"; };
 		5ABBAB37193EA9BD00F3CBFA /* runningmode_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = runningmode_2.png; sourceTree = "<group>"; };
@@ -480,6 +523,8 @@
 				2DEF526E19435B3400D4C9B5 /* GECKOViewController.m */,
 				2DEF529B19443F0100D4C9B5 /* SEALViewController.h */,
 				2DEF529C19443F0100D4C9B5 /* SEALViewController.m */,
+				5AA76DB7194696E300572D74 /* TURBOViewController.h */,
+				5AA76DB8194696E300572D74 /* TURBOViewController.m */,
 			);
 			path = moni_te;
 			sourceTree = "<group>";
@@ -524,6 +569,26 @@
 		2D85689E1940C1EB0048F43B /* header */ = {
 			isa = PBXGroup;
 			children = (
+				5AA76DBA1946C9C800572D74 /* boost_off_1.png */,
+				5AA76DBB1946C9C800572D74 /* boost_off_2.png */,
+				5AA76DBC1946C9C800572D74 /* boost_on_1.png */,
+				5AA76DBD1946C9C800572D74 /* boost_on_2.png */,
+				5AA76DBE1946C9C800572D74 /* brake_off_1.png */,
+				5AA76DBF1946C9C800572D74 /* brake_off_2.png */,
+				5AA76DC01946C9C800572D74 /* brake_on_1.png */,
+				5AA76DC11946C9C800572D74 /* brake_on_2.png */,
+				5AA76DC21946C9C800572D74 /* data_off_1.png */,
+				5AA76DC31946C9C800572D74 /* data_off_2.png */,
+				5AA76DC41946C9C800572D74 /* data_on_1.png */,
+				5AA76DC51946C9C800572D74 /* data_on_2.png */,
+				5AA76DC61946C9C800572D74 /* throttle_off_1.png */,
+				5AA76DC71946C9C800572D74 /* throttle_off_2.png */,
+				5AA76DC81946C9C800572D74 /* throttle_on_1.png */,
+				5AA76DC91946C9C800572D74 /* throttle_on_2.png */,
+				5AA76DCA1946C9C800572D74 /* turbo_off_1.png */,
+				5AA76DCB1946C9C800572D74 /* turbo_off_2.png */,
+				5AA76DCC1946C9C800572D74 /* turbo_on_1.png */,
+				5AA76DCD1946C9C800572D74 /* turbo_on_2.png */,
 				2D85689F1940C1EB0048F43B /* default_off_1.png */,
 				2D8568A01940C1EB0048F43B /* default_off_2.png */,
 				2D8568A11940C1EB0048F43B /* default_on_1.png */,
@@ -756,7 +821,9 @@
 				2D11543B193ABEA00073D1AB /* readsetting_off_1.png in Resources */,
 				2DE22A47193B049300DC39DC /* Default.png in Resources */,
 				5ABBAB3A193EA9BD00F3CBFA /* runningmode_2.png in Resources */,
+				5AA76DD51946C9C800572D74 /* brake_on_2.png in Resources */,
 				2DA251F4193F5BEF001D87A6 /* cov_2.png in Resources */,
+				5AA76DD01946C9C800572D74 /* boost_on_1.png in Resources */,
 				2D115451193AC3D80073D1AB /* toolbarexit_on_2.png in Resources */,
 				5ABBAB39193EA9BD00F3CBFA /* runningmode_1.png in Resources */,
 				2DEF5271194366B800D4C9B5 /* gecko.plist in Resources */,
@@ -764,6 +831,7 @@
 				2DA251F3193F5BEF001D87A6 /* cov_1.png in Resources */,
 				5ABBAB38193EA9BD00F3CBFA /* paramicon.png in Resources */,
 				2DE22A53193B09AD00DC39DC /* buttonquit_off_1.png in Resources */,
+				5AA76DD71946C9C800572D74 /* data_off_2.png in Resources */,
 				2D11543C193ABEA00073D1AB /* readsetting_off_2.png in Resources */,
 				2DEF528E1944325700D4C9B5 /* battery_2.png in Resources */,
 				2DA2520F193F6442001D87A6 /* btn_020.press@2x.png in Resources */,
@@ -775,13 +843,17 @@
 				2D8568B81940C1EB0048F43B /* general_on_1.png in Resources */,
 				2DEF52931944325700D4C9B5 /* gm_1.png in Resources */,
 				2D11544D193AC3D80073D1AB /* toolbarcenter.png in Resources */,
+				5AA76DE01946C9C800572D74 /* turbo_on_1.png in Resources */,
+				5AA76DDF1946C9C800572D74 /* turbo_off_2.png in Resources */,
 				2DA25203193F5BEF001D87A6 /* tpr_1.png in Resources */,
 				2DA25213193F6442001D87A6 /* btn_021@2x.png in Resources */,
 				2D11544E193AC3D80073D1AB /* toolbarexit_off_1.png in Resources */,
 				2D174268193C046500FA81D4 /* buttonpos_off_2.png in Resources */,
 				2DEF527C19442C6300D4C9B5 /* hardware_2.png in Resources */,
+				5AA76DD81946C9C800572D74 /* data_on_1.png in Resources */,
 				2DEF527B19442C6300D4C9B5 /* hardware_1.png in Resources */,
 				2DA25212193F6442001D87A6 /* btn_021.press@2x.png in Resources */,
+				5AA76DDD1946C9C800572D74 /* throttle_on_2.png in Resources */,
 				2D8568B11940C1EB0048F43B /* default_on_2.png in Resources */,
 				2DA25200193F5BEF001D87A6 /* pdb_2.png in Resources */,
 				2DA8A7F3193A2407002E68D9 /* SEAL.png in Resources */,
@@ -793,20 +865,25 @@
 				2D8568B01940C1EB0048F43B /* default_on_1.png in Resources */,
 				2DA251FC193F5BEF001D87A6 /* nr_2.png in Resources */,
 				2D8568AF1940C1EB0048F43B /* default_off_2.png in Resources */,
+				5AA76DDB1946C9C800572D74 /* throttle_off_2.png in Resources */,
 				2DEF527E19442C6300D4C9B5 /* software_2.png in Resources */,
 				2DEF52991944325700D4C9B5 /* svo_1.png in Resources */,
 				2DEF52981944325700D4C9B5 /* sts_2.png in Resources */,
 				2D115452193AC3D80073D1AB /* toolbarlanguage_off.png in Resources */,
 				2DEF52941944325700D4C9B5 /* gm_2.png in Resources */,
+				5AA76DE11946C9C800572D74 /* turbo_on_2.png in Resources */,
 				2DEF527D19442C6300D4C9B5 /* software_1.png in Resources */,
 				2D8568B21940C1EB0048F43B /* firmware_off_1.png in Resources */,
 				2DE22A56193B09AD00DC39DC /* buttonquit_on_2.png in Resources */,
 				2D17426C193C046500FA81D4 /* quitalert_2.png in Resources */,
+				5AA76DD11946C9C800572D74 /* boost_on_2.png in Resources */,
+				5AA76DDE1946C9C800572D74 /* turbo_off_1.png in Resources */,
 				2DA251F6193F5BEF001D87A6 /* ic_2.png in Resources */,
 				2DA25210193F6442001D87A6 /* btn_020@2x.png in Resources */,
 				2DE22A5A193B09AD00DC39DC /* buttonyes_on_2.png in Resources */,
 				2D115442193ABEA00073D1AB /* sendsetting_on_2.png in Resources */,
 				2DA251F5193F5BEF001D87A6 /* ic_1.png in Resources */,
+				5AA76DD91946C9C800572D74 /* data_on_2.png in Resources */,
 				2DA8A7F1193A2407002E68D9 /* BEAST.png in Resources */,
 				2D8568B61940C1EB0048F43B /* general_off_1.png in Resources */,
 				2DEF528D1944325700D4C9B5 /* battery_1.png in Resources */,
@@ -816,15 +893,21 @@
 				2DE22A48193B049300DC39DC /* Default@2x.png in Resources */,
 				2DA251F8193F5BEF001D87A6 /* mr_2.png in Resources */,
 				2DEF52901944325700D4C9B5 /* brake_2.png in Resources */,
+				5AA76DCE1946C9C800572D74 /* boost_off_1.png in Resources */,
 				2DE22A57193B09AD00DC39DC /* buttonyes_off_1.png in Resources */,
 				2DA25202193F5BEF001D87A6 /* tl_2.png in Resources */,
+				5AA76DD61946C9C800572D74 /* data_off_1.png in Resources */,
 				2DA2520D193F6442001D87A6 /* bg_023@2x.png in Resources */,
 				2DE22A59193B09AD00DC39DC /* buttonyes_on_1.png in Resources */,
+				5AA76DDA1946C9C800572D74 /* throttle_off_1.png in Resources */,
 				2DEF52951944325700D4C9B5 /* lvcot_1.png in Resources */,
+				5AA76DD31946C9C800572D74 /* brake_off_2.png in Resources */,
 				2D174269193C046500FA81D4 /* buttonpos_on_1.png in Resources */,
 				2DA8A7EB193A14DA002E68D9 /* Localizable.strings in Resources */,
+				5AA76DD41946C9C800572D74 /* brake_on_1.png in Resources */,
 				2D11543F193ABEA00073D1AB /* sendsetting_off_1.png in Resources */,
 				2DA25201193F5BEF001D87A6 /* tl_1.png in Resources */,
+				5AA76DD21946C9C800572D74 /* brake_off_1.png in Resources */,
 				2D115453193AC3D80073D1AB /* toolbarlanguage_on.png in Resources */,
 				2DA251F7193F5BEF001D87A6 /* mr_1.png in Resources */,
 				2D8568BB1940C1EB0048F43B /* header_on.png in Resources */,
@@ -850,9 +933,11 @@
 				2DEF527A19442C6300D4C9B5 /* device_2.png in Resources */,
 				2DEF52971944325700D4C9B5 /* sts_1.png in Resources */,
 				2D7F2A641937714B00E004AE /* Main.storyboard in Resources */,
+				5AA76DDC1946C9C800572D74 /* throttle_on_1.png in Resources */,
 				2D115450193AC3D80073D1AB /* toolbarexit_on_1.png in Resources */,
 				2D174266193C046500FA81D4 /* buttonneg_on_2.png in Resources */,
 				2D8568BA1940C1EB0048F43B /* header_off.png in Resources */,
+				5AA76DCF1946C9C800572D74 /* boost_off_2.png in Resources */,
 				2D174263193C046500FA81D4 /* buttonneg_off_1.png in Resources */,
 				2DA251FE193F5BEF001D87A6 /* pb_2.png in Resources */,
 				2DEF529A1944325700D4C9B5 /* svo_2.png in Resources */,
@@ -896,6 +981,7 @@
 				2DABD6E51938C56C00F27ED3 /* UIBaseButton.m in Sources */,
 				2D7F2A611937714B00E004AE /* AppDelegate.m in Sources */,
 				2D7F2A5D1937714B00E004AE /* main.m in Sources */,
+				5AA76DB9194696E300572D74 /* TURBOViewController.m in Sources */,
 				2D115426193AB40E0073D1AB /* BEASTViewController.m in Sources */,
 				2DA8A7E5193A0F7E002E68D9 /* Global.m in Sources */,
 				2D7F2A871937734D00E004AE /* AsyncUdpSocket.m in Sources */,

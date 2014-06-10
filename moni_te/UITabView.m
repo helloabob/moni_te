@@ -36,6 +36,10 @@
 -(void)setNumberOfTabs:(int)numberOfTabs{
     _numberOfTabs=numberOfTabs;
     
+    if (numberOfTabs==8) {
+        menuArray=[[NSArray alloc]initWithObjects:@"firmware",@"general",@"throttle",@"brake",@"boost",@"turbo",@"data",@"default", nil];
+    }
+    
     tabMenuBar=[[[UIView alloc]initWithFrame:CGRectMake(0, 0, 40*numberOfTabs, 38)]autorelease];
     [self addSubview:tabMenuBar];
     

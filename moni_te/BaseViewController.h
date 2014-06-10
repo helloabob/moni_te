@@ -13,6 +13,7 @@
 @property(nonatomic,retain)UIView *contentView;
 @property(nonatomic,assign)BOOL BottomBarHidden;
 @property(nonatomic,assign)BOOL SettingControlViewHidden;
+@property(nonatomic,assign)BOOL BlackAreaHidden;
 @property(nonatomic,retain)NSDictionary *dict;
 @property(nonatomic,retain)NSArray *keyArray;
 -(void)renderImage;

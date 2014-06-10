@@ -15,6 +15,7 @@
     UIBaseButton *baseButton;
 //    UIView *maskView;
     SettingControlView *scv;
+    UIImageView *blackArea;
 }
 
 @end
@@ -78,6 +79,10 @@
     [scv addTarget:self actionRead:@selector(onRead) actionSet:@selector(onSet)];
     [self.contentView addSubview:scv];
     
+    blackArea=[[[UIImageView alloc]initWithFrame:CGRectMake(10, 40, 300, 166)]autorelease];
+    blackArea.image=[UIImage imageNamed:@"blackarea"];
+    blackArea.hidden=YES;
+    [self.contentView addSubview:blackArea];
 }
 -(void)onRead{
     
@@ -103,6 +108,10 @@
             [view renderImage];
         }
     }
+}
+-(void)setBlackAreaHidden:(BOOL)BlackAreaHidden{
+    blackArea.hidden=BlackAreaHidden;
+    [self.contentView bringSubviewToFront:blackArea];
 }
 -(void)setSettingControlViewHidden:(BOOL)SettingControlViewHidden{
     scv.hidden=SettingControlViewHidden;
