@@ -352,15 +352,15 @@ static unsigned char result[33];
 }
 -(BOOL)tabDidClicked:(int)index{
     if (index==7) {
-        UIView *view=[tabView viewForIndex:1];
-        for (ParamButtonView *pbv in view.subviews) {
-            NSDictionary *tmp=nil;
-            tmp=self.dict[self.keyArray[pbv.tag-1000]];
-            NSArray *values=[Global convertStringToArray:tmp forKey:@"ValuesRange"];
-            int defaultKey=[tmp[@"DefaultKey"] intValue];
-            pbv.valueString=values[defaultKey];
-            result[g_tag-1000]=[Global dataFromDict:tmp AtIndex:defaultKey];
-        }
+//        UIView *view=[tabView viewForIndex:1];
+//        for (ParamButtonView *pbv in view.subviews) {
+//            NSDictionary *tmp=nil;
+//            tmp=self.dict[self.keyArray[pbv.tag-1000]];
+//            NSArray *values=[Global convertStringToArray:tmp forKey:@"ValuesRange"];
+//            int defaultKey=[tmp[@"DefaultKey"] intValue];
+//            pbv.valueString=values[defaultKey];
+//            result[g_tag-1000]=[Global dataFromDict:tmp AtIndex:defaultKey];
+//        }
         return NO;
     }else if(index==3){
         [self changeSettingY:20];

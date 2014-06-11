@@ -8,3 +8,5 @@ TURBO
 7. endrpm	total 115   change 0-115 -> 0-114
 8. turbotiming
 9. turbodelay   total 20+1.  change 0-16 -> 0-20
+10. startrpm2   total 43   change 0-43 -> 0-42
+11. turboslopeon/turboslopeoff  unit

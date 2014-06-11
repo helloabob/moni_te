@@ -12,6 +12,8 @@
     UIView *tabMenuBar;
     UIView *panel;
     NSArray *menuArray;
+    int currentTabIndex;
+    BOOL canPan;
 }
 
 -(void)dealloc{
@@ -29,10 +31,42 @@
         [self addSubview:panel];
         
         menuArray=[[NSArray alloc]initWithObjects:@"firmware",@"general",@"default", nil];
+        
+        UIPanGestureRecognizer *pan=[[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan:)];
+        [self addGestureRecognizer:pan];
+        [pan release];
+        canPan=YES;
     }
     return self;
 }
-
+-(void)pan:(UIPanGestureRecognizer *)gest{
+//    CGPoint pt=[gest locationInView:self];
+    if (!canPan) {
+        return;
+    }
+    CGPoint pt2=[gest translationInView:self];
+    if (pt2.x>50) {
+        //previous
+        if (currentTabIndex>0) {
+            int tag=currentTabIndex-1+2000;
+            [self tabClicked:(UIButton *)[tabMenuBar viewWithTag:tag]];
+            canPan=NO;
+            [self performSelector:@selector(resetCanPan) withObject:nil afterDelay:0.3];
+        }
+    }else if(pt2.x<-50){
+        //next
+        if (currentTabIndex<_numberOfTabs-1) {
+            int tag=currentTabIndex+1+2000;
+            [self tabClicked:(UIButton *)[tabMenuBar viewWithTag:tag]];
+            canPan=NO;
+            [self performSelector:@selector(resetCanPan) withObject:nil afterDelay:0.3];
+        }
+    }
+    NSLog(@"pt2:%@",NSStringFromCGPoint(pt2));
+}
+-(void)resetCanPan{
+    canPan=YES;
+}
 -(void)setNumberOfTabs:(int)numberOfTabs{
     _numberOfTabs=numberOfTabs;
     
@@ -87,6 +121,7 @@
     if (canContinue==NO) {
         return;
     }
+    currentTabIndex=sender.tag-2000;
     for (UIButton *btn in tabMenuBar.subviews) {
         if ([btn isKindOfClass:[UIButton class]]) {
             btn.selected=NO;

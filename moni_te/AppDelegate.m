@@ -19,8 +19,10 @@
     unsigned char a=strtoul([str UTF8String], 0, 16);
     NSLog(@"%d",a);
     
+//    [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"language":@"2"}];
+    
     // Override point for customization after application launch.
-    [Global setLanguage:1];
+//    [Global setLanguage:1];
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     self.window.backgroundColor = [UIColor blackColor];
     application.statusBarStyle=1;

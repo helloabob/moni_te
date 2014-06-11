@@ -8,18 +8,30 @@
 
 #import "Global.h"
 
-static int __language;
+//static int __language;
 
 @implementation Global
 +(BOOL)setLanguage:(int)lang{
-    if (lang!=__language) {
-        __language=lang;
+    int global_lang=[[[NSUserDefaults standardUserDefaults]objectForKey:@"language"]intValue];
+    if (global_lang!=lang) {
+        [[NSUserDefaults standardUserDefaults]setObject:[NSString stringWithFormat:@"%d",lang] forKey:@"language"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
         return YES;
     }
     return NO;
+//    if (lang!=__language) {
+//        __language=lang;
+//        return YES;
+//    }
+//    return NO;
 }
 +(int)language{
-    return __language;
+    if (![[NSUserDefaults standardUserDefaults]objectForKey:@"language"]) {
+        [[NSUserDefaults standardUserDefaults]setObject:@"2" forKey:@"language"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+    }
+    return [[[NSUserDefaults standardUserDefaults] objectForKey:@"language"] intValue];
+//    return __language;
 }
 +(unsigned char)dataFromDict:(NSDictionary *)dic AtIndex:(int)index{
     NSArray *array=[self convertStringToArray:dic forKey:@"KeysRange"];

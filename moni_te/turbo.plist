@@ -266,5 +266,38 @@
 		<key>PreCode</key>
 		<string>0xa2</string>
 	</dict>
+	<key>startrpm2</key>
+	<dict>
+		<key>DefaultKey</key>
+		<string>12</string>
+		<key>ValuesRange</key>
+		<string>8000rpm-50000rpm</string>
+		<key>KeysRange</key>
+		<string>0-42</string>
+		<key>PreCode</key>
+		<string>0xac</string>
+	</dict>
+	<key>turboslopeon</key>
+	<dict>
+		<key>DefaultKey</key>
+		<string>4</string>
+		<key>ValuesRange</key>
+		<string>3deg/0.1S-30deg/0.1S,Instant</string>
+		<key>KeysRange</key>
+		<string>0-10</string>
+		<key>PreCode</key>
+		<string>0xad</string>
+	</dict>
+	<key>turboslopeoff</key>
+	<dict>
+		<key>DefaultKey</key>
+		<string>3</string>
+		<key>ValuesRange</key>
+		<string>6deg/0.1S-30deg/0.1S,Instant</string>
+		<key>KeysRange</key>
+		<string>0-5</string>
+		<key>PreCode</key>
+		<string>0xa5</string>
+	</dict>
 </dict>
 </plist>
