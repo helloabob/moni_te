@@ -237,6 +237,7 @@
 		5ABBAB39193EA9BD00F3CBFA /* runningmode_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ABBAB36193EA9BD00F3CBFA /* runningmode_1.png */; };
 		5ABBAB3A193EA9BD00F3CBFA /* runningmode_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ABBAB37193EA9BD00F3CBFA /* runningmode_2.png */; };
 		5ABBAB3D193EB4DA00F3CBFA /* ParamButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABBAB3C193EB4DA00F3CBFA /* ParamButtonView.m */; };
+		5AF1601E1948533F00324152 /* turbo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AF1601D1948533F00324152 /* turbo.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -501,6 +502,7 @@
 		5ABBAB37193EA9BD00F3CBFA /* runningmode_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = runningmode_2.png; sourceTree = "<group>"; };
 		5ABBAB3B193EB4DA00F3CBFA /* ParamButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParamButtonView.h; sourceTree = "<group>"; };
 		5ABBAB3C193EB4DA00F3CBFA /* ParamButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParamButtonView.m; sourceTree = "<group>"; };
+		5AF1601D1948533F00324152 /* turbo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = turbo.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -656,6 +658,7 @@
 		2D7F2A571937714B00E004AE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5AF1601D1948533F00324152 /* turbo.plist */,
 				2DEF5270194366B800D4C9B5 /* gecko.plist */,
 				2DE22A43193B049300DC39DC /* Default-568h@2x.png */,
 				2DE22A44193B049300DC39DC /* Default.png */,
@@ -1149,6 +1152,7 @@
 				2D11544F193AC3D80073D1AB /* toolbarexit_off_2.png in Resources */,
 				2D7F2A5B1937714B00E004AE /* InfoPlist.strings in Resources */,
 				2DA251FF193F5BEF001D87A6 /* pdb_1.png in Resources */,
+				5AF1601E1948533F00324152 /* turbo.plist in Resources */,
 				2D115441193ABEA00073D1AB /* sendsetting_on_1.png in Resources */,
 				2DA9B82C1947463800A2E574 /* endrpm_2.png in Resources */,
 				2DEF52A01944A5EC00D4C9B5 /* blackarea.png in Resources */,

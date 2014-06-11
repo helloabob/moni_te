@@ -1,0 +1,10 @@
+TURBO
+1. voltage cutoff
+2. switchpoint1
+3. dragebrake
+4. switchpoint2
+5. boosttiming
+6. startrpm1   total 68.   change 0-69 -> 0-67
+7. endrpm	total 115   change 0-115 -> 0-114
+8. turbotiming
+9. turbodelay   total 20+1.  change 0-16 -> 0-20

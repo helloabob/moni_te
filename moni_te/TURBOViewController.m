@@ -19,6 +19,7 @@ static unsigned char result[33];
 @interface TURBOViewController (){
     TSLocateView *locateView;
     UITabView *tabView;
+    int currentTabIndex;
 }
 
 @end
@@ -68,8 +69,9 @@ static unsigned char result[33];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    unsigned char a=0xd8;
-    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:&a length:1] withDelegate:self];
+    [self onRead];
+//    unsigned char a=0xd8;
+//    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:&a length:1] withDelegate:self];
     //    remove BEC Voltage Output
     //    self.keyArray=@[@"BrakeType",@"BatteryType",@"CutOffVoltageThreshold",@"LowVoltageCutOffType",@"StartUpStrength",@"MotorTiming",@"SBECVoltageOutput",@"MotorRotation"];
     self.keyArray=@[@"BrakeType",@"BatteryType",@"CutOffVoltageThreshold",@"LowVoltageCutOffType",@"StartUpStrength",@"MotorTiming",@"MotorRotation"];
@@ -277,7 +279,6 @@ static unsigned char result[33];
     [view addSubview:pbv];
     pbv.valueString=@"unknown";
     
-    
     self.SettingControlViewHidden=NO;
     
 }
@@ -320,8 +321,8 @@ static unsigned char result[33];
     g_tag=0;
 }
 -(void)onRead{
-    unsigned char a=0xd8;
-    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:&a length:1] withDelegate:self];
+//    unsigned char a=0xd8;
+//    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:&a length:1] withDelegate:self];
 }
 -(void)onSet{
     int send_length=7;
@@ -342,6 +343,7 @@ static unsigned char result[33];
     [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:ret length:send_length*2] withDelegate:nil];
 }
 -(void)viewDidChanged:(int)index{
+    currentTabIndex=index;
     if (index==0) {
         self.SettingControlViewHidden=YES;
     }else{

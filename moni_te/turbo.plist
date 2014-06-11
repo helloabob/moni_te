@@ -35,69 +35,236 @@
 		<key>PreCode</key>
 		<string>0xec</string>
 	</dict>
-	<key>CutOffVoltageThreshold</key>
+	<key>escheatprotect</key>
 	<dict>
 		<key>DefaultKey</key>
 		<string>1</string>
 		<key>ValuesRange</key>
-		<string>2.8V/50%,3.0V/60%,3.2V/65%,No Protection</string>
+		<string>85 Degree Celsius,105 Degree Celsius,125 Degree Celsius,Disable</string>
 		<key>KeysRange</key>
 		<string>0-3</string>
+		<key>PreCode</key>
+		<string>0xef</string>
 	</dict>
-	<key>LowVoltageCutOffType</key>
+	<key>motorrotation</key>
+	<dict>
+		<key>DefaultKey</key>
+		<string>1</string>
+		<key>ValuesRange</key>
+		<string>Normal,reverse</string>
+		<key>KeysRange</key>
+		<string>0-1</string>
+		<key>PreCode</key>
+		<string>0xe7</string>
+	</dict>
+	<key>switchpoint1</key>
+	<dict>
+		<key>DefaultKey</key>
+		<string>49</string>
+		<key>ValuesRange</key>
+		<string>1%-99%</string>
+		<key>KeysRange</key>
+		<string>0-98</string>
+		<key>PreCode</key>
+		<string>0xea</string>
+	</dict>
+	<key>punchrate1</key>
+	<dict>
+		<key>DefaultKey</key>
+		<string>14</string>
+		<key>ValuesRange</key>
+		<string>1-30</string>
+		<key>KeysRange</key>
+		<string>0-29</string>
+		<key>PreCode</key>
+		<string>0xe6</string>
+	</dict>
+	<key>punchrate2</key>
+	<dict>
+		<key>DefaultKey</key>
+		<string>14</string>
+		<key>ValuesRange</key>
+		<string>1-30</string>
+		<key>KeysRange</key>
+		<string>0-29</string>
+		<key>PreCode</key>
+		<string>0xeb</string>
+	</dict>
+	<key>thcurve</key>
 	<dict>
 		<key>DefaultKey</key>
 		<string>0</string>
 		<key>ValuesRange</key>
-		<string>Reduce Power,Cut Off Power</string>
+		<string>Linear,Custom</string>
 		<key>KeysRange</key>
 		<string>0-1</string>
+		<key>PreCode</key>
+		<string>0xe9</string>
 	</dict>
-	<key>StartUpStrength</key>
+	<key>dragbrake</key>
 	<dict>
 		<key>DefaultKey</key>
-		<string>4</string>
+		<string>10</string>
 		<key>ValuesRange</key>
-		<string>10%,15%,20%,25%,30%,35%,40%,45%,50%</string>
+		<string>0%-100%</string>
+		<key>KeysRange</key>
+		<string>0-100</string>
+		<key>PreCode</key>
+		<string>0xe4</string>
+	</dict>
+	<key>brakestrength</key>
+	<dict>
+		<key>DefaultKey</key>
+		<string>6</string>
+		<key>ValuesRange</key>
+		<string>0%,12.50%,25%,37.50%,50%,62.50%,75%,87.50%,100%</string>
 		<key>KeysRange</key>
 		<string>0-8</string>
+		<key>PreCode</key>
+		<string>0xe3</string>
 	</dict>
-	<key>MotorTiming</key>
+	<key>initialbrake</key>
 	<dict>
 		<key>DefaultKey</key>
 		<string>0</string>
 		<key>ValuesRange</key>
-		<string>Auto,2°,8°,15°,22°,30°</string>
-		<key>KeysRange</key>
-		<string>0-5</string>
-	</dict>
-	<key>SBECVoltageOutput</key>
-	<dict>
-		<key>DefaultKey</key>
-		<string>0</string>
-		<key>ValuesRange</key>
-		<string>5.0V,6.0V,7.4V,8.4V</string>
-		<key>KeysRange</key>
-		<string>0-3</string>
-	</dict>
-	<key>MotorRotation</key>
-	<dict>
-		<key>DefaultKey</key>
-		<string>0</string>
-		<key>ValuesRange</key>
-		<string>Forward,Reverse</string>
-		<key>KeysRange</key>
-		<string>0-1</string>
-	</dict>
-	<key>GovernorMode</key>
-	<dict>
-		<key>DefaultKey</key>
-		<string>0</string>
-		<key>ValuesRange</key>
-		<string>RPM OFF,1st Soft Start,2nd Soft Start,1st Governor Mode,2nd Governor Mode
-</string>
+		<string>Equal Drag Brake,0%,20%,30%,40%</string>
 		<key>KeysRange</key>
 		<string>0-4</string>
+		<key>PreCode</key>
+		<string>0xed</string>
+	</dict>
+	<key>switchpoint2</key>
+	<dict>
+		<key>DefaultKey</key>
+		<string>49</string>
+		<key>ValuesRange</key>
+		<string>1%-99%</string>
+		<key>KeysRange</key>
+		<string>0-98</string>
+		<key>PreCode</key>
+		<string>0xee</string>
+	</dict>
+	<key>brakerate1</key>
+	<dict>
+		<key>DefaultKey</key>
+		<string>19</string>
+		<key>ValuesRange</key>
+		<string>1-20</string>
+		<key>KeysRange</key>
+		<string>0-19</string>
+		<key>PreCode</key>
+		<string>0xa6</string>
+	</dict>
+	<key>brakerate2</key>
+	<dict>
+		<key>DefaultKey</key>
+		<string>19</string>
+		<key>ValuesRange</key>
+		<string>1-20</string>
+		<key>KeysRange</key>
+		<string>0-19</string>
+		<key>PreCode</key>
+		<string>0xa7</string>
+	</dict>
+	<key>brakecurve</key>
+	<dict>
+		<key>DefaultKey</key>
+		<string>0</string>
+		<key>ValuesRange</key>
+		<string>Linear,Custom</string>
+		<key>KeysRange</key>
+		<string>0-1</string>
+		<key>PreCode</key>
+		<string>0xe1</string>
+	</dict>
+	<key>boosttiming</key>
+	<dict>
+		<key>DefaultKey</key>
+		<string>0</string>
+		<key>ValuesRange</key>
+		<string>0deg-64deg</string>
+		<key>KeysRange</key>
+		<string>0-64</string>
+		<key>PreCode</key>
+		<string>0xe5</string>
+	</dict>
+	<key>startrpm1</key>
+	<dict>
+		<key>DefaultKey</key>
+		<string>28</string>
+		<key>ValuesRange</key>
+		<string>1000-35000</string>
+		<key>KeysRange</key>
+		<string>0-67</string>
+		<key>PreCode</key>
+		<string>0xa3</string>
+	</dict>
+	<key>endrpm</key>
+	<dict>
+		<key>DefaultKey</key>
+		<string>44</string>
+		<key>ValuesRange</key>
+		<string>3000-60000</string>
+		<key>KeysRange</key>
+		<string>0-114</string>
+		<key>PreCode</key>
+		<string>0xa8</string>
+	</dict>
+	<key>slope</key>
+	<dict>
+		<key>DefaultKey</key>
+		<string>19</string>
+		<key>ValuesRange</key>
+		<string>Linear,Custom</string>
+		<key>KeysRange</key>
+		<string>0-1</string>
+		<key>PreCode</key>
+		<string>0xa9</string>
+	</dict>
+	<key>stability</key>
+	<dict>
+		<key>DefaultKey</key>
+		<string>0</string>
+		<key>ValuesRange</key>
+		<string>Yes,No</string>
+		<key>KeysRange</key>
+		<string>0-1</string>
+		<key>PreCode</key>
+		<string>0xaa</string>
+	</dict>
+	<key>turbotiming</key>
+	<dict>
+		<key>DefaultKey</key>
+		<string>10</string>
+		<key>ValuesRange</key>
+		<string>0deg-64deg</string>
+		<key>KeysRange</key>
+		<string>0-64</string>
+		<key>PreCode</key>
+		<string>0xa1</string>
+	</dict>
+	<key>activationmethod</key>
+	<dict>
+		<key>DefaultKey</key>
+		<string>0</string>
+		<key>ValuesRange</key>
+		<string>Full TH,RPM,Full TH+RPM</string>
+		<key>KeysRange</key>
+		<string>0-2</string>
+		<key>PreCode</key>
+		<string>0xab</string>
+	</dict>
+	<key>turbodelay</key>
+	<dict>
+		<key>DefaultKey</key>
+		<string>6</string>
+		<key>ValuesRange</key>
+		<string>Instant,0.05-1</string>
+		<key>KeysRange</key>
+		<string>0-20</string>
+		<key>PreCode</key>
+		<string>0xa2</string>
 	</dict>
 </dict>
 </plist>
