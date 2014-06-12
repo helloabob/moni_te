@@ -66,6 +66,20 @@
             float f=i;
             array[i]=[NSString stringWithFormat:@"%f",f*0.05];
         }
+    }else if([name isEqualToString:@"startrpm2"]){
+        for (int i=0; i<43; i++) {
+            array[i]=[NSString stringWithFormat:@"%d",i*1000+8000];
+        }
+    }else if([name isEqualToString:@"turboslopeon"]){
+        for (int i=0; i<10; i++) {
+            array[i]=[NSString stringWithFormat:@"%ddeg/0.1S",i*3+3];
+        }
+        array[10]=@"Instant";
+    }else if([name isEqualToString:@"turboslopeoff"]){
+        for (int i=0; i<5; i++) {
+            array[i]=[NSString stringWithFormat:@"%ddeg/0.1S",i*6+6];
+        }
+        array[5]=@"Instant";
     }
 }
 -(void)setKeyWithResponseBytes:(unsigned char *)bytes{
