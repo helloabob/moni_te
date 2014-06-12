@@ -38,6 +38,16 @@ static unsigned char result[33];
 -(void)didReceiveData:(NSData *)data{
     NSLog(@"dt:%@",data);
     
+    unsigned char *tmp=data.bytes;
+    for (int i=1; i<7; i++) {
+        UIView *view=[tabView viewForIndex:i];
+        for (ParamButtonView *pbv in view.subviews) {
+            if ([pbv isKindOfClass:[ParamButtonView class]]) {
+                [pbv setKeyWithResponseBytes:tmp];
+            }
+        }
+    }
+    
 //    unsigned char *tmp=data.bytes;
 //    result[0]=tmp[0];
 //    result[1]=tmp[1];
@@ -53,15 +63,6 @@ static unsigned char result[33];
 //        pbv=(ParamButtonView *)[[tabView viewForIndex:1] viewWithTag:(i+1000)];
 //        pbv.valueString=[Global valueForKey:result[i] AtDictionary:self.dict[self.keyArray[i]]];
 //    }
-    
-    for (int i =1;i<7; i++) {
-        UIView *view=[tabView viewForIndex:i];
-        for (ParamButtonView *pbv in view.subviews) {
-            if ([pbv isKindOfClass:[ParamButtonView class]]) {
-                [pbv setValueWithArray:(unsigned char *)data.bytes];
-            }
-        }
-    }
 }
 
 - (void)viewDidLoad
@@ -139,140 +140,140 @@ static unsigned char result[33];
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(53, contentCenterY-105, 100, 65) withImageName:@"punchrate1" withDelegate:self]autorelease];
     pbv.tag=1006;
     [view addSubview:pbv];
-    pbv.valueString=@"Unkown";
+    pbv.valueString=@"15";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(158, contentCenterY-105, 100, 65) withImageName:@"punchrate2" withDelegate:self]autorelease];
     pbv.tag=1007;
     [view addSubview:pbv];
-    pbv.valueString=@"Forword/Brake";
+    pbv.valueString=@"15";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(1, contentCenterY-35, 100, 65) withImageName:@"threversespd" withDelegate:self]autorelease];
     pbv.tag=1001;
     [view addSubview:pbv];
-    pbv.valueString=@"105 Degree Celsius";
+    pbv.valueString=@"25%";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(106, contentCenterY-35, 100, 65) withImageName:@"switchpoint1" withDelegate:self]autorelease];
     pbv.tag=1005;
     [view addSubview:pbv];
-    pbv.valueString=@"reverse";
+    pbv.valueString=@"50%";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(211, contentCenterY-35, 100, 65) withImageName:@"thcurve" withDelegate:self]autorelease];
     pbv.tag=1008;
     [view addSubview:pbv];
-    pbv.valueString=@"unknown";
+    pbv.valueString=@"Linear";
     
     /*tab 4*/
     view=[tabView viewForIndex:3];
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(103, contentCenterY-120, 100, 65) withImageName:@"initialbrake" withDelegate:self]autorelease];
     pbv.tag=1011;
     [view addSubview:pbv];
-    pbv.valueString=@"Unkown";
+    pbv.valueString=@"Equal Drag Brake";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(1, contentCenterY-60, 100, 65) withImageName:@"dragbrake" withDelegate:self]autorelease];
     pbv.tag=1009;
     [view addSubview:pbv];
-    pbv.valueString=@"Unkown";
+    pbv.valueString=@"10%";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(106, contentCenterY-60, 100, 65) withImageName:@"brakestrength" withDelegate:self]autorelease];
     pbv.tag=1010;
     [view addSubview:pbv];
-    pbv.valueString=@"Forword/Brake";
+    pbv.valueString=@"75%";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(211, contentCenterY-60, 100, 65) withImageName:@"brakerate1" withDelegate:self]autorelease];
     pbv.tag=1013;
     [view addSubview:pbv];
-    pbv.valueString=@"Auto";
+    pbv.valueString=@"20";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(1, contentCenterY, 100, 65) withImageName:@"switchpoint2" withDelegate:self]autorelease];
     pbv.tag=1012;
     [view addSubview:pbv];
-    pbv.valueString=@"105 Degree Celsius";
+    pbv.valueString=@"50%";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(106, contentCenterY, 100, 65) withImageName:@"brakerate2" withDelegate:self]autorelease];
     pbv.tag=1014;
     [view addSubview:pbv];
-    pbv.valueString=@"reverse";
+    pbv.valueString=@"20";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(211, contentCenterY, 100, 65) withImageName:@"brakecurve" withDelegate:self]autorelease];
     pbv.tag=1015;
     [view addSubview:pbv];
-    pbv.valueString=@"unknown";
+    pbv.valueString=@"Linear";
     
     /*tab 5*/
     view=[tabView viewForIndex:4];
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(53, contentCenterY-105, 100, 65) withImageName:@"boosttiming" withDelegate:self]autorelease];
     pbv.tag=1016;
     [view addSubview:pbv];
-    pbv.valueString=@"Unkown";
+    pbv.valueString=@"0deg";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(158, contentCenterY-105, 100, 65) withImageName:@"startrpm" withDelegate:self]autorelease];
     pbv.tag=1017;
     [view addSubview:pbv];
-    pbv.valueString=@"Forword/Brake";
+    pbv.valueString=@"15000";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(1, contentCenterY-35, 100, 65) withImageName:@"endrpm" withDelegate:self]autorelease];
     pbv.tag=1018;
     [view addSubview:pbv];
-    pbv.valueString=@"105 Degree Celsius";
+    pbv.valueString=@"25000";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(106, contentCenterY-35, 100, 65) withImageName:@"stability" withDelegate:self]autorelease];
     pbv.tag=1020;
     [view addSubview:pbv];
-    pbv.valueString=@"reverse";
+    pbv.valueString=@"Yes";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(211, contentCenterY-35, 100, 65) withImageName:@"slope" withDelegate:self]autorelease];
     pbv.tag=1019;
     [view addSubview:pbv];
-    pbv.valueString=@"unknown";
+    pbv.valueString=@"Linear";
     
     /*tab 6*/
     view=[tabView viewForIndex:5];
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(1, contentCenterY-105, 100, 65) withImageName:@"turbotiming" withDelegate:self]autorelease];
     pbv.tag=1021;
     [view addSubview:pbv];
-    pbv.valueString=@"Unkown";
+    pbv.valueString=@"10deg";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(106, contentCenterY-105, 100, 65) withImageName:@"activationmethod" withDelegate:self]autorelease];
     pbv.tag=1022;
     [view addSubview:pbv];
-    pbv.valueString=@"Forword/Brake";
+    pbv.valueString=@"Full TH";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(211, contentCenterY-105, 100, 65) withImageName:@"turbodelay" withDelegate:self]autorelease];
     pbv.tag=1023;
     [view addSubview:pbv];
-    pbv.valueString=@"Auto";
+    pbv.valueString=@"3";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(1, contentCenterY-35, 100, 65) withImageName:@"startrpm" withDelegate:self]autorelease];
     pbv.tag=1024;
     [view addSubview:pbv];
-    pbv.valueString=@"105 Degree Celsius";
+    pbv.valueString=@"20000rpm";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(106, contentCenterY-35, 100, 65) withImageName:@"turboslopeon" withDelegate:self]autorelease];
     pbv.tag=1025;
     [view addSubview:pbv];
-    pbv.valueString=@"reverse";
+    pbv.valueString=@"15deg/0.1S";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(211, contentCenterY-35, 100, 65) withImageName:@"turboslopeoff" withDelegate:self]autorelease];
     pbv.tag=1026;
     [view addSubview:pbv];
-    pbv.valueString=@"unknown";
+    pbv.valueString=@"24deg/0.1S";
     
     /*tab 7*/
     view=[tabView viewForIndex:6];
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(106, contentCenterY-105, 100, 65) withImageName:@"battminvoltage" withDelegate:self]autorelease];
     pbv.tag=10000;
     [view addSubview:pbv];
-    pbv.valueString=@"Forword/Brake";
+    pbv.valueString=@"unknown";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(1, contentCenterY-35, 100, 65) withImageName:@"escmaxtemp" withDelegate:self]autorelease];
     pbv.tag=10000;
     [view addSubview:pbv];
-    pbv.valueString=@"105 Degree Celsius";
+    pbv.valueString=@"unknown";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(106, contentCenterY-35, 100, 65) withImageName:@"motmaxtemp" withDelegate:self]autorelease];
     pbv.tag=10000;
     [view addSubview:pbv];
-    pbv.valueString=@"reverse";
+    pbv.valueString=@"unknown";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(211, contentCenterY-35, 100, 65) withImageName:@"motmaxrpm" withDelegate:self]autorelease];
     pbv.tag=10000;
@@ -340,7 +341,15 @@ static unsigned char result[33];
         ret[i*2]=addons[i];
         ret[i*2+1]=result[i];
     }
-    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:ret length:send_length*2] withDelegate:nil];
+    NSMutableData *data=[NSMutableData data];
+    UIView *view=[tabView viewWithTag:currentTabIndex];
+    for (ParamButtonView *pbv in view.subviews) {
+        if ([pbv isKindOfClass:[ParamButtonView class]]) {
+            [data appendData:[pbv postedData]];
+        }
+    }
+    [[NetUtils sharedInstance] sendData:data withDelegate:nil];
+//    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:ret length:send_length*2] withDelegate:nil];
 }
 -(void)viewDidChanged:(int)index{
     currentTabIndex=index;

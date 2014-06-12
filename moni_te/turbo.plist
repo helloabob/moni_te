@@ -196,7 +196,7 @@
 		<key>ValuesRange</key>
 		<string>1000-35000</string>
 		<key>KeysRange</key>
-		<string>0-67</string>
+		<string>0-68</string>
 		<key>PreCode</key>
 		<string>0xa3</string>
 	</dict>
@@ -214,7 +214,7 @@
 	<key>slope</key>
 	<dict>
 		<key>DefaultKey</key>
-		<string>19</string>
+		<string>0</string>
 		<key>ValuesRange</key>
 		<string>Linear,Custom</string>
 		<key>KeysRange</key>

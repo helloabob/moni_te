@@ -13,8 +13,8 @@
 @property(nonatomic,retain)NSString *valueString;
 -(void)renderImage;
 /*TURBO*/
-@property(nonatomic,retain)NSDictionary *info;
-@property(nonatomic,assign)unsigned char value;
-@property(nonatomic,assign)unsigned char precode;
--(void)setValueWithArray:(unsigned char *)data;
+@property(nonatomic,assign)int index;
+-(void)config:(NSDictionary *)info withName:(NSString *)name;
+-(void)setKeyWithResponseBytes:(unsigned char *)bytes;
+-(NSData *)postedData;
 @end

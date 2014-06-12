@@ -15,8 +15,65 @@
     NSTimer *_timer;
     int lbl_width;
     id _delegate;
+    NSArray *keys;
+    NSArray *values;
+    unsigned char _precode;
 }
-
+-(void)config:(NSDictionary *)info withName:(NSString *)name{
+    _precode=(unsigned char)strtoul([info[@"PreCode"] UTF8String], 0, 16);
+    keys=[Global convertStringToArray:info forKey:@"KeysRange"];
+    _index=[info[@"DefaultKey"]intValue];
+    NSMutableArray *array=[NSMutableArray array];
+    if ([name isEqualToString:@"voltagecutoff"]) {
+        array[0]=@"disable";
+        array[1]=@"AUTO";
+        for (int i=2; i<112; i++) {
+            float f=i;
+            f=i/10.0;
+            array[i]=[NSString stringWithFormat:@"%fV",f];
+        }
+    }else if([name isEqualToString:@"switchpoint1"]){
+        for (int i=0; i<99; i++) {
+            array[i]=[NSString stringWithFormat:@"%d%%",i+1];
+        }
+    }else if([name isEqualToString:@"dragbrake"]){
+        for (int i=0; i<101; i++) {
+            array[i]=[NSString stringWithFormat:@"%d%%",i];
+        }
+    }else if([name isEqualToString:@"switchpoint2"]){
+        for (int i=0; i<99; i++) {
+            array[i]=[NSString stringWithFormat:@"%d%%",i+1];
+        }
+    }else if([name isEqualToString:@"boosttiming"]){
+        for (int i=0; i<65; i++) {
+            array[i]=[NSString stringWithFormat:@"%d",i];
+        }
+    }else if([name isEqualToString:@"startrpm1"]){
+        for (int i=0; i<69; i++) {
+            array[i]=[NSString stringWithFormat:@"%d",i*500+1000];
+        }
+    }else if([name isEqualToString:@"endrpm"]){
+        for (int i=0; i<115; i++) {
+            array[i]=[NSString stringWithFormat:@"%d",i*500+3000];
+        }
+    }else if([name isEqualToString:@"turbotiming"]){
+        for (int i=0; i<65; i++) {
+            array[i]=[NSString stringWithFormat:@"%d",i];
+        }
+    }else if([name isEqualToString:@"turbodelay"]){
+        array[0]=@"Instant";
+        for (int i=1; i<21; i++) {
+            float f=i;
+            array[i]=[NSString stringWithFormat:@"%f",f*0.05];
+        }
+    }
+}
+-(void)setKeyWithResponseBytes:(unsigned char *)bytes{
+}
+-(NSData *)postedData{
+    unsigned char ret[2]={_precode,[keys[_index]intValue]};
+    return [NSData dataWithBytes:ret length:2];
+}
 - (id)initWithFrame:(CGRect)frame withImageName:(NSString *)imageName withDelegate:(id)delegate
 {
     self = [super initWithFrame:frame];
@@ -53,9 +110,6 @@
         [self addSubview:btn];
     }
     return self;
-}
--(void)setValueWithArray:(unsigned char *)data{
-    
 }
 -(void)btnTapped{
     if (_delegate&&[_delegate respondsToSelector:@selector(viewDidTapped:)]) {

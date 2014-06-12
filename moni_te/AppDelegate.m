@@ -15,7 +15,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    NSString *str=@"2d";
+    NSString *str=@"0x2d";
     unsigned char a=strtoul([str UTF8String], 0, 16);
     NSLog(@"%d",a);
     
