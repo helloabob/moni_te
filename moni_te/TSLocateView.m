@@ -127,18 +127,19 @@
 #pragma mark - Button lifecycle
 
 - (IBAction)cancel:(id)sender {
-    CATransition *animation = [CATransition  animation];
-    animation.delegate = self;
-    animation.duration = kDuration;
-    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    animation.type = kCATransitionPush;
-    animation.subtype = kCATransitionFromBottom;
-    [self setAlpha:0.0f];
-    [self.layer addAnimation:animation forKey:@"TSLocateView"];
-    [self performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:kDuration];
+//    CATransition *animation = [CATransition  animation];
+//    animation.delegate = self;
+//    animation.duration = kDuration;
+//    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+//    animation.type = kCATransitionPush;
+//    animation.subtype = kCATransitionFromBottom;
+//    [self setAlpha:0.0f];
+//    [self.layer addAnimation:animation forKey:@"TSLocateView"];
+//    [self performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:kDuration];
     if(self.delegate) {
         [self.delegate actionSheet:self clickedButtonAtIndex:0];
     }
+    [self removeFromSuperview];
 }
 
 -(void)hidePicker{
@@ -147,18 +148,19 @@
 }
 
 - (IBAction)locate:(id)sender {
-    CATransition *animation = [CATransition  animation];
-    animation.delegate = self;
-    animation.duration = kDuration;
-    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    animation.type = kCATransitionPush;
-    animation.subtype = kCATransitionFromBottom;
-    [self setAlpha:0.0f];
-    [self.layer addAnimation:animation forKey:@"TSLocateView"];
-    [self performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:kDuration];
+//    CATransition *animation = [CATransition  animation];
+//    animation.delegate = self;
+//    animation.duration = kDuration;
+//    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+//    animation.type = kCATransitionPush;
+//    animation.subtype = kCATransitionFromBottom;
+//    [self setAlpha:0.0f];
+//    [self.layer addAnimation:animation forKey:@"TSLocateView"];
+//    [self performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:kDuration];
     if(self.delegate) {
         [self.delegate actionSheet:self clickedButtonAtIndex:1];
     }
+    [self removeFromSuperview];
     
 }
 

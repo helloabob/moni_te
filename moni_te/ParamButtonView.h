@@ -14,7 +14,10 @@
 -(void)renderImage;
 /*TURBO*/
 @property(nonatomic,assign)int index;
--(void)config:(NSDictionary *)info withName:(NSString *)name;
+-(void)config:(NSDictionary *)dict withName:(NSString *)name;
 -(void)setKeyWithResponseBytes:(unsigned char *)bytes;
 -(NSData *)postedData;
+@property(nonatomic,retain)NSArray *keys;
+@property(nonatomic,retain)NSArray *values;
+-(void)returnToDefault;
 @end

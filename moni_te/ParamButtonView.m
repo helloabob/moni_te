@@ -15,14 +15,36 @@
     NSTimer *_timer;
     int lbl_width;
     id _delegate;
-    NSArray *keys;
-    NSArray *values;
+//    NSArray *keys;
+//    NSArray *values;
     unsigned char _precode;
+    int defaultIndex;
 }
--(void)config:(NSDictionary *)info withName:(NSString *)name{
+-(void)dealloc{
+    self.keys=nil;
+    self.values=nil;
+    self.valueString=nil;
+    [super dealloc];
+}
+-(void)setIndex:(int)index{
+    if (_keys==nil) {
+        return;
+    }
+    _index=index;
+    self.valueString=_values[index];
+}
+-(void)returnToDefault{
+    self.index=defaultIndex;
+}
+-(void)config:(NSDictionary *)dict withName:(NSString *)name{
+    NSDictionary *info=dict[name];
+    if (info[@"PreCode"]==nil) {
+        return;
+    }
     _precode=(unsigned char)strtoul([info[@"PreCode"] UTF8String], 0, 16);
-    keys=[Global convertStringToArray:info forKey:@"KeysRange"];
+    _keys=[[NSArray alloc]initWithArray:[Global convertStringToArray:info forKey:@"KeysRange"]];
     _index=[info[@"DefaultKey"]intValue];
+    defaultIndex=[info[@"DefaultKey"]intValue];
     NSMutableArray *array=[NSMutableArray array];
     if ([name isEqualToString:@"voltagecutoff"]) {
         array[0]=@"disable";
@@ -30,7 +52,7 @@
         for (int i=2; i<112; i++) {
             float f=i;
             f=i/10.0;
-            array[i]=[NSString stringWithFormat:@"%fV",f];
+            array[i]=[NSString stringWithFormat:@"%.2fV",f];
         }
     }else if([name isEqualToString:@"switchpoint1"]){
         for (int i=0; i<99; i++) {
@@ -80,12 +102,34 @@
             array[i]=[NSString stringWithFormat:@"%ddeg/0.1S",i*6+6];
         }
         array[5]=@"Instant";
+    }else{
+        array=[NSMutableArray arrayWithArray:[Global convertStringToArray:info forKey:@"ValuesRange"]];
     }
+    _values=[[NSArray alloc]initWithArray:array];
 }
 -(void)setKeyWithResponseBytes:(unsigned char *)bytes{
+    if (_keys==nil) {
+        return;
+    }
+    int new_index=-1;
+    for (int i=0;i<_keys.count;i++) {
+        NSString *str=_keys[i];
+        unsigned char some_key=(unsigned char)strtoul([str UTF8String], 0, 16);
+        if (some_key==bytes[self.tag-1000]) {
+            new_index=i;
+            break;
+        }
+    }
+    if (new_index==-1) {
+        new_index=defaultIndex;
+    }
+    self.index=new_index;
 }
 -(NSData *)postedData{
-    unsigned char ret[2]={_precode,[keys[_index]intValue]};
+    if (_keys==nil) {
+        return nil;
+    }
+    unsigned char ret[2]={_precode,[_keys[_index]intValue]};
     return [NSData dataWithBytes:ret length:2];
 }
 - (id)initWithFrame:(CGRect)frame withImageName:(NSString *)imageName withDelegate:(id)delegate

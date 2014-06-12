@@ -15,6 +15,7 @@
 //    NSArray *provinces;
     NSArray	*cities;
 }
+//@property(nonatomic,assign)id delegate;
 @property (strong ,nonatomic) NSArray *provinces;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UIPickerView *locatePicker;
