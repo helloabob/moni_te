@@ -102,6 +102,10 @@
             array[i]=[NSString stringWithFormat:@"%ddeg/0.1S",i*6+6];
         }
         array[5]=@"Instant";
+    }else if([name isEqualToString:@"motmaxrpm"]){
+        for (int i=0; i<256; i++) {
+            array[i]=[NSString stringWithFormat:@"%d",i*1000];
+        }
     }else{
         array=[NSMutableArray arrayWithArray:[Global convertStringToArray:info forKey:@"ValuesRange"]];
     }

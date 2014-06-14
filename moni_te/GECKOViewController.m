@@ -76,15 +76,15 @@ static unsigned char result[9];
     ParamButtonView *pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110, 50, 100, 65) withImageName:@"device" withDelegate:self]autorelease];
     pbv.tag=500;
     [view addSubview:pbv];
-    pbv.valueString=@"";
+    pbv.valueString=@"GECKO PLANE";
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110, 120, 100, 65) withImageName:@"hardware" withDelegate:self]autorelease];
     pbv.tag=501;
     [view addSubview:pbv];
-    pbv.valueString=@"";
+    pbv.valueString=@"ZTW GECKO";
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110, 190, 100, 65) withImageName:@"software" withDelegate:self]autorelease];
     pbv.tag=502;
     [view addSubview:pbv];
-    pbv.valueString=@"";
+    pbv.valueString=@"V1.01";
     
     /*tab 2*/
     view=[tabView viewForIndex:1];

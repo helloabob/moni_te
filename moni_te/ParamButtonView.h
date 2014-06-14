@@ -19,5 +19,6 @@
 -(NSData *)postedData;
 @property(nonatomic,retain)NSArray *keys;
 @property(nonatomic,retain)NSArray *values;
+@property(nonatomic,assign)BOOL paramReadOnly;
 -(void)returnToDefault;
 @end

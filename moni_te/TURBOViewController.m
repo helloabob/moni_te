@@ -93,15 +93,15 @@ static unsigned char result[33];
     ParamButtonView *pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(1, contentCenterY-60, 100, 65) withImageName:@"device" withDelegate:self]autorelease];
     pbv.tag=500;
     [view addSubview:pbv];
-    pbv.valueString=@"";
+    pbv.valueString=@"CAR ESC";
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(106, contentCenterY-60, 100, 65) withImageName:@"hardware" withDelegate:self]autorelease];
     pbv.tag=501;
     [view addSubview:pbv];
-    pbv.valueString=@"";
+    pbv.valueString=@"TURBO";
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(211, contentCenterY-60, 100, 65) withImageName:@"software" withDelegate:self]autorelease];
     pbv.tag=502;
     [view addSubview:pbv];
-    pbv.valueString=@"";
+    pbv.valueString=@"V1.1";
     
     /*tab 2*/
     view=[tabView viewForIndex:1];
@@ -137,9 +137,9 @@ static unsigned char result[33];
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(211, contentCenterY-35, 100, 65) withImageName:@"becout" withDelegate:self]autorelease];
     [pbv config:self.dict withName:@"becout"];
-    pbv.tag=10000;
+    pbv.tag=1031;
     [view addSubview:pbv];
-    pbv.valueString=@"unknown";
+    pbv.valueString=@"6.0V";
     
     /*tab 3*/
     view=[tabView viewForIndex:2];
@@ -291,25 +291,29 @@ static unsigned char result[33];
     view=[tabView viewForIndex:6];
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(106, contentCenterY-105, 100, 65) withImageName:@"battminvoltage" withDelegate:self]autorelease];
     [pbv config:self.dict withName:@"battminvoltage"];
-    pbv.tag=10000;
+    pbv.tag=1027;
+    pbv.paramReadOnly=YES;
     [view addSubview:pbv];
     pbv.valueString=@"unknown";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(1, contentCenterY-35, 100, 65) withImageName:@"escmaxtemp" withDelegate:self]autorelease];
     [pbv config:self.dict withName:@"escmaxtemp"];
-    pbv.tag=10000;
+    pbv.tag=1028;
+    pbv.paramReadOnly=YES;
     [view addSubview:pbv];
     pbv.valueString=@"unknown";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(106, contentCenterY-35, 100, 65) withImageName:@"motmaxtemp" withDelegate:self]autorelease];
     [pbv config:self.dict withName:@"motmaxtemp"];
-    pbv.tag=10000;
+    pbv.tag=1029;
+    pbv.paramReadOnly=YES;
     [view addSubview:pbv];
     pbv.valueString=@"unknown";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(211, contentCenterY-35, 100, 65) withImageName:@"motmaxrpm" withDelegate:self]autorelease];
     [pbv config:self.dict withName:@"motmaxrpm"];
-    pbv.tag=10000;
+    pbv.tag=1030;
+    pbv.paramReadOnly=YES;
     [view addSubview:pbv];
     pbv.valueString=@"unknown";
     
@@ -378,7 +382,7 @@ static unsigned char result[33];
     NSMutableData *data=[NSMutableData data];
     UIView *view=[tabView viewForIndex:currentTabIndex];
     for (ParamButtonView *pbv in view.subviews) {
-        if ([pbv isKindOfClass:[ParamButtonView class]]) {
+        if ([pbv isKindOfClass:[ParamButtonView class]]&&pbv.paramReadOnly==NO) {
             [data appendData:[pbv postedData]];
         }
     }
