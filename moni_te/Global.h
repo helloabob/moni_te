@@ -11,6 +11,8 @@
 @interface Global : NSObject
 +(BOOL)setLanguage:(int)lang;
 +(int)language;
++(int)promode;
++(void)setPromode:(int)p;
 +(NSArray *)convertStringToArray:(NSDictionary *)dict forKey:(NSString *)key;
 +(NSString *)valueForKey:(unsigned char)key AtDictionary:(NSDictionary *)dic;
 +(unsigned char)dataFromDict:(NSDictionary *)dic AtIndex:(int)index;

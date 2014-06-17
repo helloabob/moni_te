@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 wb. All rights reserved.
 //
 
-#import "TURBOViewController.h"
+#import "TPViewController.h"
 
 #import "ParamButtonView.h"
 #import "TSLocateView.h"
@@ -16,7 +16,7 @@ static int g_tag;
 static ParamButtonView *g_pbv;
 static unsigned char result[33];
 
-@interface TURBOViewController (){
+@interface TPViewController (){
     TSLocateView *locateView;
     UITabView *tabView;
     int currentTabIndex;
@@ -25,7 +25,7 @@ static unsigned char result[33];
 
 @end
 
-@implementation TURBOViewController
+@implementation TPViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -106,13 +106,13 @@ static unsigned char result[33];
     
     /*tab 2*/
     view=[tabView viewForIndex:1];
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(1, contentCenterY-105, 100, 65) withImageName:@"promode" withDelegate:self]autorelease];
-    [pbv config:self.dict withName:@"modes"];
-    pbv.paramReadOnly=YES;
-    pbv.tag=10001;
-    [view addSubview:pbv];
-    modeIndex=[Global promode];
-    pbv.valueString=pbv.values[modeIndex];
+//    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(1, contentCenterY-105, 100, 65) withImageName:@"promode" withDelegate:self]autorelease];
+//    [pbv config:self.dict withName:@"modes"];
+//    pbv.paramReadOnly=YES;
+//    pbv.tag=10001;
+//    [view addSubview:pbv];
+//    modeIndex=[Global promode];
+//    pbv.valueString=pbv.values[modeIndex];
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(106, contentCenterY-105, 100, 65) withImageName:@"runmode" withDelegate:self]autorelease];
     [pbv config:self.dict withName:@"runmode"];
@@ -120,7 +120,7 @@ static unsigned char result[33];
     [view addSubview:pbv];
     pbv.valueString=@"Forword/Brake";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(211, contentCenterY-105, 100, 65) withImageName:@"voltagecutoff" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(211, contentCenterY-35, 100, 65) withImageName:@"voltagecutoff" withDelegate:self]autorelease];
     [pbv config:self.dict withName:@"voltagecutoff"];
     pbv.tag=1002;
     [view addSubview:pbv];
@@ -138,11 +138,11 @@ static unsigned char result[33];
     [view addSubview:pbv];
     pbv.valueString=@"reverse";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(211, contentCenterY-35, 100, 65) withImageName:@"becout" withDelegate:self]autorelease];
-    [pbv config:self.dict withName:@"becout"];
-    pbv.tag=1031;
-    [view addSubview:pbv];
-    pbv.valueString=@"6.0V";
+//    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(211, contentCenterY-35, 100, 65) withImageName:@"becout" withDelegate:self]autorelease];
+//    [pbv config:self.dict withName:@"becout"];
+//    pbv.tag=1031;
+//    [view addSubview:pbv];
+//    pbv.valueString=@"6.0V";
     
     /*tab 3*/
     view=[tabView viewForIndex:2];
@@ -254,37 +254,49 @@ static unsigned char result[33];
     
     /*tab 6*/
     view=[tabView viewForIndex:5];
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(1, contentCenterY-105, 100, 65) withImageName:@"turbotiming" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(53, contentCenterY-120, 100, 65) withImageName:@"turboklvl" withDelegate:self]autorelease];
+    [pbv config:self.dict withName:@"turboklvl"];
+    pbv.tag=1030;
+    [view addSubview:pbv];
+    pbv.valueString=@"10deg";
+    
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(158, contentCenterY-120, 100, 65) withImageName:@"turbotlvl" withDelegate:self]autorelease];
+    [pbv config:self.dict withName:@"turbotlvl"];
+    pbv.tag=1031;
+    [view addSubview:pbv];
+    pbv.valueString=@"10deg";
+    
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(1, contentCenterY-60, 100, 65) withImageName:@"turbotiming" withDelegate:self]autorelease];
     [pbv config:self.dict withName:@"turbotiming"];
     pbv.tag=1021;
     [view addSubview:pbv];
     pbv.valueString=@"10deg";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(106, contentCenterY-105, 100, 65) withImageName:@"activationmethod" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(106, contentCenterY-60, 100, 65) withImageName:@"activationmethod" withDelegate:self]autorelease];
     [pbv config:self.dict withName:@"activationmethod"];
     pbv.tag=1022;
     [view addSubview:pbv];
     pbv.valueString=@"Full TH";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(211, contentCenterY-105, 100, 65) withImageName:@"turbodelay" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(211, contentCenterY-60, 100, 65) withImageName:@"turbodelay" withDelegate:self]autorelease];
     [pbv config:self.dict withName:@"turbodelay"];
     pbv.tag=1023;
     [view addSubview:pbv];
     pbv.valueString=@"3";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(1, contentCenterY-35, 100, 65) withImageName:@"startrpm" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(1, contentCenterY, 100, 65) withImageName:@"startrpm" withDelegate:self]autorelease];
     [pbv config:self.dict withName:@"startrpm2"];
     pbv.tag=1024;
     [view addSubview:pbv];
     pbv.valueString=@"20000rpm";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(106, contentCenterY-35, 100, 65) withImageName:@"turboslopeon" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(106, contentCenterY, 100, 65) withImageName:@"turboslopeon" withDelegate:self]autorelease];
     [pbv config:self.dict withName:@"turboslopeon"];
     pbv.tag=1025;
     [view addSubview:pbv];
     pbv.valueString=@"15deg/0.1S";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(211, contentCenterY-35, 100, 65) withImageName:@"turboslopeoff" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(211, contentCenterY, 100, 65) withImageName:@"turboslopeoff" withDelegate:self]autorelease];
     [pbv config:self.dict withName:@"turboslopeoff"];
     pbv.tag=1026;
     [view addSubview:pbv];
@@ -292,28 +304,28 @@ static unsigned char result[33];
     
     /*tab 7*/
     view=[tabView viewForIndex:6];
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(106, contentCenterY-105, 100, 65) withImageName:@"battminvoltage" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(106, contentCenterY-60, 100, 65) withImageName:@"battminvoltage" withDelegate:self]autorelease];
     [pbv config:self.dict withName:@"battminvoltage"];
     pbv.tag=1027;
     pbv.paramReadOnly=YES;
     [view addSubview:pbv];
     pbv.valueString=@"unknown";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(1, contentCenterY-35, 100, 65) withImageName:@"escmaxtemp" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(1, contentCenterY-60, 100, 65) withImageName:@"escmaxtemp" withDelegate:self]autorelease];
     [pbv config:self.dict withName:@"escmaxtemp"];
     pbv.tag=1028;
     pbv.paramReadOnly=YES;
     [view addSubview:pbv];
     pbv.valueString=@"unknown";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(106, contentCenterY-35, 100, 65) withImageName:@"motmaxtemp" withDelegate:self]autorelease];
-    [pbv config:self.dict withName:@"motmaxtemp"];
-    pbv.tag=1029;
-    pbv.paramReadOnly=YES;
-    [view addSubview:pbv];
-    pbv.valueString=@"unknown";
+//    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(106, contentCenterY-35, 100, 65) withImageName:@"motmaxtemp" withDelegate:self]autorelease];
+//    [pbv config:self.dict withName:@"motmaxtemp"];
+//    pbv.tag=1029;
+//    pbv.paramReadOnly=YES;
+//    [view addSubview:pbv];
+//    pbv.valueString=@"unknown";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(211, contentCenterY-35, 100, 65) withImageName:@"motmaxrpm" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(211, contentCenterY-60, 100, 65) withImageName:@"motmaxrpm" withDelegate:self]autorelease];
     [pbv config:self.dict withName:@"motmaxrpm"];
     pbv.tag=1030;
     pbv.paramReadOnly=YES;
@@ -321,8 +333,6 @@ static unsigned char result[33];
     pbv.valueString=@"unknown";
     
     self.SettingControlViewHidden=NO;
-    
-    [self changeMode:modeIndex];
     
 }
 -(void)viewDidTapped:(ParamButtonView *)sender{
@@ -361,7 +371,6 @@ static unsigned char result[33];
         if (g_tag==10001) {
             modeIndex=locateView.selectedIndex;
             [Global setPromode:modeIndex];
-            [self changeMode:modeIndex];
         }
 //        result[g_tag-1000]=[Global dataFromDict:tmp AtIndex:tv.selectedIndex];
     }
@@ -369,16 +378,6 @@ static unsigned char result[33];
 //    locateView=nil;
     g_pbv=nil;
     g_tag=0;
-}
--(void)changeMode:(int)mode{
-    for (int i=1; i<7; i++) {
-        UIView *view=[tabView viewForIndex:i];
-        for (ParamButtonView *pbv in view.subviews) {
-            if ([pbv isKindOfClass:[ParamButtonView class]]&&pbv.tag>=1000&pbv.tag<=10000) {
-                [pbv changeToMode:mode];
-            }
-        }
-    }
 }
 -(void)onRead{
     unsigned char a=0xd8;
@@ -404,7 +403,7 @@ static unsigned char result[33];
         UIView *view=[tabView viewForIndex:i];
         for (ParamButtonView *pbv in view.subviews) {
             if ([pbv isKindOfClass:[ParamButtonView class]]&&pbv.paramReadOnly==NO) {
-                [data appendData:[pbv postedDataWithMode:modeIndex]];
+                [data appendData:[pbv postedDataWithMode:-1]];
             }
         }
     }
@@ -441,7 +440,7 @@ static unsigned char result[33];
 //            result[g_tag-1000]=[Global dataFromDict:tmp AtIndex:defaultKey];
 //        }
         return NO;
-    }else if(index==3){
+    }else if(index==3||index==5){
         [self changeSettingY:20];
     }else{
         [self changeSettingY:0];

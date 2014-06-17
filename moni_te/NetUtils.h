@@ -12,6 +12,7 @@ typedef enum {
     CarTypeAIR,         //GECKO
     CarTypeV3,          //TURBO
     CarTypeBoard,       //SEAL
+    CarTypeTP,          //TP
 }CarType;
 @protocol NetUtilsDelegate <NSObject>
 -(void)didReceiveData:(NSData *)data;

@@ -16,9 +16,11 @@
 @property(nonatomic,assign)int index;
 -(void)config:(NSDictionary *)dict withName:(NSString *)name;
 -(void)setKeyWithResponseBytes:(unsigned char *)bytes;
--(NSData *)postedData;
+-(NSData *)postedDataWithMode:(int)mode;
 @property(nonatomic,retain)NSArray *keys;
 @property(nonatomic,retain)NSArray *values;
+@property(nonatomic,retain)NSString *modes;
 @property(nonatomic,assign)BOOL paramReadOnly;
 -(void)returnToDefault;
+-(void)changeToMode:(int)mode;
 @end

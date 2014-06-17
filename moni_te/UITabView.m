@@ -62,7 +62,7 @@
             [self performSelector:@selector(resetCanPan) withObject:nil afterDelay:0.3];
         }
     }
-    NSLog(@"pt2:%@",NSStringFromCGPoint(pt2));
+//    NSLog(@"pt2:%@",NSStringFromCGPoint(pt2));
 }
 -(void)resetCanPan{
     canPan=YES;

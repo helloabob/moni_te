@@ -243,6 +243,7 @@
 		5ABBAB3A193EA9BD00F3CBFA /* runningmode_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ABBAB37193EA9BD00F3CBFA /* runningmode_2.png */; };
 		5ABBAB3D193EB4DA00F3CBFA /* ParamButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABBAB3C193EB4DA00F3CBFA /* ParamButtonView.m */; };
 		5AF1601E1948533F00324152 /* turbo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AF1601D1948533F00324152 /* turbo.plist */; };
+		5AF18C77194FDF1500072FA3 /* TPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF18C76194FDF1500072FA3 /* TPViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -513,6 +514,8 @@
 		5ABBAB3B193EB4DA00F3CBFA /* ParamButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParamButtonView.h; sourceTree = "<group>"; };
 		5ABBAB3C193EB4DA00F3CBFA /* ParamButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParamButtonView.m; sourceTree = "<group>"; };
 		5AF1601D1948533F00324152 /* turbo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = turbo.plist; sourceTree = "<group>"; };
+		5AF18C75194FDF1500072FA3 /* TPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPViewController.h; sourceTree = "<group>"; };
+		5AF18C76194FDF1500072FA3 /* TPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -672,6 +675,8 @@
 				2DEF529C19443F0100D4C9B5 /* SEALViewController.m */,
 				5AA76DB7194696E300572D74 /* TURBOViewController.h */,
 				5AA76DB8194696E300572D74 /* TURBOViewController.m */,
+				5AF18C75194FDF1500072FA3 /* TPViewController.h */,
+				5AF18C76194FDF1500072FA3 /* TPViewController.m */,
 			);
 			path = moni_te;
 			sourceTree = "<group>";
@@ -1265,6 +1270,7 @@
 				2D115426193AB40E0073D1AB /* BEASTViewController.m in Sources */,
 				2DA8A7E5193A0F7E002E68D9 /* Global.m in Sources */,
 				2D7F2A871937734D00E004AE /* AsyncUdpSocket.m in Sources */,
+				5AF18C77194FDF1500072FA3 /* TPViewController.m in Sources */,
 				5ABBAB3D193EB4DA00F3CBFA /* ParamButtonView.m in Sources */,
 				2DEF526F19435B3400D4C9B5 /* GECKOViewController.m in Sources */,
 				2DA8A7E2193A0EE0002E68D9 /* LoadingViewController.m in Sources */,

@@ -11,19 +11,28 @@
 //static int __language;
 
 @implementation Global
++(int)promode{
+    if (![[NSUserDefaults standardUserDefaults]objectForKey:@"promode"]) {
+        [[NSUserDefaults standardUserDefaults]setObject:@"0" forKey:@"promode"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+    }
+    return [[[NSUserDefaults standardUserDefaults] objectForKey:@"promode"] intValue];
+}
++(void)setPromode:(int)p{
+    int global_lang=[self promode];
+    if (global_lang!=p) {
+        [[NSUserDefaults standardUserDefaults]setObject:[NSString stringWithFormat:@"%d",p] forKey:@"promode"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+    }
+}
 +(BOOL)setLanguage:(int)lang{
-    int global_lang=[[[NSUserDefaults standardUserDefaults]objectForKey:@"language"]intValue];
+    int global_lang=[self language];
     if (global_lang!=lang) {
         [[NSUserDefaults standardUserDefaults]setObject:[NSString stringWithFormat:@"%d",lang] forKey:@"language"];
         [[NSUserDefaults standardUserDefaults]synchronize];
         return YES;
     }
     return NO;
-//    if (lang!=__language) {
-//        __language=lang;
-//        return YES;
-//    }
-//    return NO;
 }
 +(int)language{
     if (![[NSUserDefaults standardUserDefaults]objectForKey:@"language"]) {
@@ -31,7 +40,6 @@
         [[NSUserDefaults standardUserDefaults]synchronize];
     }
     return [[[NSUserDefaults standardUserDefaults] objectForKey:@"language"] intValue];
-//    return __language;
 }
 +(unsigned char)dataFromDict:(NSDictionary *)dic AtIndex:(int)index{
     NSArray *array=[self convertStringToArray:dic forKey:@"KeysRange"];

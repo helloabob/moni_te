@@ -12,6 +12,8 @@
 		<string>0-2</string>
 		<key>PreCode</key>
 		<string>0xa4</string>
+		<key>Modes</key>
+		<string>,0,1,2,3,4,5,6,7,8,</string>
 	</dict>
 	<key>threversespd</key>
 	<dict>
@@ -23,6 +25,8 @@
 		<string>0-3</string>
 		<key>PreCode</key>
 		<string>0xe8</string>
+		<key>Modes</key>
+		<string>,0,1,2,3,4,5,6,7,8,</string>
 	</dict>
 	<key>voltagecutoff</key>
 	<dict>
@@ -34,6 +38,8 @@
 		<string>0-111</string>
 		<key>PreCode</key>
 		<string>0xec</string>
+		<key>Modes</key>
+		<string>,0,1,2,3,4,5,6,7,8,</string>
 	</dict>
 	<key>escheatprotect</key>
 	<dict>
@@ -45,6 +51,8 @@
 		<string>0-3</string>
 		<key>PreCode</key>
 		<string>0xef</string>
+		<key>Modes</key>
+		<string>,0,1,2,3,4,5,6,7,8,</string>
 	</dict>
 	<key>motorrotation</key>
 	<dict>
@@ -56,6 +64,8 @@
 		<string>0-1</string>
 		<key>PreCode</key>
 		<string>0xe7</string>
+		<key>Modes</key>
+		<string>,0,1,2,3,4,5,6,7,8,</string>
 	</dict>
 	<key>switchpoint1</key>
 	<dict>
@@ -67,6 +77,8 @@
 		<string>0-98</string>
 		<key>PreCode</key>
 		<string>0xea</string>
+		<key>Modes</key>
+		<string>,0,1,2,3,4,5,6,7,8,</string>
 	</dict>
 	<key>punchrate1</key>
 	<dict>
@@ -78,6 +90,8 @@
 		<string>0-29</string>
 		<key>PreCode</key>
 		<string>0xe6</string>
+		<key>Modes</key>
+		<string>,0,1,2,3,4,5,6,7,8,</string>
 	</dict>
 	<key>punchrate2</key>
 	<dict>
@@ -89,6 +103,8 @@
 		<string>0-29</string>
 		<key>PreCode</key>
 		<string>0xeb</string>
+		<key>Modes</key>
+		<string>,0,1,2,3,4,5,6,7,8,</string>
 	</dict>
 	<key>thcurve</key>
 	<dict>
@@ -100,6 +116,8 @@
 		<string>0-1</string>
 		<key>PreCode</key>
 		<string>0xe9</string>
+		<key>Modes</key>
+		<string>,0,1,2,3,4,5,6,7,8,</string>
 	</dict>
 	<key>dragbrake</key>
 	<dict>
@@ -111,6 +129,8 @@
 		<string>0-100</string>
 		<key>PreCode</key>
 		<string>0xe4</string>
+		<key>Modes</key>
+		<string>,0,1,2,3,4,5,6,7,8,</string>
 	</dict>
 	<key>brakestrength</key>
 	<dict>
@@ -122,6 +142,8 @@
 		<string>0-8</string>
 		<key>PreCode</key>
 		<string>0xe3</string>
+		<key>Modes</key>
+		<string>,0,1,2,3,4,5,6,7,8,</string>
 	</dict>
 	<key>initialbrake</key>
 	<dict>
@@ -133,6 +155,8 @@
 		<string>0-4</string>
 		<key>PreCode</key>
 		<string>0xed</string>
+		<key>Modes</key>
+		<string>,0,1,2,3,4,5,6,7,8,</string>
 	</dict>
 	<key>switchpoint2</key>
 	<dict>
@@ -144,6 +168,8 @@
 		<string>0-98</string>
 		<key>PreCode</key>
 		<string>0xee</string>
+		<key>Modes</key>
+		<string>,0,1,2,3,4,5,6,7,8,</string>
 	</dict>
 	<key>brakerate1</key>
 	<dict>
@@ -155,6 +181,8 @@
 		<string>0-19</string>
 		<key>PreCode</key>
 		<string>0xa6</string>
+		<key>Modes</key>
+		<string>,0,1,2,3,4,5,6,7,8,</string>
 	</dict>
 	<key>brakerate2</key>
 	<dict>
@@ -166,6 +194,8 @@
 		<string>0-19</string>
 		<key>PreCode</key>
 		<string>0xa7</string>
+		<key>Modes</key>
+		<string>,0,1,2,3,4,5,6,7,8,</string>
 	</dict>
 	<key>brakecurve</key>
 	<dict>
@@ -177,6 +207,8 @@
 		<string>0-1</string>
 		<key>PreCode</key>
 		<string>0xe1</string>
+		<key>Modes</key>
+		<string>,0,1,2,3,4,5,6,7,8,</string>
 	</dict>
 	<key>boosttiming</key>
 	<dict>
@@ -188,6 +220,8 @@
 		<string>0-64</string>
 		<key>PreCode</key>
 		<string>0xe5</string>
+		<key>Modes</key>
+		<string>,0,1,2,3,4,5,6,7,8,</string>
 	</dict>
 	<key>startrpm1</key>
 	<dict>
@@ -199,6 +233,8 @@
 		<string>0-68</string>
 		<key>PreCode</key>
 		<string>0xa3</string>
+		<key>Modes</key>
+		<string>,1,2,5,6,</string>
 	</dict>
 	<key>endrpm</key>
 	<dict>
@@ -210,6 +246,8 @@
 		<string>0-114</string>
 		<key>PreCode</key>
 		<string>0xa8</string>
+		<key>Modes</key>
+		<string>,1,2,5,6,</string>
 	</dict>
 	<key>slope</key>
 	<dict>
@@ -221,6 +259,8 @@
 		<string>0-1</string>
 		<key>PreCode</key>
 		<string>0xa9</string>
+		<key>Modes</key>
+		<string>,1,2,5,6,</string>
 	</dict>
 	<key>stability</key>
 	<dict>
@@ -232,6 +272,8 @@
 		<string>0-1</string>
 		<key>PreCode</key>
 		<string>0xaa</string>
+		<key>Modes</key>
+		<string>,1,2,5,6,</string>
 	</dict>
 	<key>turbotiming</key>
 	<dict>
@@ -243,6 +285,8 @@
 		<string>0-64</string>
 		<key>PreCode</key>
 		<string>0xa1</string>
+		<key>Modes</key>
+		<string>,0,1,2,3,4,5,6,7,8,</string>
 	</dict>
 	<key>activationmethod</key>
 	<dict>
@@ -254,6 +298,8 @@
 		<string>0-2</string>
 		<key>PreCode</key>
 		<string>0xab</string>
+		<key>Modes</key>
+		<string>,1,2,3,4,5,6,7,</string>
 	</dict>
 	<key>turbodelay</key>
 	<dict>
@@ -265,6 +311,8 @@
 		<string>0-20</string>
 		<key>PreCode</key>
 		<string>0xa2</string>
+		<key>Modes</key>
+		<string>,1,2,3,4,5,6,7,</string>
 	</dict>
 	<key>startrpm2</key>
 	<dict>
@@ -276,6 +324,8 @@
 		<string>0-42</string>
 		<key>PreCode</key>
 		<string>0xac</string>
+		<key>Modes</key>
+		<string>,,</string>
 	</dict>
 	<key>turboslopeon</key>
 	<dict>
@@ -287,6 +337,8 @@
 		<string>0-10</string>
 		<key>PreCode</key>
 		<string>0xad</string>
+		<key>Modes</key>
+		<string>,1,2,3,4,5,6,7,</string>
 	</dict>
 	<key>turboslopeoff</key>
 	<dict>
@@ -298,6 +350,8 @@
 		<string>0-5</string>
 		<key>PreCode</key>
 		<string>0xa5</string>
+		<key>Modes</key>
+		<string>,1,2,3,4,5,6,7,</string>
 	</dict>
 	<key>becout</key>
 	<dict>
@@ -309,6 +363,8 @@
 		<string>0-1</string>
 		<key>PreCode</key>
 		<string>0xe0</string>
+		<key>Modes</key>
+		<string>,0,1,2,3,4,5,6,7,8</string>
 	</dict>
 	<key>battminvoltage</key>
 	<dict>
@@ -375,6 +431,17 @@
 		<string>0-20</string>
 		<key>PreCode</key>
 		<string>0xe2</string>
+	</dict>
+	<key>modes</key>
+	<dict>
+		<key>DefaultKey</key>
+		<string>0</string>
+		<key>ValuesRange</key>
+		<string>Cvawlev模式,Stock 17.5T模式,Buggy SOT模式,Pvactice模式,Sport模式,Stock 10.5T模式,Stock 13.5T模式,Modify特殊模式,Zevo Timing模式</string>
+		<key>KeysRange</key>
+		<string>0-8</string>
+		<key>PreCode</key>
+		<string>0xff</string>
 	</dict>
 </dict>
 </plist>

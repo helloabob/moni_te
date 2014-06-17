@@ -15,15 +15,18 @@
     NSTimer *_timer;
     int lbl_width;
     id _delegate;
+    NSString *_name;
 //    NSArray *keys;
 //    NSArray *values;
     unsigned char _precode;
     int defaultIndex;
+    UIView *_mask;
 }
 -(void)dealloc{
     self.keys=nil;
     self.values=nil;
     self.valueString=nil;
+    self.modes=nil;
     [super dealloc];
 }
 -(void)setIndex:(int)index{
@@ -37,12 +40,16 @@
     self.index=defaultIndex;
 }
 -(void)config:(NSDictionary *)dict withName:(NSString *)name{
+    _name=[[NSString alloc]initWithString:name];
     NSDictionary *info=dict[name];
     if (info[@"PreCode"]==nil) {
         return;
     }
     _precode=(unsigned char)strtoul([info[@"PreCode"] UTF8String], 0, 16);
     _keys=[[NSArray alloc]initWithArray:[Global convertStringToArray:info forKey:@"KeysRange"]];
+    if (info[@"Modes"]!=nil) {
+        _modes=[[NSString alloc]initWithString:info[@"Modes"]];
+    }
     _index=[info[@"DefaultKey"]intValue];
     defaultIndex=[info[@"DefaultKey"]intValue];
     NSMutableArray *array=[NSMutableArray array];
@@ -129,9 +136,27 @@
     }
     self.index=new_index;
 }
--(NSData *)postedData{
+-(void)changeToMode:(int)mode{
+    if ([_modes rangeOfString:[NSString stringWithFormat:@"%d",mode]].length==0) {
+        _mask.hidden=NO;
+    }else{
+        _mask.hidden=YES;
+    }
+}
+-(NSData *)postedDataWithMode:(int)mode{
     if (_keys==nil) {
         return nil;
+    }
+    if (_precode==0xff) {
+        return nil;
+    }
+    if (mode!=-1) {
+        if (_modes==nil) {
+            return nil;
+        }
+        if ([_modes rangeOfString:[NSString stringWithFormat:@"%d",mode]].length==0) {
+            return nil;
+        }
     }
     unsigned char ret[2]={_precode,[_keys[_index]intValue]};
     return [NSData dataWithBytes:ret length:2];
@@ -161,6 +186,7 @@
         lblValue.textColor=[UIColor whiteColor];
         lblValue.textAlignment=NSTextAlignmentCenter;
         lblValue.font=[UIFont systemFontOfSize:12];
+        lblValue.backgroundColor=[UIColor clearColor];
         lbl_width=lblValue.bounds.size.width;
         [innerView addSubview:lblValue];
         
@@ -170,6 +196,13 @@
         btn.backgroundColor=[UIColor clearColor];
         [btn addTarget:self action:@selector(btnTapped) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn];
+        
+        _mask=[[[UIView alloc]initWithFrame:self.bounds]autorelease];
+        _mask.backgroundColor=[UIColor lightGrayColor];
+        _mask.layer.cornerRadius=5;
+        _mask.alpha=0.3;
+        _mask.hidden=YES;
+        [self addSubview:_mask];
     }
     return self;
 }

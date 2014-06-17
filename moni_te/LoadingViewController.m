@@ -11,6 +11,7 @@
 #import "GECKOViewController.h"
 #import "SEALViewController.h"
 #import "TURBOViewController.h"
+#import "TPViewController.h"
 
 @implementation ConnectionFailedAlertView
 - (id)initWithFrame:(CGRect)frame withDelegate:(id)delegate
@@ -83,10 +84,15 @@
             //V3 TURBO
             carType=CarTypeV3;
             logo.image=[UIImage imageNamed:@"TURBO"];
+//            carType=CarTypeTP;
+//            logo.image=[UIImage imageNamed:@"TP"];
         }else if(a==0x2d){
             //boat SEAL
             carType=CarTypeBoard;
             logo.image=[UIImage imageNamed:@"SEAL"];
+        }else if(a==0x29){
+            carType=CarTypeTP;
+            logo.image=[UIImage imageNamed:@"TP"];
         }
         if (lblConnecting.superview!=nil) {
             [lblConnecting removeFromSuperview];
@@ -112,6 +118,8 @@
         className=@"SEALViewController";
     }else if(carType==CarTypeV3){
         className=@"TURBOViewController";
+    }else if(carType==CarTypeTP){
+        className=@"TPViewController";
     }
     vc=[[[NSClassFromString(className) alloc]init]autorelease];
     [self.navigationController pushViewController:vc animated:NO];
