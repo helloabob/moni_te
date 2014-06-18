@@ -90,6 +90,23 @@ static int old_y;
 -(void)changeSettingY:(int)y{
     scv.center=CGPointMake(scv.center.x, old_y+y);
 }
+-(void)showAlert{
+//    NSString *title=[Global language]==1?@"提示":@"Warning";
+//    NSString *body=[Global language]==1?@"是否继续?":@"Continue?";
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"提示" message:@"是否继续?" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
+    [alert show];
+    [alert release];
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex==0) {
+        NSLog(@"alert_ok");
+        [self returnToDefault];
+    }else{
+    }
+}
+-(void)returnToDefault{
+    
+}
 -(void)onRead{
     
 }

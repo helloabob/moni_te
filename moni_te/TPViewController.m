@@ -422,23 +422,7 @@ static unsigned char result[33];
 }
 -(BOOL)tabDidClicked:(int)index{
     if (index==7) {
-        for (int i=1; i<7; i++) {
-            UIView *view=[tabView viewForIndex:i];
-            for (ParamButtonView *pbv in view.subviews) {
-                if ([pbv isKindOfClass:[ParamButtonView class]]&&pbv.tag>=1000&&pbv.tag<2000) {
-                    [pbv returnToDefault];
-                }
-            }
-        }
-//        UIView *view=[tabView viewForIndex:1];
-//        for (ParamButtonView *pbv in view.subviews) {
-//            NSDictionary *tmp=nil;
-//            tmp=self.dict[self.keyArray[pbv.tag-1000]];
-//            NSArray *values=[Global convertStringToArray:tmp forKey:@"ValuesRange"];
-//            int defaultKey=[tmp[@"DefaultKey"] intValue];
-//            pbv.valueString=values[defaultKey];
-//            result[g_tag-1000]=[Global dataFromDict:tmp AtIndex:defaultKey];
-//        }
+        [self showAlert];
         return NO;
     }else if(index==3||index==5){
         [self changeSettingY:20];
@@ -447,7 +431,16 @@ static unsigned char result[33];
     }
     return YES;
 }
-
+-(void)returnToDefault{
+    for (int i=1; i<7; i++) {
+        UIView *view=[tabView viewForIndex:i];
+        for (ParamButtonView *pbv in view.subviews) {
+            if ([pbv isKindOfClass:[ParamButtonView class]]&&pbv.tag>=1000&&pbv.tag<2000) {
+                [pbv returnToDefault];
+            }
+        }
+    }
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

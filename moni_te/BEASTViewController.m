@@ -151,8 +151,7 @@ static unsigned char result[11];
     if (g_tag==sender.tag) {
         return;
     }
-    g_pbv=sender;
-    g_tag=sender.tag;
+    
     NSDictionary *tmp=nil;
     tmp=self.dict[self.keyArray[sender.tag-1]];
     if (tmp==nil) {
@@ -160,11 +159,12 @@ static unsigned char result[11];
     }
     NSArray *array=[Global convertStringToArray:tmp forKey:@"ValuesRange"];
     
-    if (locateView!=nil) {
+    if (g_pbv!=nil) {
         [locateView hidePicker];
         locateView=nil;
     }
-    
+    g_pbv=sender;
+    g_tag=sender.tag;
     locateView = [[TSLocateView alloc] initWithTitle:@"" delegate:self];
     locateView.provinces=array;
     [locateView showInView:self.view];

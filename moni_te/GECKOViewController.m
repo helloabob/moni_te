@@ -140,8 +140,7 @@ static unsigned char result[9];
     if (g_tag==sender.tag) {
         return;
     }
-    g_pbv=sender;
-    g_tag=sender.tag;
+    
     NSDictionary *tmp=nil;
     tmp=self.dict[self.keyArray[sender.tag-1000]];
     if (tmp==nil) {
@@ -149,11 +148,12 @@ static unsigned char result[9];
     }
     NSArray *array=[Global convertStringToArray:tmp forKey:@"ValuesRange"];
     
-    if (locateView!=nil) {
+    if (g_pbv!=nil) {
         [locateView hidePicker];
         locateView=nil;
     }
-    
+    g_pbv=sender;
+    g_tag=sender.tag;
     locateView = [[TSLocateView alloc] initWithTitle:@"" delegate:self];
     locateView.provinces=array;
     [locateView showInView:self.view];
@@ -202,20 +202,22 @@ static unsigned char result[9];
 }
 -(BOOL)tabDidClicked:(int)index{
     if (index==2) {
-        UIView *view=[tabView viewForIndex:1];
-        for (ParamButtonView *pbv in view.subviews) {
-            NSDictionary *tmp=nil;
-            tmp=self.dict[self.keyArray[pbv.tag-1000]];
-            NSArray *values=[Global convertStringToArray:tmp forKey:@"ValuesRange"];
-            int defaultKey=[tmp[@"DefaultKey"] intValue];
-            pbv.valueString=values[defaultKey];
-            result[g_tag-1000]=[Global dataFromDict:tmp AtIndex:defaultKey];
-        }
+        [self showAlert];
         return NO;
     }
     return YES;
 }
-
+-(void)returnToDefault{
+    UIView *view=[tabView viewForIndex:1];
+    for (ParamButtonView *pbv in view.subviews) {
+        NSDictionary *tmp=nil;
+        tmp=self.dict[self.keyArray[pbv.tag-1000]];
+        NSArray *values=[Global convertStringToArray:tmp forKey:@"ValuesRange"];
+        int defaultKey=[tmp[@"DefaultKey"] intValue];
+        pbv.valueString=values[defaultKey];
+        result[g_tag-1000]=[Global dataFromDict:tmp AtIndex:defaultKey];
+    }
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -55,7 +55,7 @@
         }
     }else if(pt2.x<-50){
         //next
-        if (currentTabIndex<_numberOfTabs-1) {
+        if (currentTabIndex<_numberOfTabs-2) {
             int tag=currentTabIndex+1+2000;
             [self tabClicked:(UIButton *)[tabMenuBar viewWithTag:tag]];
             canPan=NO;

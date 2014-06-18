@@ -18,4 +18,6 @@
 @property(nonatomic,retain)NSArray *keyArray;
 -(void)renderImage;
 -(void)changeSettingY:(int)y;
+-(void)returnToDefault;
+-(void)showAlert;
 @end
