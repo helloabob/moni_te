@@ -345,6 +345,8 @@ static unsigned char result[33];
 //    }
 //    NSArray *array=[Global convertStringToArray:tmp forKey:@"ValuesRange"];
     
+    [self setHelpMsg:[sender.desc objectForKey:[Global language]==1?@"cn":@"en"]];
+    
     locateView = [[TSLocateView alloc] initWithTitle:@"" delegate:self];
     locateView.provinces=sender.values;
     [locateView showInView:self.view];

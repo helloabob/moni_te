@@ -20,4 +20,5 @@
 -(void)changeSettingY:(int)y;
 -(void)returnToDefault;
 -(void)showAlert;
+-(void)setHelpMsg:(NSString *)str;
 @end

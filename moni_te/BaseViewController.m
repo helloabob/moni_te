@@ -18,6 +18,7 @@ static int old_y;
 //    UIView *maskView;
     SettingControlView *scv;
     UIImageView *blackArea;
+    UITextView *_tv;
 }
 
 @end
@@ -85,7 +86,21 @@ static int old_y;
     blackArea=[[[UIImageView alloc]initWithFrame:CGRectMake(10, 40, 300, 115)]autorelease];
     blackArea.image=[UIImage imageNamed:@"blackarea"];
     blackArea.hidden=YES;
+    blackArea.userInteractionEnabled=YES;
+    UITextView *tv = [[[UITextView alloc] initWithFrame:CGRectMake(10, 10, 280, 95)]autorelease];
+    [blackArea addSubview:tv];
+    tv.backgroundColor=[UIColor clearColor];
+    tv.textColor =[UIColor whiteColor];
+    tv.font = [UIFont systemFontOfSize:14];
+    tv.showsVerticalScrollIndicator=YES;
+    tv.userInteractionEnabled=YES;
+    tv.scrollEnabled=YES;
+    tv.contentSize = CGSizeMake(280, 400);
     [self.contentView addSubview:blackArea];
+    _tv = tv;
+}
+-(void)setHelpMsg:(NSString *)str{
+    _tv.text =str;
 }
 -(void)changeSettingY:(int)y{
     scv.center=CGPointMake(scv.center.x, old_y+y);

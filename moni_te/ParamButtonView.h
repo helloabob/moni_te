@@ -20,6 +20,7 @@
 @property(nonatomic,retain)NSArray *keys;
 @property(nonatomic,retain)NSArray *values;
 @property(nonatomic,retain)NSString *modes;
+@property(nonatomic,retain)NSDictionary *desc;
 @property(nonatomic,assign)BOOL paramReadOnly;
 -(void)returnToDefault;
 -(void)changeToMode:(int)mode;

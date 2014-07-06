@@ -27,6 +27,7 @@
     self.values=nil;
     self.valueString=nil;
     self.modes=nil;
+    self.desc=nil;
     [super dealloc];
 }
 -(void)setIndex:(int)index{
@@ -44,6 +45,9 @@
     NSDictionary *info=dict[name];
     if (info[@"PreCode"]==nil) {
         return;
+    }
+    if (info[@"desc"]) {
+        self.desc = info[@"desc"];
     }
     _precode=(unsigned char)strtoul([info[@"PreCode"] UTF8String], 0, 16);
     _keys=[[NSArray alloc]initWithArray:[Global convertStringToArray:info forKey:@"KeysRange"]];
