@@ -71,7 +71,14 @@ Option 3: “Forward / Reverse” When moving from the forward zone to the backw
 			<string>这项功能主要是防止锂电池过度放电而造成不可恢复的损坏。 
 			如果开启了电压保护，运行中电调会时刻监视电池电压，一旦电压低于设定的阈值，在3秒内动力输出将逐步降为正常功率的30%，此时车手应立即靠边退出比赛，以免阻碍赛道上的其他车辆或被后面快车撞到，</string>
 			<key>en</key>
-			<string>This setting defines the low voltage cutoff for use with LiPo batteries,preventing over discharging. The ESC detects the battery’s voltage at any time, if the voltage is lower than the threshold for 2 seconds, the output power will be reduced 80%,and the red LED flashes.。 There are three main options for the cutoff setting.</string>
+			<string>This setting defines the low voltage cutoff for use with LiPo batteries,preventing over discharging. The ESC detects the battery’s voltage at any time, if the voltage is lower than the threshold for 2 seconds, the output power will be reduced 80%,and the red LED flashes 。 There are three main options for the cutoff setting. 
+
+Option 1: “None” – No voltage cutoff is used. Select for use with NiCD or NiMH battery types.
+
+Option 2: “Auto” – The ESC detects the number of cells present in the battery pack used, and selects a suitable cut-off voltage. 
+
+Option 3: “User Selected” – The level of the Voltage cutoff is defined by the user. The setting selected is for the overall battery voltage. The cutoff can be set from 3.0v – 11.1v, with steps of 0.1v.
+</string>
 		</dict>
 	</dict>
 	<key>escheatprotect</key>
@@ -89,7 +96,7 @@ Option 3: “Forward / Reverse” When moving from the forward zone to the backw
 		<key>desc</key>
 		<dict>
 			<key>cn</key>
-			<string>启用该功能后，电调或有感无刷电机温升达到厂方预设特定值时自动关闭输出，而且绿灯会闪烁，直到温度降低才恢复输出</string>
+			<string>启用该功能后，电调或有感无刷电机温升达到厂方预设特定值时自动关闭输出，而且绿灯会闪烁，直到温度降低才恢复输出。</string>
 			<key>en</key>
 			<string>If this function is selected, the output power will be cut-off if the internal temperature of the ESC hits the set level for 3 seconds. When the protection activates, the LED will flash</string>
 		</dict>
@@ -106,6 +113,13 @@ Option 3: “Forward / Reverse” When moving from the forward zone to the backw
 		<string>0xe7</string>
 		<key>Modes</key>
 		<string>,0,1,2,3,4,5,6,7,8,</string>
+		<key>desc</key>
+		<dict>
+			<key>cn</key>
+			<string>设置向前的时候，车向前走，设置向后的时候，车向后走。用在有的车和别的车走向相反的时候。</string>
+			<key>en</key>
+			<string>Control the running direction of the car, the paraments can be set according ,to your require to charge the motor rotation.</string>
+		</dict>
 	</dict>
 	<key>switchpoint1</key>
 	<dict>
@@ -122,7 +136,7 @@ Option 3: “Forward / Reverse” When moving from the forward zone to the backw
 		<key>desc</key>
 		<dict>
 			<key>cn</key>
-			<string></string>
+			<string>前段加速度和后段加速度的分界点。</string>
 			<key>en</key>
 			<string>This setting defines the point in the forward throttle position at which the punch rate changes.</string>
 		</dict>
@@ -142,7 +156,7 @@ Option 3: “Forward / Reverse” When moving from the forward zone to the backw
 		<key>desc</key>
 		<dict>
 			<key>cn</key>
-			<string></string>
+			<string>前半段加速度我们分为30个档位可调整，当设为 1时，则油门加速较慢，对于快速加油门时的输出有较多的限制；当设置值越大，则加速越快，对油门输出的限制越少，一般情况下，对于油门能够控制的很好的车手，可以将加速度设置较高，以减小电调对油门响应的限制。</string>
 			<key>en</key>
 			<string>This is the level of punch used in the first stage of the punch range, before the switch point. Setting 1 is least punch, with 30 being the most.</string>
 		</dict>
@@ -162,7 +176,7 @@ Option 3: “Forward / Reverse” When moving from the forward zone to the backw
 		<key>desc</key>
 		<dict>
 			<key>cn</key>
-			<string></string>
+			<string>后半段加速度我们分为30个档位可调整，当设为 1时，则油门加速较慢，对于快速加油门时的输出有较多的限制；当设置值越大，则加速越快，对油门输出的限制越少，一般情况下，对于油门能够控制的很好的车手，可以将加速度设置较高，以减小电调对油门响应的限制。</string>
 			<key>en</key>
 			<string>This is the level of punch used in the second stage of the punch range, after the switch point. Setting 1 is least punch, with 30 being the most.</string>
 		</dict>
@@ -267,7 +281,9 @@ Option 3: “Forward / Reverse” When moving from the forward zone to the backw
 		<key>desc</key>
 		<dict>
 			<key>cn</key>
-			<string></string>
+			<string>刹车分段点，刹车力度比1，刹车力度比2，此三个参数是用于控制刹车油门输出快慢的，设置适合的刹车油门加速度则可以辅助车手对刹车力度的控制，避免刹车过猛。 
+整个油门行程共分为 100份，这100份分为前后独立可调的两段。加速度我们分为20个档位可调整，当设为 1时，则对刹车响应有较多的限制，当设置值越大时，对刹车油门的限制越少，一般情况下，对于能够熟练控制刹车的车手，可以设置较高的加速度，以减小电调对刹车油门响应的限制。
+</string>
 			<key>en</key>
 			<string>This setting defines the point in the backward throttle position at which the brake rate changes.</string>
 		</dict>
@@ -287,7 +303,9 @@ Option 3: “Forward / Reverse” When moving from the forward zone to the backw
 		<key>desc</key>
 		<dict>
 			<key>cn</key>
-			<string></string>
+			<string>刹车分段点，刹车力度比1，刹车力度比2，此三个参数是用于控制刹车油门输出快慢的，设置适合的刹车油门加速度则可以辅助车手对刹车力度的控制，避免刹车过猛。 
+整个油门行程共分为 100份，这100份分为前后独立可调的两段。加速度我们分为20个档位可调整，当设为 1时，则对刹车响应有较多的限制，当设置值越大时，对刹车油门的限制越少，一般情况下，对于能够熟练控制刹车的车手，可以设置较高的加速度，以减小电调对刹车油门响应的限制。
+</string>
 			<key>en</key>
 			<string>This is the level of brake rate used in the first stage of the range, before the switch point. Setting 1 is least braking rate, with 30 being the most.</string>
 		</dict>
@@ -307,7 +325,9 @@ Option 3: “Forward / Reverse” When moving from the forward zone to the backw
 		<key>desc</key>
 		<dict>
 			<key>cn</key>
-			<string></string>
+			<string>刹车分段点，刹车力度比1，刹车力度比2，此三个参数是用于控制刹车油门输出快慢的，设置适合的刹车油门加速度则可以辅助车手对刹车力度的控制，避免刹车过猛。 
+整个油门行程共分为 100份，这100份分为前后独立可调的两段。加速度我们分为20个档位可调整，当设为 1时，则对刹车响应有较多的限制，当设置值越大时，对刹车油门的限制越少，一般情况下，对于能够熟练控制刹车的车手，可以设置较高的加速度，以减小电调对刹车油门响应的限制。
+</string>
 			<key>en</key>
 			<string>This is the level of brake rate used in the second stage of the range, after the switch point. Setting 1 is least braking rate, with 30 being the most.</string>
 		</dict>
@@ -372,7 +392,10 @@ Option 3: “Forward / Reverse” When moving from the forward zone to the backw
 		<key>desc</key>
 		<dict>
 			<key>cn</key>
-			<string></string>
+			<string>Boost 值是根据转速来动态分配的，当转速低于起始转速时，则Boost 实际开启值为0, 在转速处于起始转速和结束转速之间时，Boost 是根据当时转速的大小来动态变化的。 
+如果设置项“Boost随RPM变化方式”设置为线性时，则Boost 值在这段范围内是线性分配的。 
+举个例子，假设 Boost Timing 设置为5度，起始转速为10000,结束转速为15000,则各个转速下的Boost 进角值如下表所示。如果转速高于结束转速时，则Boost实际开启值则为Boost 设置值。
+</string>
 			<key>en</key>
 			<string>This setting defines the RPM at which the boost timing is started to be added.</string>
 		</dict>
@@ -392,7 +415,10 @@ Option 3: “Forward / Reverse” When moving from the forward zone to the backw
 		<key>desc</key>
 		<dict>
 			<key>cn</key>
-			<string></string>
+			<string>Boost 值是根据转速来动态分配的，当转速低于起始转速时，则Boost 实际开启值为0, 在转速处于起始转速和结束转速之间时，Boost 是根据当时转速的大小来动态变化的。 
+如果设置项“Boost随RPM变化方式”设置为线性时，则Boost 值在这段范围内是线性分配的。 
+举个例子，假设 Boost Timing 设置为5度，起始转速为10000,结束转速为15000,则各个转速下的Boost 进角值如下表所示。如果转速高于结束转速时，则Boost实际开启值则为Boost 设置值。
+</string>
 			<key>en</key>
 			<string>This setting defines the RPM at which the full level of boost timing is applied.</string>
 		</dict>
@@ -432,6 +458,14 @@ Option 3: “Forward / Reverse” When moving from the forward zone to the backw
 		<string>0xaa</string>
 		<key>Modes</key>
 		<string>,1,2,5,6,</string>
+		<key>desc</key>
+		<dict>
+			<key>cn</key>
+			<string>如果选择受油门控制，则Boost 的值不但受转速控制，还受油门大小的控制，当25% 的油门时，则最大只能开启16度的Boost 进角，当50% 油门时，最大只能开启 32度的Boost 进角，100%全油时，才可以开启64度的Boost进角，选择受油门控制后，整个油门行程的头段会变得更柔顺，马达发热更低，但是启动爆发力则差一些。</string>
+			<key>en</key>
+			<string>This setting is a limit for the boost timing addition, in relation to the throttle position, which can aid car stability whilst on throttle. If enabled, the ESC will monitor the throttle position and Motor RPM, and limit the maximum amount of available boost timing.
+E.g. If the boost timing is set to 36 points and the boost end RPM setting has been achieved, but the throttle position is only 50%, then only 32 points (50% of 64 points) of boost will be applied.</string>
+		</dict>
 	</dict>
 	<key>turbotiming</key>
 	<dict>
@@ -643,6 +677,13 @@ Option 3: “Forward / Reverse” When moving from the forward zone to the backw
 		<string>0-8</string>
 		<key>PreCode</key>
 		<string>0xff</string>
+		<key>desc</key>
+		<dict>
+			<key>cn</key>
+			<string>把不同的参数组合在一起，供车手选择</string>
+			<key>en</key>
+			<string>All in one ,up to ten profiles can be stored in the memory and improted or exported easily,factory pre-set profiles include blinky mode,modify mode,stock mode,practice mode,offroad mode,drift mode,crawler mode</string>
+		</dict>
 	</dict>
 </dict>
 </plist>

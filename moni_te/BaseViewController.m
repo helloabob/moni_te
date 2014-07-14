@@ -95,12 +95,12 @@ static int old_y;
     tv.showsVerticalScrollIndicator=YES;
     tv.userInteractionEnabled=YES;
     tv.scrollEnabled=YES;
-    tv.contentSize = CGSizeMake(280, 400);
     [self.contentView addSubview:blackArea];
     _tv = tv;
 }
 -(void)setHelpMsg:(NSString *)str{
-    _tv.text =str;
+//    _tv.text =str;
+    _tv.text =[str stringByReplacingOccurrencesOfString:@" " withString:@""];
 }
 -(void)changeSettingY:(int)y{
     scv.center=CGPointMake(scv.center.x, old_y+y);

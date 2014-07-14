@@ -333,6 +333,7 @@ static unsigned char result[33];
     pbv.valueString=@"unknown";
     
     self.SettingControlViewHidden=NO;
+    self.BlackAreaHidden=NO;
     
 }
 -(void)viewDidTapped:(ParamButtonView *)sender{
