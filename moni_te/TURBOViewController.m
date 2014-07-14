@@ -444,6 +444,7 @@ static unsigned char result[33];
             }
         }
     }
+    [super returnToDefault];
 }
 - (void)didReceiveMemoryWarning
 {

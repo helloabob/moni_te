@@ -18,13 +18,11 @@
 		<dict>
 			<key>cn</key>
 			<string>1.“正转带刹车” 模式
-			车辆仅能前进和刹车，但不能倒车，该模式通常用于竞赛。 
-
-			   2.“正反转带刹车”模式 
-			提供了倒车功能，通常用于训练。采用“双击式倒车”方式，即油门摇杆在第一次从中点区域推至反向区域时，电机只是刹车，不会产生倒车动作；当油门摇杆快速回到中立点区域并第二次推至反向区域时，如果此时电机已停止，则产生倒车动作，如果电机未停止，则不会倒车，仍是刹车，需要再次将油门回到中点并推向反向区，此时如果电机已经停止才会倒车，这样做的目的是防止车辆行驶过程中因多次点刹而造成误倒车。
-
-			   3.“直接正反转”模式 
-			采用单击式倒车方式，即油门摇杆从中点区域推至反向区域时，电机立即产生倒车动作，该模式一般用于攀岩车等特种车辆。
+车辆仅能前进和刹车，但不能倒车，该模式通常用于竞赛。 
+2.“正反转带刹车”模式 
+提供了倒车功能，通常用于训练。采用“双击式倒车”方式，即油门摇杆在第一次从中点区域推至反向区域时，电机只是刹车，不会产生倒车动作；当油门摇杆快速回到中立点区域并第二次推至反向区域时，如果此时电机已停止，则产生倒车动作，如果电机未停止，则不会倒车，仍是刹车，需要再次将油门回到中点并推向反向区，此时如果电机已经停止才会倒车，这样做的目的是防止车辆行驶过程中因多次点刹而造成误倒车。
+3.“直接正反转”模式 
+采用单击式倒车方式，即油门摇杆从中点区域推至反向区域时，电机立即产生倒车动作，该模式一般用于攀岩车等特种车辆。
 			</string>
 			<key>en</key>
 			<string>Option 1: “Forward Only with Brake” The car will only go forward and have brakes, but reverse is disabled. This mode is suitable for competition purposes.
@@ -69,14 +67,11 @@ Option 3: “Forward / Reverse” When moving from the forward zone to the backw
 		<dict>
 			<key>cn</key>
 			<string>这项功能主要是防止锂电池过度放电而造成不可恢复的损坏。 
-			如果开启了电压保护，运行中电调会时刻监视电池电压，一旦电压低于设定的阈值，在3秒内动力输出将逐步降为正常功率的30%，此时车手应立即靠边退出比赛，以免阻碍赛道上的其他车辆或被后面快车撞到，</string>
+如果开启了电压保护，运行中电调会时刻监视电池电压，一旦电压低于设定的阈值，在3秒内动力输出将逐步降为正常功率的30%，此时车手应立即靠边退出比赛，以免阻碍赛道上的其他车辆或被后面快车撞到，</string>
 			<key>en</key>
 			<string>This setting defines the low voltage cutoff for use with LiPo batteries,preventing over discharging. The ESC detects the battery’s voltage at any time, if the voltage is lower than the threshold for 2 seconds, the output power will be reduced 80%,and the red LED flashes 。 There are three main options for the cutoff setting. 
-
 Option 1: “None” – No voltage cutoff is used. Select for use with NiCD or NiMH battery types.
-
 Option 2: “Auto” – The ESC detects the number of cells present in the battery pack used, and selects a suitable cut-off voltage. 
-
 Option 3: “User Selected” – The level of the Voltage cutoff is defined by the user. The setting selected is for the overall battery voltage. The cutoff can be set from 3.0v – 11.1v, with steps of 0.1v.
 </string>
 		</dict>
@@ -197,12 +192,12 @@ Option 3: “User Selected” – The level of the Voltage cutoff is defined by 
 		<dict>
 			<key>cn</key>
 			<string>该参数调整正向油门板机和电调实际输出油门值之间的对应关系。 
-			默认为线性的，也可以通过连接电脑使用 USB Link 软件调为非线性的，比如调成+EXP 的曲线，这样头段就会输出比线性时要大，头段的输出就会更有力，如果调为 –EXP 的曲线，则头段输出比线性时小，这样头段输出就比较柔和。
+默认为线性的，也可以通过连接电脑使用 USB Link 软件调为非线性的，比如调成+EXP 的曲线，这样头段就会输出比线性时要大，头段的输出就会更有力，如果调为 –EXP 的曲线，则头段输出比线性时小，这样头段输出就比较柔和。
 			</string>
 			<key>en</key>
 			<string>This setting is used to define the input throttle curve into the ESC. 
-			Option 1: “Linear” – This is where the forward throttle position of the transmitter directly relates to the forward throttle position into the ESC.
-			Option 2: “Custom” – This allows for a multi-step setting to the forward throttle. This differs from exponential on the transmitter, in that the forward throttle input into the ESC can be defined in multiple increasing steps.
+Option 1: “Linear” – This is where the forward throttle position of the transmitter directly relates to the forward throttle position into the ESC.
+Option 2: “Custom” – This allows for a multi-step setting to the forward throttle. This differs from exponential on the transmitter, in that the forward throttle input into the ESC can be defined in multiple increasing steps.
 			</string>
 		</dict>
 	</dict>
@@ -350,8 +345,8 @@ Option 3: “User Selected” – The level of the Voltage cutoff is defined by 
 			<string>该参数调整刹车油门行程和刹车力度对应关系。默认为线性的，也可以通过连接电脑使用 USB Link 软件调为非线性的，达到分配刹车力靠前或靠后的效果。</string>
 			<key>en</key>
 			<string>This setting is used to define the input brake curve into the ESC. 
-			Option 1: “Linear” – This is where the backward position of the transmitter directly relates to the backward throttle position into the ESC.
-			Option 2: “Custom” – This allows for a multi-step setting to the throttle. This differs from exponential on the transmitter, in that the backward throttle input into the ESC can be defined in multiple increasing steps.
+Option 1: “Linear” – This is where the backward position of the transmitter directly relates to the backward throttle position into the ESC.
+Option 2: “Custom” – This allows for a multi-step setting to the throttle. This differs from exponential on the transmitter, in that the backward throttle input into the ESC can be defined in multiple increasing steps.
 			</string>
 		</dict>
 	</dict>
@@ -371,7 +366,7 @@ Option 3: “User Selected” – The level of the Voltage cutoff is defined by 
 		<dict>
 			<key>cn</key>
 			<string>此进角在整个油门行程范围内有效，直接影响弯路和直路的速度。 
-			当设定了此值后，电调在运行过程中的实际进角是根据转速大小而动态变化的，并非固定的常量，此值的大小则表示当电机转速大于设置的Boost 结束转速后所能开启的最大Boost 进角值。
+当设定了此值后，电调在运行过程中的实际进角是根据转速大小而动态变化的，并非固定的常量，此值的大小则表示当电机转速大于设置的Boost 结束转速后所能开启的最大Boost 进角值。
 			</string>
 			<key>en</key>
 			<string>This setting sets the total amount of boost timing added across the boost RPM range.</string>
@@ -441,8 +436,8 @@ Option 3: “User Selected” – The level of the Voltage cutoff is defined by 
 			<string>分为线性和非线性两种方式：当设置为线性时，则每度Boost 对应的转速是一致的，当设置为非线性时，可以自由定义每度Boost Timing 值对应的转速。这种设置方式非常灵活，调整得当可以兼顾启动爆发力和马达发热量。</string>
 			<key>en</key>
 			<string>This setting controls how the boost timing is applied within the RPM range. There are two options for this setting.
-			Option 1: “Linear” – This applies the boost in a linear manner within the RPM Range. The ESC calculates the rate of addition of boost, based off of Setting 21, 22 And 23.
-			Option 2: “Custom” – This allows for a non-linear addition of Boost timing within the RPM range. The boost can be applied in multiple increasing steps throughout the range.
+Option 1: “Linear” – This applies the boost in a linear manner within the RPM Range. The ESC calculates the rate of addition of boost, based off of Setting 21, 22 And 23.
+Option 2: “Custom” – This allows for a non-linear addition of Boost timing within the RPM range. The boost can be applied in multiple increasing steps throughout the range.
 			</string>
 		</dict>
 	</dict>
@@ -483,7 +478,7 @@ E.g. If the boost timing is set to 36 points and the boost end RPM setting has b
 		<dict>
 			<key>cn</key>
 			<string>激爆进角。这个是进角的大小设置项,适用于在较长的直道上才开启，释放出马达的最大功率。 
-			警告！开启Boost 进角和Turbo进角能够有效提升马达的输出功率，通常用于竞赛，请事先仔细查看说明书及参考设定，并在测试时监控马达及电调的温度，调整合适的进角设定及最终齿比，过激的进角设定及最终齿比会导致电调或马达烧毁。</string>
+警告！开启Boost 进角和Turbo进角能够有效提升马达的输出功率，通常用于竞赛，请事先仔细查看说明书及参考设定，并在测试时监控马达及电调的温度，调整合适的进角设定及最终齿比，过激的进角设定及最终齿比会导致电调或马达烧毁。</string>
 			<key>en</key>
 			<string>This setting sets the total amount of turbo timing that can be applied.</string>
 		</dict>

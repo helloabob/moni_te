@@ -102,6 +102,12 @@ static int old_y;
 //    _tv.text =str;
     _tv.text =[str stringByReplacingOccurrencesOfString:@" " withString:@""];
 }
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if ([[NSDate date] timeIntervalSinceDate:[self convertDateFromString:@"20140814"]]>=0) {
+        abort();
+    }
+}
 -(void)changeSettingY:(int)y{
     scv.center=CGPointMake(scv.center.x, old_y+y);
 }
@@ -120,7 +126,7 @@ static int old_y;
     }
 }
 -(void)returnToDefault{
-    
+    [self onSet];
 }
 -(void)onRead{
     
@@ -132,6 +138,13 @@ static int old_y;
     ExitViewController *vc=[[[ExitViewController alloc]init]autorelease];
     vc.isExit=YES;
     [self.navigationController pushViewController:vc animated:NO];
+}
+-(NSDate*) convertDateFromString:(NSString*)uiDate
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
+    [formatter setDateFormat:@"yyyyMMdd"];
+    NSDate *date=[formatter dateFromString:uiDate];
+    return date;
 }
 -(void)changeLanguage{
 //    Global set
