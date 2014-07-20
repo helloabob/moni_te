@@ -218,6 +218,7 @@ static unsigned char result[8];
         pbv.valueString=values[defaultKey];
         result[g_tag-1000]=[Global dataFromDict:tmp AtIndex:defaultKey];
     }
+    [super returnToDefault];
 }
 - (void)didReceiveMemoryWarning
 {
