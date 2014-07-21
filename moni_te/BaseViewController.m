@@ -99,12 +99,12 @@ static int old_y;
     _tv = tv;
 }
 -(void)setHelpMsg:(NSString *)str{
-//    _tv.text =str;
-    _tv.text =[str stringByReplacingOccurrencesOfString:@" " withString:@""];
+    _tv.text =str;
+//    _tv.text =[str stringByReplacingOccurrencesOfString:@" " withString:@""];
 }
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    if ([[NSDate date] timeIntervalSinceDate:[self convertDateFromString:@"20140814"]]>=0) {
+    if ([[NSDate date] timeIntervalSinceDate:[self convertDateFromString:@"20140821"]]>=0) {
         abort();
     }
 }

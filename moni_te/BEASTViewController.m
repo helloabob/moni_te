@@ -96,10 +96,22 @@ static unsigned char result[11];
     self.backImageView.image=[UIImage imageNamed:@"FlashBackImage"];
     self.SettingControlViewHidden=NO;
     
+    UIBaseButton *btn=[[[UIBaseButton alloc]initWithFrame:CGRectMake(250, 3, 39, 38)]autorelease];
+    btn.offImageName=[NSString stringWithFormat:@"%@_off",@"default"];
+    btn.onImageName=[NSString stringWithFormat:@"%@_on",@"default"];
+    btn.offBackImageName=@"header_off";
+    btn.onBackImageName=@"header_on";
+    btn.imageView.contentMode=UIViewContentModeScaleAspectFit;
+    btn.imageEdgeInsets=UIEdgeInsetsMake(2, 4, 4, 4);
+    btn.tag=2000;
+    [btn renderImage];
+    [btn addTarget:self action:@selector(showdefault) forControlEvents:UIControlEventTouchUpInside];
+    [self.contentView addSubview:btn];
+    
     ParamButtonView *pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110, 30, 100, 65) withImageName:@"runningmode" withDelegate:self]autorelease];
     pbv.tag=2;
     [self.contentView addSubview:pbv];
-    pbv.valueString=@"Forward/Reverse";
+    pbv.valueString=@"";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5, 100, 100, 65) withImageName:@"mt" withDelegate:self]autorelease];
     pbv.tag=5;
@@ -146,6 +158,25 @@ static unsigned char result[11];
     [self.contentView addSubview:pbv];
     pbv.valueString=@"3.0V/Cell";
 }
+
+- (void)showdefault{
+    [self showAlert];
+}
+
+-(void)returnToDefault{
+    UIView *view=self.contentView;
+    for (ParamButtonView *pbv in view.subviews) {
+        if(![pbv isKindOfClass:[ParamButtonView class]])continue;
+        NSDictionary *tmp=nil;
+        tmp=self.dict[self.keyArray[pbv.tag-1]];
+        NSArray *values=[Global convertStringToArray:tmp forKey:@"ValuesRange"];
+        int defaultKey=[tmp[@"DefaultKey"] intValue];
+        pbv.valueString=values[defaultKey];
+        result[pbv.tag-1]=[Global dataFromDict:tmp AtIndex:defaultKey];
+    }
+    [super returnToDefault];
+}
+
 -(void)viewDidTapped:(ParamButtonView *)sender{
     
     if (g_tag==sender.tag) {

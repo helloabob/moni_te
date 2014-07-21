@@ -126,7 +126,7 @@ static unsigned char result[9];
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110-4, 240-41, 100, 65) withImageName:@"sts" withDelegate:self]autorelease];
     pbv.tag=1004;
     [view addSubview:pbv];
-    pbv.valueString=@"30%";
+    pbv.valueString=@"10%";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(215-4, 240-41, 100, 65) withImageName:@"lvcot" withDelegate:self]autorelease];
     pbv.tag=1003;
@@ -215,7 +215,7 @@ static unsigned char result[9];
         NSArray *values=[Global convertStringToArray:tmp forKey:@"ValuesRange"];
         int defaultKey=[tmp[@"DefaultKey"] intValue];
         pbv.valueString=values[defaultKey];
-        result[g_tag-1000]=[Global dataFromDict:tmp AtIndex:defaultKey];
+        result[pbv.tag-1000]=[Global dataFromDict:tmp AtIndex:defaultKey];
     }
     [super returnToDefault];
 }

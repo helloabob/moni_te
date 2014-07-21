@@ -216,7 +216,7 @@ static unsigned char result[8];
         NSArray *values=[Global convertStringToArray:tmp forKey:@"ValuesRange"];
         int defaultKey=[tmp[@"DefaultKey"] intValue];
         pbv.valueString=values[defaultKey];
-        result[g_tag-1000]=[Global dataFromDict:tmp AtIndex:defaultKey];
+        result[pbv.tag-1000]=[Global dataFromDict:tmp AtIndex:defaultKey];
     }
     [super returnToDefault];
 }
