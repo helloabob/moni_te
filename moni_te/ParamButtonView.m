@@ -30,6 +30,9 @@
     self.desc=nil;
     [super dealloc];
 }
+-(int)getDefaultIndex{
+    return defaultIndex;
+}
 -(void)setIndex:(int)index{
     if (_keys==nil) {
         return;

@@ -17,6 +17,7 @@
 }
 //@property(nonatomic,assign)id delegate;
 @property (strong ,nonatomic) NSArray *provinces;
+@property(nonatomic,assign) int defaultIndex;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UIPickerView *locatePicker;
 //@property (strong, nonatomic) TSLocation *locate;

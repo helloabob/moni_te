@@ -22,6 +22,7 @@
 @property(nonatomic,retain)NSString *modes;
 @property(nonatomic,retain)NSDictionary *desc;
 @property(nonatomic,assign)BOOL paramReadOnly;
+@property(nonatomic,assign,readonly)int getDefaultIndex;
 -(void)returnToDefault;
 -(void)changeToMode:(int)mode;
 @end

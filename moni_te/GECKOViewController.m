@@ -156,6 +156,7 @@ static unsigned char result[9];
     g_tag=sender.tag;
     locateView = [[TSLocateView alloc] initWithTitle:@"" delegate:self];
     locateView.provinces=array;
+    locateView.defaultIndex=[tmp[@"DefaultKey"]intValue];
     [locateView showInView:self.view];
 }
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex

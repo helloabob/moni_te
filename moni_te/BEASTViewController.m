@@ -198,6 +198,7 @@ static unsigned char result[11];
     g_tag=sender.tag;
     locateView = [[TSLocateView alloc] initWithTitle:@"" delegate:self];
     locateView.provinces=array;
+    locateView.defaultIndex=[tmp[@"DefaultKey"]intValue];
     [locateView showInView:self.view];
 }
 

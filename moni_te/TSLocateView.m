@@ -84,6 +84,35 @@
     }
 }
 
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+    switch (component) {
+        case 0:
+            //            return [[_provinces objectAtIndex:row] objectForKey:@"State"];
+//            return _provinces[row];
+            if (view) {
+                if (row==_defaultIndex) {
+                    ((UILabel *)view).textColor = [UIColor whiteColor];
+                }else{
+                    ((UILabel *)view).textColor = [UIColor blackColor];
+                }
+                return view;
+            }else{
+                UILabel *lbl = [[[UILabel alloc] init] autorelease];
+                lbl.text=_provinces[row];
+                lbl.textColor=row==_defaultIndex?[UIColor whiteColor]:[UIColor blackColor];
+                return lbl;
+            }
+            break;
+        case 1:
+            return [[cities objectAtIndex:row] objectForKey:@"city"];
+            break;
+        default:
+            return nil;
+            break;
+    }
+    return nil;
+}
+
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     switch (component) {
