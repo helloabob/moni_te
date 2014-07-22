@@ -667,7 +667,7 @@ E.g. If the boost timing is set to 36 points and the boost end RPM setting has b
 		<key>DefaultKey</key>
 		<string>0</string>
 		<key>ValuesRange</key>
-		<string>Cvawlev模式,Stock 17.5T模式,Buggy SOT模式,Pvactice模式,Sport模式,Stock 10.5T模式,Stock 13.5T模式,Modify特殊模式,Zevo Timing模式</string>
+		<string>Cvawlev,Stock 17.5T,Buggy SOT,Pvactice,Sport,Stock 10.5T,Stock 13.5T,Modify,Zevo Timing</string>
 		<key>KeysRange</key>
 		<string>0-8</string>
 		<key>PreCode</key>

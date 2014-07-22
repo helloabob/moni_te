@@ -99,6 +99,7 @@
             }else{
                 UILabel *lbl = [[[UILabel alloc] init] autorelease];
                 lbl.text=_provinces[row];
+                lbl.textAlignment = 1;
                 lbl.textColor=row==_defaultIndex?[UIColor whiteColor]:[UIColor blackColor];
                 return lbl;
             }
