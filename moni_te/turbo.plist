@@ -510,7 +510,7 @@ E.g. If the boost timing is set to 36 points and the boost end RPM setting has b
 		<key>ValuesRange</key>
 		<string>Instant,0.05-1</string>
 		<key>KeysRange</key>
-		<string>0-20</string>
+		<string>0-15</string>
 		<key>PreCode</key>
 		<string>0xa2</string>
 		<key>Modes</key>

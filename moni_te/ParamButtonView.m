@@ -98,10 +98,18 @@
         }
     }else if([name isEqualToString:@"turbodelay"]){
         array[0]=@"Instant";
-        for (int i=1; i<21; i++) {
+        for (int i=1; i<11; i++) {
             float f=i;
             array[i]=[NSString stringWithFormat:@"%f",f*0.05];
         }
+        for (int i=1; i<6; i++) {
+            float f=i;
+            array[i]=[NSString stringWithFormat:@"%f",f*0.1+0.5];
+        }
+//        for (int i=1; i<21; i++) {
+//            float f=i;
+//            array[i]=[NSString stringWithFormat:@"%f",f*0.05];
+//        }
     }else if([name isEqualToString:@"startrpm2"]){
         for (int i=0; i<43; i++) {
             array[i]=[NSString stringWithFormat:@"%d",i*1000+8000];

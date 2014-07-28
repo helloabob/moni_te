@@ -41,10 +41,12 @@ static unsigned char result[8];
     result[1]=tmp[1];
     result[2]=tmp[2];
     result[3]=tmp[3];
-    result[4]=tmp[4];
+    result[4]=tmp[6];
     result[5]=tmp[5];
-//    result[6]=tmp[6];
     result[6]=tmp[7];
+//    result[4]=tmp[4];
+//    result[5]=tmp[5];
+//    result[6]=tmp[7];
     
     ParamButtonView *pbv=nil;
     for (int i=0; i<7; i++) {
@@ -184,9 +186,9 @@ static unsigned char result[8];
     addons[1]=0xe3;
     addons[2]=0xe4;
     addons[3]=0xea;
-    addons[4]=0xe9;
+//    addons[4]=0xe9;
+    addons[4]=0xe6;
     addons[5]=0xe5;
-//    addons[6]=0xe6;
     addons[6]=0xe8;
     unsigned char ret[send_length*2];
     for (int i=0; i<send_length; i++) {

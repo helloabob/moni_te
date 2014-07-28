@@ -109,7 +109,8 @@ static unsigned char result[9];
     pbv.valueString=@"Auto";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110-4, 170-41, 100, 65) withImageName:@"svo" withDelegate:self]autorelease];
-    pbv.tag=1006;
+//    pbv.tag=1006;
+    pbv.tag = 1004;
     [view addSubview:pbv];
     pbv.valueString=@"5.0V";
     
@@ -124,7 +125,8 @@ static unsigned char result[9];
     pbv.valueString=@"Forward";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110-4, 240-41, 100, 65) withImageName:@"sts" withDelegate:self]autorelease];
-    pbv.tag=1004;
+//    pbv.tag=1004;
+    pbv.tag = 1006;
     [view addSubview:pbv];
     pbv.valueString=@"10%";
     
