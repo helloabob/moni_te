@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BaseViewController : UIViewController
+@interface BaseViewController : UIViewController<UITextViewDelegate>
 @property(nonatomic,retain)UIImageView *backImageView;
 @property(nonatomic,retain)UIView *contentView;
 @property(nonatomic,assign)BOOL BottomBarHidden;

@@ -95,8 +95,12 @@ static int old_y;
     tv.showsVerticalScrollIndicator=YES;
     tv.userInteractionEnabled=YES;
     tv.scrollEnabled=YES;
+    tv.delegate= self;
     [self.contentView addSubview:blackArea];
     _tv = tv;
+}
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView{
+    return NO;
 }
 -(void)setHelpMsg:(NSString *)str{
     _tv.text =str;

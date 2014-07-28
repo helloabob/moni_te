@@ -63,10 +63,10 @@
     if ([name isEqualToString:@"voltagecutoff"]) {
         array[0]=@"disable";
         array[1]=@"AUTO";
-        for (int i=2; i<112; i++) {
+        for (int i=0; i<82; i++) {
             float f=i;
-            f=i/10.0;
-            array[i]=[NSString stringWithFormat:@"%.2fV",f];
+            f=i/10.0+3.0;
+            array[i+2]=[NSString stringWithFormat:@"%.1fV",f];
         }
     }else if([name isEqualToString:@"switchpoint1"]){
         for (int i=0; i<99; i++) {
@@ -82,15 +82,15 @@
         }
     }else if([name isEqualToString:@"boosttiming"]){
         for (int i=0; i<65; i++) {
-            array[i]=[NSString stringWithFormat:@"%d",i];
+            array[i]=[NSString stringWithFormat:@"%ddeg",i];
         }
     }else if([name isEqualToString:@"startrpm1"]){
         for (int i=0; i<69; i++) {
-            array[i]=[NSString stringWithFormat:@"%d",i*500+1000];
+            array[i]=[NSString stringWithFormat:@"%drpm",i*500+1000];
         }
     }else if([name isEqualToString:@"endrpm"]){
         for (int i=0; i<115; i++) {
-            array[i]=[NSString stringWithFormat:@"%d",i*500+3000];
+            array[i]=[NSString stringWithFormat:@"%drpm",i*500+3000];
         }
     }else if([name isEqualToString:@"turbotiming"]){
         for (int i=0; i<65; i++) {
@@ -100,11 +100,11 @@
         array[0]=@"Instant";
         for (int i=1; i<11; i++) {
             float f=i;
-            array[i]=[NSString stringWithFormat:@"%f",f*0.05];
+            array[i]=[NSString stringWithFormat:@"%.2fS",f*0.05];
         }
         for (int i=1; i<6; i++) {
             float f=i;
-            array[i]=[NSString stringWithFormat:@"%f",f*0.1+0.5];
+            array[i]=[NSString stringWithFormat:@"%.2fS",f*0.1+0.5];
         }
 //        for (int i=1; i<21; i++) {
 //            float f=i;
@@ -112,7 +112,7 @@
 //        }
     }else if([name isEqualToString:@"startrpm2"]){
         for (int i=0; i<43; i++) {
-            array[i]=[NSString stringWithFormat:@"%d",i*1000+8000];
+            array[i]=[NSString stringWithFormat:@"%drpm",i*1000+8000];
         }
     }else if([name isEqualToString:@"turboslopeon"]){
         for (int i=0; i<10; i++) {

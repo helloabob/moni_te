@@ -41,9 +41,9 @@ static unsigned char result[9];
     result[1]=tmp[1];
     result[2]=tmp[2];
     result[3]=tmp[3];
-    result[4]=tmp[4];
+    result[4]=tmp[6];
     result[5]=tmp[5];
-    result[6]=tmp[6];
+    result[6]=tmp[4];
     result[7]=tmp[7];
     result[8]=tmp[8];
     
@@ -109,8 +109,8 @@ static unsigned char result[9];
     pbv.valueString=@"Auto";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110-4, 170-41, 100, 65) withImageName:@"svo" withDelegate:self]autorelease];
-//    pbv.tag=1006;
-    pbv.tag = 1004;
+    pbv.tag=1006;
+//    pbv.tag = 1004;
     [view addSubview:pbv];
     pbv.valueString=@"5.0V";
     
@@ -125,8 +125,8 @@ static unsigned char result[9];
     pbv.valueString=@"Forward";
     
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110-4, 240-41, 100, 65) withImageName:@"sts" withDelegate:self]autorelease];
-//    pbv.tag=1004;
-    pbv.tag = 1006;
+    pbv.tag=1004;
+//    pbv.tag = 1006;
     [view addSubview:pbv];
     pbv.valueString=@"10%";
     
@@ -184,9 +184,9 @@ static unsigned char result[9];
     addons[1]=0xe3;
     addons[2]=0xe4;
     addons[3]=0xea;
-    addons[4]=0xe9;
+    addons[4]=0xe6;
     addons[5]=0xe5;
-    addons[6]=0xe6;
+    addons[6]=0xe9;
     addons[7]=0xe8;
     addons[8]=0xe7;
     unsigned char ret[18];

@@ -14,7 +14,7 @@
 	<key>RunningMode</key>
 	<dict>
 		<key>DefaultKey</key>
-		<string>2</string>
+		<string>1</string>
 		<key>ValuesRange</key>
 		<string>Forward w/o Reverse,Forward with pause then Reverse,Forward/Reverse</string>
 		<key>KeysRange</key>
