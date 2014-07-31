@@ -30,6 +30,6 @@
 
 #define LocalizableString(a) [NSString stringWithFormat:@"%@_%d",a,[Global language]]
 
-#if 1
+#if 0
 #define NSLog(...) {}
 #endif

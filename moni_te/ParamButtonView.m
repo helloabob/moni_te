@@ -139,9 +139,11 @@
     }
     int new_index=-1;
     for (int i=0;i<_keys.count;i++) {
-        NSString *str=_keys[i];
-        unsigned char some_key=(unsigned char)strtoul([str UTF8String], 0, 16);
+        int some_key = [_keys[i] intValue];
+//        NSString *str=_keys[i];
+//        unsigned char some_key=(unsigned char)strtoul([str UTF8String], 0, 16);
         if (some_key==bytes[self.tag-1000]) {
+            if(self.tag==1007)NSLog(@"find:%d", i);
             new_index=i;
             break;
         }
