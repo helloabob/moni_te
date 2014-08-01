@@ -22,4 +22,6 @@ typedef enum {
 + (instancetype)sharedInstance;
 @property(nonatomic,assign)id delegate;
 -(void)sendData:(NSData *)data withDelegate:(id)delegate;
+-(void)closeSocket;
+-(void)initSocket;
 @end

@@ -384,6 +384,7 @@ static unsigned char result[33];
 -(void)onRead{
     unsigned char a=0xd8;
     [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:&a length:1] withDelegate:self];
+    self.isConnected = YES;
 }
 -(void)onSet{
 //    int send_length=7;

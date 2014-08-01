@@ -98,6 +98,11 @@ static int old_y;
     tv.delegate= self;
     [self.contentView addSubview:blackArea];
     _tv = tv;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didEndBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+}
+-(void)didEndBackground:(NSNotification *)notif{
+    [[NetUtils sharedInstance] closeSocket];
 }
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView{
     return NO;
@@ -108,9 +113,14 @@ static int old_y;
 }
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    NSLog(@"viewDidAppear");
     if ([[NSDate date] timeIntervalSinceDate:[self convertDateFromString:@"20140821"]]>=0) {
         abort();
     }
+//    if (_isConnected==NO) {
+//        [[NetUtils sharedInstance] initSocket];
+//        _isConnected = YES;
+//    }
 }
 -(void)changeSettingY:(int)y{
     scv.center=CGPointMake(scv.center.x, old_y+y);

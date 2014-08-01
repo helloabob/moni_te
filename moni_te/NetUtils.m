@@ -28,19 +28,27 @@
     return sharedNetUtilsInstance;
 }
 -(void)initSocket{
-    socket=[[AsyncUdpSocket alloc]initWithDelegate:self];
-    [socket bindToPort:8008 error:nil];
-    threadshold=2;
-    port2=8008;
-//    self.host2=@"192.168.1.11";
-    self.host2=@"192.168.0.108";
-//    self.host2=@"131.252.90.228";
+    if (socket == nil) {
+        socket=[[AsyncUdpSocket alloc]initWithDelegate:self];
+        [socket bindToPort:8008 error:nil];
+        threadshold=2;
+        port2=8008;
+//        self.host2=@"192.168.1.11";
+//        self.host2=@"192.168.0.108";
+        self.host2=@"131.252.90.50";
+    }
+    
+}
+-(void)closeSocket{
+    if (socket!=nil) {
+        [socket close];
+        socket = nil;
+    }
 }
 -(void)sendData:(NSData *)data withDelegate:(id)delegate{
     NSLog(@"sent:%@ and len:%d",data,data.length);
-    if (socket==nil) {
-        [self initSocket];
-    }
+    [self initSocket];
+    
     _delegate=delegate;
     self.mdata=[NSData dataWithBytes:data.bytes length:data.length];
     resend_count=0;

@@ -13,7 +13,9 @@
     NSString *_titleImageName;
     UILabel *lblValue;
     NSTimer *_timer;
-    int lbl_width;
+//    int lbl_width;
+    CGRect _rect;
+    CGAffineTransform _transform;
     id _delegate;
     NSString *_name;
 //    NSArray *keys;
@@ -143,7 +145,6 @@
 //        NSString *str=_keys[i];
 //        unsigned char some_key=(unsigned char)strtoul([str UTF8String], 0, 16);
         if (some_key==bytes[self.tag-1000]) {
-            if(self.tag==1007)NSLog(@"find:%d", i);
             new_index=i;
             break;
         }
@@ -204,7 +205,9 @@
         lblValue.textAlignment=NSTextAlignmentCenter;
         lblValue.font=[UIFont systemFontOfSize:12];
         lblValue.backgroundColor=[UIColor clearColor];
-        lbl_width=lblValue.bounds.size.width;
+//        lbl_width=lblValue.bounds.size.width;
+        _rect = lblValue.frame;
+        _transform = lblValue.transform;
         [innerView addSubview:lblValue];
         
         [self renderImage];
@@ -233,17 +236,22 @@
 //        return;
 //    }
 //    dispatch_async(dispatch_get_main_queue(), ^(){
+    [lblValue.layer removeAllAnimations];
+    lblValue.transform = _transform;
         lblValue.text=valueString;
-        [lblValue.layer removeAllAnimations];
         CGSize textSize = [lblValue.text sizeWithFont:lblValue.font];
         
-        if (textSize.width > lbl_width) {
+        if (textSize.width > _rect.size.width) {
             
-            CGRect lframe = lblValue.frame;
+//            CGRect lframe = lblValue.frame;
+            CGRect lframe = _rect;
             lframe.size.width = textSize.width;
             lblValue.frame = lframe;
             
-            float offset = textSize.width - lbl_width;
+            float offset = textSize.width - _rect.size.width;
+//            CATransition *animation = [CATransaction animation];
+//            animation.type = kCATransitionFromLeft;
+            
             [UIView animateWithDuration:3.0
                                   delay:0
                                 options:UIViewAnimationOptionRepeat //动画重复的主开关

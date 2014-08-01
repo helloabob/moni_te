@@ -16,6 +16,7 @@
 @property(nonatomic,assign)BOOL BlackAreaHidden;
 @property(nonatomic,retain)NSDictionary *dict;
 @property(nonatomic,retain)NSArray *keyArray;
+@property(nonatomic,assign)BOOL isConnected;
 -(void)renderImage;
 -(void)changeSettingY:(int)y;
 -(void)returnToDefault;
