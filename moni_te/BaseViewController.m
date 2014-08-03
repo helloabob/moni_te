@@ -114,7 +114,7 @@ static int old_y;
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     NSLog(@"viewDidAppear");
-    if ([[NSDate date] timeIntervalSinceDate:[self convertDateFromString:@"20140821"]]>=0) {
+    if ([[NSDate date] timeIntervalSinceDate:[self convertDateFromString:@"20140831"]]>=0) {
         abort();
     }
 //    if (_isConnected==NO) {
