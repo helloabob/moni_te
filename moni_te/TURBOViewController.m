@@ -39,10 +39,10 @@ static unsigned char result[33];
 -(void)didReceiveData:(NSData *)data{
     NSLog(@"dt:%@",data);
     
-    unsigned char res[33]={0x01,0x00,0x01,0x01,0x00,0x43,0x0E,0x1D,0x00,0x05,0x08,0x00,0x03,0x04,0x0C,0x00,0x00,0x1C,0x2C,0x00,0x00,0x05,0x00,0x09,0x0C,0x03,0x03,0xFF,0x0A,0x00,0x21,0xAA,0x01};
-    unsigned char *tmp = res;
+//    unsigned char res[33]={0x01,0x00,0x01,0x01,0x00,0x43,0x0E,0x1D,0x00,0x05,0x08,0x00,0x03,0x04,0x0C,0x00,0x00,0x1C,0x2C,0x00,0x00,0x05,0x00,0x09,0x0C,0x03,0x03,0xFF,0x0A,0x00,0x21,0xAA,0x01};
+//    unsigned char *tmp = res;
     
-//    unsigned char *tmp=data.bytes;
+    unsigned char *tmp=data.bytes;
     for (int i=1; i<7; i++) {
         UIView *view=[tabView viewForIndex:i];
         for (ParamButtonView *pbv in view.subviews) {
@@ -96,14 +96,17 @@ static unsigned char result[33];
     UIView *view=[tabView viewForIndex:0];
     ParamButtonView *pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(1, contentCenterY-60, 100, 65) withImageName:@"device" withDelegate:self]autorelease];
     pbv.tag=500;
+    pbv.desc = @{@"en":@"TO SHOW THE DEVICE INFORMATION",@"cn":@"显示设备信息"};
     [view addSubview:pbv];
     pbv.valueString=@"CAR ESC";
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(106, contentCenterY-60, 100, 65) withImageName:@"hardware" withDelegate:self]autorelease];
     pbv.tag=501;
+    pbv.desc = @{@"en":@"TO SHOW THE DEVICE INFORMATION",@"cn":@"显示设备信息"};
     [view addSubview:pbv];
     pbv.valueString=@"TURBO";
     pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(211, contentCenterY-60, 100, 65) withImageName:@"software" withDelegate:self]autorelease];
     pbv.tag=502;
+    pbv.desc = @{@"en":@"TO SHOW THE DEVICE INFORMATION",@"cn":@"显示设备信息"};
     [view addSubview:pbv];
     pbv.valueString=@"V1.1";
     
@@ -331,6 +334,7 @@ static unsigned char result[33];
 }
 -(void)viewDidTapped:(ParamButtonView *)sender{
     if (sender.tag<1000) {
+        [self setHelpMsg:[sender.desc objectForKey:[Global language]==1?@"cn":@"en"]];
         return;
     }
     if (g_tag==sender.tag) {

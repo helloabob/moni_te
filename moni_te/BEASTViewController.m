@@ -97,17 +97,17 @@ static unsigned char result[11];
     self.backImageView.image=[UIImage imageNamed:@"FlashBackImage"];
     self.SettingControlViewHidden=NO;
     
-    UIBaseButton *btn=[[[UIBaseButton alloc]initWithFrame:CGRectMake(250, 3, 39, 38)]autorelease];
-    btn.offImageName=[NSString stringWithFormat:@"%@_off",@"default"];
-    btn.onImageName=[NSString stringWithFormat:@"%@_on",@"default"];
-    btn.offBackImageName=@"header_off";
-    btn.onBackImageName=@"header_on";
-    btn.imageView.contentMode=UIViewContentModeScaleAspectFit;
-    btn.imageEdgeInsets=UIEdgeInsetsMake(2, 4, 4, 4);
-    btn.tag=2000;
-    [btn renderImage];
-    [btn addTarget:self action:@selector(showdefault) forControlEvents:UIControlEventTouchUpInside];
-    [self.contentView addSubview:btn];
+//    UIBaseButton *btn=[[[UIBaseButton alloc]initWithFrame:CGRectMake(250, 3, 39, 38)]autorelease];
+//    btn.offImageName=[NSString stringWithFormat:@"%@_off",@"default"];
+//    btn.onImageName=[NSString stringWithFormat:@"%@_on",@"default"];
+//    btn.offBackImageName=@"header_off";
+//    btn.onBackImageName=@"header_on";
+//    btn.imageView.contentMode=UIViewContentModeScaleAspectFit;
+//    btn.imageEdgeInsets=UIEdgeInsetsMake(2, 4, 4, 4);
+//    btn.tag=2000;
+//    [btn renderImage];
+//    [btn addTarget:self action:@selector(showdefault) forControlEvents:UIControlEventTouchUpInside];
+//    [self.contentView addSubview:btn];
     
     ParamButtonView *pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110, 30, 100, 65) withImageName:@"runningmode" withDelegate:self]autorelease];
     pbv.tag=2;
