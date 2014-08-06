@@ -53,8 +53,10 @@ static unsigned char result[11];
         pbv=(ParamButtonView *)[self.contentView viewWithTag:(i+1)];
         pbv.valueString=[Global valueForKey:result[i] AtDictionary:self.dict[self.keyArray[i]]];
     }
+    [super didReceiveData:data];
 }
 -(void)onRead{
+    [super onRead];
     unsigned char a=0xd8;
     [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:&a length:1] withDelegate:self];
 }
@@ -88,8 +90,9 @@ static unsigned char result[11];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    unsigned char a=0xd8;
-    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:&a length:1] withDelegate:self];
+//    unsigned char a=0xd8;
+//    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:&a length:1] withDelegate:self];
+    [self onRead];
     self.isConnected = YES;
     self.keyArray=@[@"CutOffVoltage",@"RunningMode",@"PercentageBraking",@"PercentageDragBrake",@"MotorTiming",@"InitialAcceleration",@"ThrottleLimit",@"ThrottlePercentReverse",@"NeutralRange",@"MotorRotation"];
     self.dict=[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"beast" ofType:@"plist"]];

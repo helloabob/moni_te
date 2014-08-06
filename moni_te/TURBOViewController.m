@@ -51,6 +51,7 @@ static unsigned char result[33];
             }
         }
     }
+    [super didReceiveData:data];
     
 //    unsigned char *tmp=data.bytes;
 //    result[0]=tmp[0];
@@ -392,6 +393,7 @@ static unsigned char result[33];
     }
 }
 -(void)onRead{
+    [super onRead];
     unsigned char a=0xd8;
     [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:&a length:1] withDelegate:self];
     self.isConnected = YES;

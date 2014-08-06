@@ -22,4 +22,7 @@
 -(void)returnToDefault;
 -(void)showAlert;
 -(void)setHelpMsg:(NSString *)str;
+-(void)onRead;
+-(void)didReceiveData:(NSData *)data;
+-(void)didNotReceive;
 @end

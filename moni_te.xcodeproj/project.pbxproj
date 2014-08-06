@@ -217,6 +217,7 @@
 		2DEF529D19443F0100D4C9B5 /* SEALViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DEF529C19443F0100D4C9B5 /* SEALViewController.m */; };
 		2DEF52A01944A5EC00D4C9B5 /* blackarea.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF529F1944A5EC00D4C9B5 /* blackarea.png */; };
 		5A5A79E9193AF1BD00C103B1 /* NetUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5A79E8193AF1BD00C103B1 /* NetUtils.m */; };
+		5A7E8FE91991EBE60030A496 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7E8FE81991EBE60030A496 /* MBProgressHUD.m */; };
 		5AA76DB9194696E300572D74 /* TURBOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA76DB8194696E300572D74 /* TURBOViewController.m */; };
 		5AA76DCE1946C9C800572D74 /* boost_off_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DBA1946C9C800572D74 /* boost_off_1.png */; };
 		5AA76DCF1946C9C800572D74 /* boost_off_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DBB1946C9C800572D74 /* boost_off_2.png */; };
@@ -486,6 +487,8 @@
 		2DEF529F1944A5EC00D4C9B5 /* blackarea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackarea.png; sourceTree = "<group>"; };
 		5A5A79E7193AF1BD00C103B1 /* NetUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetUtils.h; sourceTree = "<group>"; };
 		5A5A79E8193AF1BD00C103B1 /* NetUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetUtils.m; sourceTree = "<group>"; };
+		5A7E8FE71991EBE60030A496 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		5A7E8FE81991EBE60030A496 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		5AA76DB7194696E300572D74 /* TURBOViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TURBOViewController.h; sourceTree = "<group>"; };
 		5AA76DB8194696E300572D74 /* TURBOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TURBOViewController.m; sourceTree = "<group>"; };
 		5AA76DBA1946C9C800572D74 /* boost_off_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boost_off_1.png; sourceTree = "<group>"; };
@@ -634,6 +637,8 @@
 		2D7F2A561937714B00E004AE /* moni_te */ = {
 			isa = PBXGroup;
 			children = (
+				5A7E8FE71991EBE60030A496 /* MBProgressHUD.h */,
+				5A7E8FE81991EBE60030A496 /* MBProgressHUD.m */,
 				2DA251DC193F5771001D87A6 /* TSLocateView.h */,
 				2DA251DD193F5771001D87A6 /* TSLocateView.m */,
 				2DA251DE193F5771001D87A6 /* TSLocateView.xib */,
@@ -1267,6 +1272,7 @@
 				2D7F2A611937714B00E004AE /* AppDelegate.m in Sources */,
 				2D7F2A5D1937714B00E004AE /* main.m in Sources */,
 				5AA76DB9194696E300572D74 /* TURBOViewController.m in Sources */,
+				5A7E8FE91991EBE60030A496 /* MBProgressHUD.m in Sources */,
 				2D115426193AB40E0073D1AB /* BEASTViewController.m in Sources */,
 				2DA8A7E5193A0F7E002E68D9 /* Global.m in Sources */,
 				2D7F2A871937734D00E004AE /* AsyncUdpSocket.m in Sources */,

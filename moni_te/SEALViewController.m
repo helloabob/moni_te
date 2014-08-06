@@ -53,6 +53,7 @@ static unsigned char result[8];
         pbv=(ParamButtonView *)[[tabView viewForIndex:1] viewWithTag:(i+1000)];
         pbv.valueString=[Global valueForKey:result[i] AtDictionary:self.dict[self.keyArray[i]]];
     }
+    [super didReceiveData:data];
 }
 
 - (void)viewDidLoad
@@ -60,8 +61,9 @@ static unsigned char result[8];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    unsigned char a=0xd8;
-    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:&a length:1] withDelegate:self];
+//    unsigned char a=0xd8;
+//    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:&a length:1] withDelegate:self];
+    [self onRead];
     self.isConnected = YES;
 //    remove BEC Voltage Output
 //    self.keyArray=@[@"BrakeType",@"BatteryType",@"CutOffVoltageThreshold",@"LowVoltageCutOffType",@"StartUpStrength",@"MotorTiming",@"SBECVoltageOutput",@"MotorRotation"];
@@ -177,6 +179,7 @@ static unsigned char result[8];
     g_tag=0;
 }
 -(void)onRead{
+    [super onRead];
     unsigned char a=0xd8;
     [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:&a length:1] withDelegate:self];
 }

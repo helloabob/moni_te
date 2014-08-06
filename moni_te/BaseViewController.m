@@ -9,6 +9,7 @@
 #import "BaseViewController.h"
 #import "ExitViewController.h"
 #import "SettingControlView.h"
+#import "MBProgressHUD.h"
 
 static int old_y;
 
@@ -144,8 +145,14 @@ static int old_y;
 -(void)returnToDefault{
     [self onSet];
 }
+-(void)didReceiveData:(NSData *)data{
+    [MBProgressHUD hideHUDForView:self.view animated:NO];
+}
+-(void)didNotReceive{
+    [MBProgressHUD hideHUDForView:self.view animated:NO];
+}
 -(void)onRead{
-    
+    [MBProgressHUD showHUDAddedTo:self.view animated:NO];
 }
 -(void)onSet{
     

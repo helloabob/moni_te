@@ -36,7 +36,7 @@
         port2=8008;
         self.host2=@"192.168.1.11";
 //        self.host2=@"192.168.0.106";
-//        self.host2=@"131.252.90.145";
+//        self.host2=@"131.252.90.28";
         inProgress = NO;
     }
     
@@ -61,7 +61,7 @@
     [socket sendData:data toHost:_host2 port:port2 withTimeout:1 tag:1];
     if (delegate!=nil) {
         inProgress = YES;
-        [socket receiveWithTimeout:2 tag:1];
+        [socket receiveWithTimeout:10 tag:1];
     }
 }
 
