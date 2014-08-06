@@ -19,6 +19,7 @@
     int threadshold;
     int resend_count;
     int port2;
+    BOOL inProgress;
 }
 + (instancetype)sharedInstance{
     static NetUtils *sharedNetUtilsInstance = nil;
@@ -33,9 +34,10 @@
         [socket bindToPort:8008 error:nil];
         threadshold=2;
         port2=8008;
-//        self.host2=@"192.168.1.11";
-//        self.host2=@"192.168.0.108";
-        self.host2=@"131.252.90.145";
+        self.host2=@"192.168.1.11";
+//        self.host2=@"192.168.0.106";
+//        self.host2=@"131.252.90.145";
+        inProgress = NO;
     }
     
 }
@@ -46,33 +48,43 @@
     }
 }
 -(void)sendData:(NSData *)data withDelegate:(id)delegate{
-    NSLog(@"sent:%@ and len:%d",data,data.length);
+    NSLog(@"try to send");
     [self initSocket];
-    
+    if (inProgress==YES) {
+        NSLog(@"inProgress_over");
+        return;
+    }
+    NSLog(@"sent:%@ and len:%d",data,data.length);
     _delegate=delegate;
     self.mdata=[NSData dataWithBytes:data.bytes length:data.length];
     resend_count=0;
-    [socket sendData:data toHost:_host2 port:port2 withTimeout:2 tag:1];
-    [socket receiveWithTimeout:1 tag:1];
+    [socket sendData:data toHost:_host2 port:port2 withTimeout:1 tag:1];
+    if (delegate!=nil) {
+        inProgress = YES;
+        [socket receiveWithTimeout:2 tag:1];
+    }
 }
 
 /**/
 - (void)onUdpSocket:(AsyncUdpSocket *)sock didNotReceiveDataWithTag:(long)tag dueToError:(NSError *)error{
+    NSLog(@"didNotReceive");
+    inProgress = NO;
     if (_delegate==nil) {
         return;
     }
-    if (resend_count<threadshold) {
-        resend_count++;
-        [socket sendData:_mdata toHost:_host2 port:port2 withTimeout:1 tag:1];
-        [socket receiveWithTimeout:1 tag:1];
-        return;
-    }
+//    if (resend_count<threadshold) {
+//        resend_count++;
+//        [socket sendData:_mdata toHost:_host2 port:port2 withTimeout:1 tag:1];
+//        [socket receiveWithTimeout:2 tag:1];
+//        return;
+//    }
     if (_delegate&&[_delegate respondsToSelector:@selector(didNotReceive)]) {
         [_delegate didNotReceive];
     }
 }
 - (BOOL)onUdpSocket:(AsyncUdpSocket *)sock didReceiveData:(NSData *)data withTag:(long)tag fromHost:(NSString *)host port:(UInt16)port
 {
+    inProgress = NO;
     NSLog(@"rec:%@",data);
     if (_delegate&&[_delegate respondsToSelector:@selector(didReceiveData:)]) {
         [_delegate didReceiveData:data];
