@@ -21,6 +21,7 @@ static ParamButtonView *g_pbv;
     UITabView *tabView;
     int currentTabIndex;
     int modeIndex;
+    UITextView *testField;
 }
 
 @end
@@ -37,6 +38,8 @@ static ParamButtonView *g_pbv;
 }
 
 -(void)didReceiveData:(NSData *)data{
+    testField.text = [testField.text stringByAppendingFormat:@"\n%@",data];
+
     NSLog(@"dt:%@",data);
     
 //    unsigned char res[33]={0x01,0x00,0x01,0x01,0x00,0x43,0x0E,0x1D,0x00,0x05,0x08,0x00,0x03,0x04,0x0C,0x00,0x00,0x1C,0x2C,0x00,0x00,0x05,0x00,0x09,0x0C,0x03,0x03,0xFF,0x0A,0x00,0x21,0xAA,0x01};
@@ -334,7 +337,20 @@ static ParamButtonView *g_pbv;
     
     [self changeMode:modeIndex];
     
+    testField = [[UITextView alloc] initWithFrame:CGRectMake(0, 50, 320, 230)];
+    testField.textColor = [UIColor blackColor];
+    testField.backgroundColor = [UIColor whiteColor];
+//    testField.delegate = self;
+    [self.contentView addSubview:testField];
+    
 }
+//- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+//    if ([text isEqualToString:@"\n"]) {
+//        [textView resignFirstResponder];
+////        return NO;
+//    }
+//    return YES;
+//}
 -(void)viewDidTapped:(ParamButtonView *)sender{
     if (sender.tag<1000) {
         [self setHelpMsg:[sender.desc objectForKey:[Global language]==1?@"cn":@"en"]];
@@ -425,6 +441,8 @@ static ParamButtonView *g_pbv;
         }
     }
     
+    unsigned char tmp = 0xd4;
+    [data appendBytes:&tmp length:1];
     
     [[NetUtils sharedInstance] sendData:data withDelegate:nil];
 //    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:ret length:send_length*2] withDelegate:nil];

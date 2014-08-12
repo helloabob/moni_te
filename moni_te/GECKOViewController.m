@@ -193,12 +193,13 @@ static unsigned char result[9];
     addons[6]=0xe9;
     addons[7]=0xe8;
     addons[8]=0xe7;
-    unsigned char ret[18];
+    unsigned char ret[18+1];
     for (int i=0; i<9; i++) {
         ret[i*2]=addons[i];
         ret[i*2+1]=result[i];
     }
-    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:ret length:18] withDelegate:nil];
+    ret[18]=0xd4;
+    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:ret length:18+1] withDelegate:nil];
 }
 -(void)viewDidChanged:(int)index{
     if (index==0) {
