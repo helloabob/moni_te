@@ -17,12 +17,15 @@
 @property(nonatomic,retain)NSDictionary *dict;
 @property(nonatomic,retain)NSArray *keyArray;
 @property(nonatomic,assign)BOOL isConnected;
+@property(nonatomic,retain)NSMutableData *bufferData;
+@property(nonatomic,assign)int receiveCount;
+-(void)sendSetData:(NSData *)data;
 -(void)renderImage;
 -(void)changeSettingY:(int)y;
 -(void)returnToDefault;
 -(void)showAlert;
 -(void)setHelpMsg:(NSString *)str;
 -(void)onRead;
--(void)didReceiveData:(NSData *)data;
+-(BOOL)didReceiveData:(NSData *)data;
 -(void)didNotReceive;
 @end

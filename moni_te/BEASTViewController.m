@@ -32,7 +32,7 @@ static unsigned char result[11];
     }
     return self;
 }
--(void)didReceiveData:(NSData *)data{
+-(BOOL)didReceiveData:(NSData *)data{
     NSLog(@"dt:%@",data);
     
     unsigned char *tmp=data.bytes;
@@ -54,6 +54,7 @@ static unsigned char result[11];
         pbv.valueString=[Global valueForKey:result[i] AtDictionary:self.dict[self.keyArray[i]]];
     }
     [super didReceiveData:data];
+    return YES;
 }
 -(void)onRead{
     [super onRead];
@@ -77,14 +78,15 @@ static unsigned char result[11];
     
     
     
-    unsigned char ret[send_length*2+1];
+    unsigned char ret[send_length*2];
     for (int i=0; i<send_length; i++) {
         ret[i*2]=addons[i];
         ret[i*2+1]=result[i];
     }
-    ret[send_length*2]=0xd4;
+//    ret[send_length*2]=0xd4;
     
-    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:ret length:send_length*2+1] withDelegate:nil];
+//    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:ret length:send_length*2] withDelegate:nil];
+    [self sendSetData:[NSData dataWithBytes:ret length:send_length*2]];
 }
 - (void)viewDidLoad
 {

@@ -15,7 +15,7 @@ typedef enum {
     CarTypeTP,          //TP
 }CarType;
 @protocol NetUtilsDelegate <NSObject>
--(void)didReceiveData:(NSData *)data;
+-(BOOL)didReceiveData:(NSData *)data;
 -(void)didNotReceive;
 @end
 @interface NetUtils : NSObject

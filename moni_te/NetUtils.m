@@ -61,7 +61,7 @@
     [socket sendData:data toHost:_host2 port:port2 withTimeout:1 tag:1];
     if (delegate!=nil) {
         inProgress = YES;
-        [socket receiveWithTimeout:10 tag:1];
+        [socket receiveWithTimeout:3 tag:1];
     }
 }
 
@@ -87,7 +87,7 @@
     inProgress = NO;
     NSLog(@"rec:%@",data);
     if (_delegate&&[_delegate respondsToSelector:@selector(didReceiveData:)]) {
-        [_delegate didReceiveData:data];
+        return [_delegate didReceiveData:data];
     }
     return YES;
     

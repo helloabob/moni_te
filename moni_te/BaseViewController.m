@@ -145,8 +145,9 @@ static int old_y;
 -(void)returnToDefault{
     [self onSet];
 }
--(void)didReceiveData:(NSData *)data{
+-(BOOL)didReceiveData:(NSData *)data{
     [MBProgressHUD hideHUDForView:self.view animated:NO];
+    return YES;
 }
 -(void)didNotReceive{
     [MBProgressHUD hideHUDForView:self.view animated:NO];
@@ -168,6 +169,11 @@ static int old_y;
     [formatter setDateFormat:@"yyyyMMdd"];
     NSDate *date=[formatter dateFromString:uiDate];
     return date;
+}
+-(void)sendSetData:(NSData *)data {
+    NSMutableData *m_data = [NSMutableData dataWithData:data];
+    [m_data appendData:data];
+    [[NetUtils sharedInstance] sendData:m_data withDelegate:nil];
 }
 -(void)changeLanguage{
 //    Global set

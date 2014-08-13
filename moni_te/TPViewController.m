@@ -36,10 +36,28 @@ static unsigned char result[33];
     return self;
 }
 
--(void)didReceiveData:(NSData *)data{
-    NSLog(@"dt:%@",data);
-    
-    unsigned char *tmp=data.bytes;
+-(void)didNotReceive{
+    NSLog(@"turbo_not_receive");
+    if (self.receiveCount == 1) {
+        [self updateParamValue];
+    } else {
+        [super didReceiveData:nil];
+    }
+}
+-(BOOL)didReceiveData:(NSData *)data{
+    if (self.receiveCount == 0) {
+        [self.bufferData appendData:data];
+        self.receiveCount = 1;
+        return NO;
+    } else if (self.receiveCount == 1){
+        [self.bufferData appendData:data];
+        [self updateParamValue];
+    }
+    self.receiveCount = 2;
+    return YES;
+}
+- (void)updateParamValue {
+    unsigned char *tmp=self.bufferData.bytes;
     for (int i=1; i<7; i++) {
         UIView *view=[tabView viewForIndex:i];
         for (ParamButtonView *pbv in view.subviews) {
@@ -48,29 +66,16 @@ static unsigned char result[33];
             }
         }
     }
-    [super didReceiveData:data];
-    
-//    unsigned char *tmp=data.bytes;
-//    result[0]=tmp[0];
-//    result[1]=tmp[1];
-//    result[2]=tmp[2];
-//    result[3]=tmp[3];
-//    result[4]=tmp[4];
-//    result[5]=tmp[5];
-//    //    result[6]=tmp[6];
-//    result[6]=tmp[7];
-//    
-//    ParamButtonView *pbv=nil;
-//    for (int i=0; i<7; i++) {
-//        pbv=(ParamButtonView *)[[tabView viewForIndex:1] viewWithTag:(i+1000)];
-//        pbv.valueString=[Global valueForKey:result[i] AtDictionary:self.dict[self.keyArray[i]]];
-//    }
+    [super didReceiveData:nil];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.bufferData = [NSMutableData data];
+    self.receiveCount = 0;
     
     [self onRead];
 //    unsigned char a=0xd8;
@@ -384,6 +389,8 @@ static unsigned char result[33];
 }
 -(void)onRead{
     [super onRead];
+    self.receiveCount = 0;
+    self.bufferData.length = 0;
     unsigned char a=0xd8;
     [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:&a length:1] withDelegate:self];
     self.isConnected = YES;
@@ -414,7 +421,8 @@ static unsigned char result[33];
     }
     
     
-    [[NetUtils sharedInstance] sendData:data withDelegate:nil];
+//    [[NetUtils sharedInstance] sendData:data withDelegate:nil];
+    [self sendSetData:data];
 //    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:ret length:send_length*2] withDelegate:nil];
 }
 -(void)viewDidChanged:(int)index{

@@ -22,6 +22,7 @@ static ParamButtonView *g_pbv;
     int currentTabIndex;
     int modeIndex;
     UITextView *testField;
+    
 }
 
 @end
@@ -36,18 +37,28 @@ static ParamButtonView *g_pbv;
     }
     return self;
 }
-
--(void)didReceiveData:(NSData *)data{
-    testField.text = [testField.text stringByAppendingFormat:@"\n%@",data];
-
-    NSLog(@"dt:%@",data);
-    
-//    unsigned char res[33]={0x01,0x00,0x01,0x01,0x00,0x43,0x0E,0x1D,0x00,0x05,0x08,0x00,0x03,0x04,0x0C,0x00,0x00,0x1C,0x2C,0x00,0x00,0x05,0x00,0x09,0x0C,0x03,0x03,0xFF,0x0A,0x00,0x21,0xAA,0x01};
-//    unsigned char *tmp = res;
-    unsigned char res[]={0x02,0x02,0x03,0x00,0x01,0x2C,0x05,0x0C,0x01,0x08,0x03,0x03,0x2A,0x0E,0x0C,0x01,0x02,0x0C,0x2B,0x01,0x01,0x02,0x02,0x02,0x07,0x00,0x00,0x54,0x2E,0x00,0x1A,0x00,0x00,0xAA,0x01};
-    unsigned char *tmp = res;
-    
-//    unsigned char *tmp=data.bytes;
+-(void)didNotReceive{
+    NSLog(@"turbo_not_receive");
+    if (self.receiveCount == 1) {
+        [self updateParamValue];
+    }else {
+        [super didReceiveData:nil];
+    }
+}
+-(BOOL)didReceiveData:(NSData *)data{
+    if (self.receiveCount == 0) {
+        [self.bufferData appendData:data];
+        self.receiveCount = 1;
+        return NO;
+    }else if (self.receiveCount == 1){
+        [self.bufferData appendData:data];
+        [self updateParamValue];
+    }
+    self.receiveCount = 2;
+    return YES;
+}
+- (void)updateParamValue {
+    unsigned char *tmp=self.bufferData.bytes;
     for (int i=1; i<7; i++) {
         UIView *view=[tabView viewForIndex:i];
         for (ParamButtonView *pbv in view.subviews) {
@@ -56,29 +67,16 @@ static ParamButtonView *g_pbv;
             }
         }
     }
-    [super didReceiveData:data];
-    
-//    unsigned char *tmp=data.bytes;
-//    result[0]=tmp[0];
-//    result[1]=tmp[1];
-//    result[2]=tmp[2];
-//    result[3]=tmp[3];
-//    result[4]=tmp[4];
-//    result[5]=tmp[5];
-//    //    result[6]=tmp[6];
-//    result[6]=tmp[7];
-//    
-//    ParamButtonView *pbv=nil;
-//    for (int i=0; i<7; i++) {
-//        pbv=(ParamButtonView *)[[tabView viewForIndex:1] viewWithTag:(i+1000)];
-//        pbv.valueString=[Global valueForKey:result[i] AtDictionary:self.dict[self.keyArray[i]]];
-//    }
+    [super didReceiveData:nil];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.bufferData = [NSMutableData data];
+    self.receiveCount = 0;
     
     [self onRead];
 //    unsigned char a=0xd8;
@@ -337,11 +335,11 @@ static ParamButtonView *g_pbv;
     
     [self changeMode:modeIndex];
     
-    testField = [[UITextView alloc] initWithFrame:CGRectMake(0, 50, 320, 230)];
-    testField.textColor = [UIColor blackColor];
-    testField.backgroundColor = [UIColor whiteColor];
+//    testField = [[UITextView alloc] initWithFrame:CGRectMake(0, 50, 320, 230)];
+//    testField.textColor = [UIColor blackColor];
+//    testField.backgroundColor = [UIColor whiteColor];
 //    testField.delegate = self;
-    [self.contentView addSubview:testField];
+//    [self.contentView addSubview:testField];
     
 }
 //- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
@@ -412,6 +410,8 @@ static ParamButtonView *g_pbv;
 }
 -(void)onRead{
     [super onRead];
+    self.receiveCount = 0;
+    self.bufferData.length = 0;
     unsigned char a=0xd8;
     [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:&a length:1] withDelegate:self];
     self.isConnected = YES;
@@ -441,11 +441,11 @@ static ParamButtonView *g_pbv;
         }
     }
     
-    unsigned char tmp = 0xd4;
-    [data appendBytes:&tmp length:1];
+//    unsigned char tmp = 0xd4;
+//    [data appendBytes:&tmp length:1];
     
-    [[NetUtils sharedInstance] sendData:data withDelegate:nil];
-//    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:ret length:send_length*2] withDelegate:nil];
+//    [[NetUtils sharedInstance] sendData:data withDelegate:nil];
+    [self sendSetData:data];
 }
 -(void)viewDidChanged:(int)index{
     currentTabIndex=index;
