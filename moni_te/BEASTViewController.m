@@ -33,8 +33,10 @@ static unsigned char result[11];
     return self;
 }
 -(BOOL)didReceiveData:(NSData *)data{
-    NSLog(@"dt:%@",data);
-    
+//    NSLog(@"dt:%@",data);
+    if (data.length < 13) {
+        return YES;
+    }
     unsigned char *tmp=data.bytes;
     result[0]=tmp[0];
     result[1]=tmp[2];
@@ -53,7 +55,7 @@ static unsigned char result[11];
         pbv=(ParamButtonView *)[self.contentView viewWithTag:(i+1)];
         pbv.valueString=[Global valueForKey:result[i] AtDictionary:self.dict[self.keyArray[i]]];
     }
-    [super didReceiveData:data];
+    [super didReceiveData:nil];
     return YES;
 }
 -(void)onRead{

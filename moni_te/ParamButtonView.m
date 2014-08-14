@@ -65,11 +65,16 @@
     if ([name isEqualToString:@"voltagecutoff"]) {
         array[0]=@"disable";
         array[1]=@"AUTO";
-        for (int i=0; i<82; i++) {
-            float f=i;
-            f=i/10.0+3.0;
-            array[i+2]=[NSString stringWithFormat:@"%.1fV",f];
+        for (int i = 0; i < 110; i++) {
+            float f = i;
+            f = f/10.0 + 0.2;
+            array[i+2] = [NSString stringWithFormat:@"%.1fV",f];
         }
+//        for (int i=0; i<82; i++) {
+//            float f=i;
+//            f=i/10.0+3.0;
+//            array[i+2]=[NSString stringWithFormat:@"%.1fV",f];
+//        }
     }else if([name isEqualToString:@"switchpoint1"]){
         for (int i=0; i<99; i++) {
             array[i]=[NSString stringWithFormat:@"%d%%",i+1];
@@ -106,7 +111,7 @@
         }
         for (int i=1; i<6; i++) {
             float f=i;
-            array[i]=[NSString stringWithFormat:@"%.2fS",f*0.1+0.5];
+            array[i+10]=[NSString stringWithFormat:@"%.2fS",f*0.1+0.5];
         }
 //        for (int i=1; i<21; i++) {
 //            float f=i;
@@ -142,8 +147,6 @@
     int new_index=-1;
     for (int i=0;i<_keys.count;i++) {
         int some_key = [_keys[i] intValue];
-//        NSString *str=_keys[i];
-//        unsigned char some_key=(unsigned char)strtoul([str UTF8String], 0, 16);
         if (some_key==bytes[self.tag-1000]) {
             new_index=i;
             break;

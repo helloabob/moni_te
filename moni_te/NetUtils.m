@@ -30,7 +30,9 @@
 }
 -(void)initSocket{
     if (socket == nil) {
-        socket=[[AsyncUdpSocket alloc]initWithDelegate:self];
+//        socket=[[AsyncUdpSocket alloc]initWithDelegate:self];
+        socket = [[AsyncUdpSocket alloc] initIPv4];
+        socket.delegate = self;
         [socket bindToPort:8008 error:nil];
         threadshold=2;
         port2=8008;
@@ -54,10 +56,11 @@
         NSLog(@"inProgress_over");
         return;
     }
-    NSLog(@"sent:%@ and len:%d",data,data.length);
+    NSLog(@"sent:%@ and len:%d and tag:%d",data,data.length, 1);
     _delegate=delegate;
     self.mdata=[NSData dataWithBytes:data.bytes length:data.length];
     resend_count=0;
+//    current_tag = global_tag;
     [socket sendData:data toHost:_host2 port:port2 withTimeout:1 tag:1];
     if (delegate!=nil) {
         inProgress = YES;
@@ -70,6 +73,7 @@
     NSLog(@"didNotReceive");
     inProgress = NO;
     if (_delegate==nil) {
+        [self closeSocket];
         return;
     }
 //    if (resend_count<threadshold) {
@@ -81,13 +85,18 @@
     if (_delegate&&[_delegate respondsToSelector:@selector(didNotReceive)]) {
         [_delegate didNotReceive];
     }
+    [self closeSocket];
 }
 - (BOOL)onUdpSocket:(AsyncUdpSocket *)sock didReceiveData:(NSData *)data withTag:(long)tag fromHost:(NSString *)host port:(UInt16)port
 {
     inProgress = NO;
-    NSLog(@"rec:%@",data);
+    NSLog(@"recv:%@",data);
+//    NSLog(@"rec:%@ and tag:%ld and global_tag:%d",data,tag,global_tag);
     if (_delegate&&[_delegate respondsToSelector:@selector(didReceiveData:)]) {
-        return [_delegate didReceiveData:data];
+        NSData *dt = [NSData dataWithData:data];
+        [self closeSocket];
+        NSLog(@"recv2:%@",dt);
+        return [_delegate didReceiveData:dt];
     }
     return YES;
     
@@ -125,7 +134,6 @@
             [socket sendData:[self genTest4:data] toHost:host port:port withTimeout:5 tag:type];
         }
     }
-    
     return YES;
 }
 

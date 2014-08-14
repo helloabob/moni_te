@@ -65,7 +65,7 @@
     }
     return self;
 }
--(void)didReceiveData:(NSData *)data{
+-(BOOL)didReceiveData:(NSData *)data{
     if (data.length==1) {
         if (logo==nil) {
             logo=[[UIImageView alloc]initWithFrame:CGRectMake(50, self.contentView.bounds.size.height/2-48, 220, 81)];
@@ -104,7 +104,10 @@
         [self performSelector:@selector(nextPage) withObject:nil afterDelay:1];
 //        unsigned char b=0xd8;
 //        [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:&b length:1] withDelegate:self];
+    }else{
+        [self showReconnectionAlert];
     }
+    return YES;
 }
 -(void)nextPage{
     NSLog(@"next_page");
@@ -124,8 +127,7 @@
     vc=[[[NSClassFromString(className) alloc]init]autorelease];
     [self.navigationController pushViewController:vc animated:NO];
 }
--(void)didNotReceive{
-    NSLog(@"failed");
+- (void)showReconnectionAlert{
     if (lblConnecting.superview!=nil) {
         [lblConnecting removeFromSuperview];
     }
@@ -137,6 +139,10 @@
     }
     [cfav renderImage];
     [self.contentView addSubview:cfav];
+}
+-(void)didNotReceive{
+    NSLog(@"failed");
+    [self showReconnectionAlert];
 }
 -(void)reconnect{
     if (cfav.superview!=nil) {

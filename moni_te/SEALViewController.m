@@ -34,7 +34,10 @@ static unsigned char result[8];
 }
 
 -(BOOL)didReceiveData:(NSData *)data{
-    NSLog(@"dt:%@",data);
+//    NSLog(@"dt:%@",data);
+    if (data.length < 8) {
+        return YES;
+    }
     
     unsigned char *tmp=data.bytes;
     result[0]=tmp[0];

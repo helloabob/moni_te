@@ -38,7 +38,6 @@ static ParamButtonView *g_pbv;
     return self;
 }
 -(void)didNotReceive{
-    NSLog(@"turbo_not_receive");
     if (self.receiveCount == 1) {
         [self updateParamValue];
     }else {
@@ -49,7 +48,8 @@ static ParamButtonView *g_pbv;
     if (self.receiveCount == 0) {
         [self.bufferData appendData:data];
         self.receiveCount = 1;
-        return NO;
+        [self performSelector:@selector(sendDelay) withObject:nil afterDelay:0.2];
+        return YES;
     }else if (self.receiveCount == 1){
         [self.bufferData appendData:data];
         [self updateParamValue];
@@ -57,7 +57,14 @@ static ParamButtonView *g_pbv;
     self.receiveCount = 2;
     return YES;
 }
+- (void)sendDelay{
+    unsigned char a=0xd8;
+    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:&a length:1] withDelegate:self];
+}
 - (void)updateParamValue {
+    if (self.bufferData.length < 33) {
+        return;
+    }
     unsigned char *tmp=self.bufferData.bytes;
     for (int i=1; i<7; i++) {
         UIView *view=[tabView viewForIndex:i];
