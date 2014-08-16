@@ -55,7 +55,17 @@
         self.desc = info[@"desc"];
     }
     _precode=(unsigned char)strtoul([info[@"PreCode"] UTF8String], 0, 16);
-    _keys=[[NSArray alloc]initWithArray:[Global convertStringToArray:info forKey:@"KeysRange"]];
+    if ([name isEqualToString:@"voltagecutoff"]) {
+        NSMutableArray *keyArray = [NSMutableArray array];
+        [keyArray addObject:[NSString stringWithFormat:@"%d",0]];
+        [keyArray addObject:[NSString stringWithFormat:@"%d",1]];
+        for (int i = 30; i < 112; i++) {
+            [keyArray addObject:[NSString stringWithFormat:@"%d", i]];
+        }
+        _keys = [[NSArray alloc] initWithArray:keyArray];
+    } else {
+        _keys=[[NSArray alloc]initWithArray:[Global convertStringToArray:info forKey:@"KeysRange"]];
+    }
     if (info[@"Modes"]!=nil) {
         _modes=[[NSString alloc]initWithString:info[@"Modes"]];
     }
@@ -65,16 +75,19 @@
     if ([name isEqualToString:@"voltagecutoff"]) {
         array[0]=@"disable";
         array[1]=@"AUTO";
-        for (int i = 0; i < 110; i++) {
-            float f = i;
-            f = f/10.0 + 0.2;
-            array[i+2] = [NSString stringWithFormat:@"%.1fV",f];
-        }
-//        for (int i=0; i<82; i++) {
-//            float f=i;
-//            f=i/10.0+3.0;
-//            array[i+2]=[NSString stringWithFormat:@"%.1fV",f];
+//        version 1
+//        for (int i = 0; i < 110; i++) {
+//            float f = i;
+//            f = f/10.0 + 0.2;
+//            array[i+2] = [NSString stringWithFormat:@"%.1fV",f];
 //        }
+        
+//        versoin 2
+        for (int i=0; i<82; i++) {
+            float f=i;
+            f=i/10.0+3.0;
+            array[i+2]=[NSString stringWithFormat:@"%.1fV",f];
+        }
     }else if([name isEqualToString:@"switchpoint1"]){
         for (int i=0; i<99; i++) {
             array[i]=[NSString stringWithFormat:@"%d%%",i+1];
