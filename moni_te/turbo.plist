@@ -58,7 +58,7 @@ Option 3: “Forward / Reverse” When moving from the forward zone to the backw
 		<key>ValuesRange</key>
 		<string>Disable,Auto,3.0V-11.1V</string>
 		<key>KeysRange</key>
-		<string>0-111</string>
+		<string>0-83</string>
 		<key>PreCode</key>
 		<string>0xec</string>
 		<key>Modes</key>

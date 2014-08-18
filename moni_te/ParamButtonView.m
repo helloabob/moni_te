@@ -55,17 +55,18 @@
         self.desc = info[@"desc"];
     }
     _precode=(unsigned char)strtoul([info[@"PreCode"] UTF8String], 0, 16);
-    if ([name isEqualToString:@"voltagecutoff"]) {
-        NSMutableArray *keyArray = [NSMutableArray array];
-        [keyArray addObject:[NSString stringWithFormat:@"%d",0]];
-        [keyArray addObject:[NSString stringWithFormat:@"%d",1]];
-        for (int i = 30; i < 112; i++) {
-            [keyArray addObject:[NSString stringWithFormat:@"%d", i]];
-        }
-        _keys = [[NSArray alloc] initWithArray:keyArray];
-    } else {
-        _keys=[[NSArray alloc]initWithArray:[Global convertStringToArray:info forKey:@"KeysRange"]];
-    }
+//    if ([name isEqualToString:@"voltagecutoff"]) {
+//        NSMutableArray *keyArray = [NSMutableArray array];
+//        [keyArray addObject:[NSString stringWithFormat:@"%d",0]];
+//        [keyArray addObject:[NSString stringWithFormat:@"%d",1]];
+//        for (int i = 30; i < 112; i++) {
+//            [keyArray addObject:[NSString stringWithFormat:@"%d", i]];
+//        }
+//        _keys = [[NSArray alloc] initWithArray:keyArray];
+//    } else {
+//        _keys=[[NSArray alloc]initWithArray:[Global convertStringToArray:info forKey:@"KeysRange"]];
+//    }
+    _keys=[[NSArray alloc]initWithArray:[Global convertStringToArray:info forKey:@"KeysRange"]];
     if (info[@"Modes"]!=nil) {
         _modes=[[NSString alloc]initWithString:info[@"Modes"]];
     }
