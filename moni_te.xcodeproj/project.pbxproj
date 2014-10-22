@@ -239,6 +239,8 @@
 		5AA76DDF1946C9C800572D74 /* turbo_off_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DCB1946C9C800572D74 /* turbo_off_2.png */; };
 		5AA76DE01946C9C800572D74 /* turbo_on_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DCC1946C9C800572D74 /* turbo_on_1.png */; };
 		5AA76DE11946C9C800572D74 /* turbo_on_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DCD1946C9C800572D74 /* turbo_on_2.png */; };
+		5AAFEF4F19F7562600C31957 /* 1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AAFEF4E19F7562600C31957 /* 1024.png */; };
+		5AAFEF5119F756E500C31957 /* 120.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AAFEF5019F756E500C31957 /* 120.png */; };
 		5ABBAB38193EA9BD00F3CBFA /* paramicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ABBAB35193EA9BD00F3CBFA /* paramicon.png */; };
 		5ABBAB39193EA9BD00F3CBFA /* runningmode_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ABBAB36193EA9BD00F3CBFA /* runningmode_1.png */; };
 		5ABBAB3A193EA9BD00F3CBFA /* runningmode_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ABBAB37193EA9BD00F3CBFA /* runningmode_2.png */; };
@@ -511,6 +513,8 @@
 		5AA76DCB1946C9C800572D74 /* turbo_off_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turbo_off_2.png; sourceTree = "<group>"; };
 		5AA76DCC1946C9C800572D74 /* turbo_on_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turbo_on_1.png; sourceTree = "<group>"; };
 		5AA76DCD1946C9C800572D74 /* turbo_on_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turbo_on_2.png; sourceTree = "<group>"; };
+		5AAFEF4E19F7562600C31957 /* 1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1024.png; sourceTree = "<group>"; };
+		5AAFEF5019F756E500C31957 /* 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120.png; sourceTree = "<group>"; };
 		5ABBAB35193EA9BD00F3CBFA /* paramicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paramicon.png; sourceTree = "<group>"; };
 		5ABBAB36193EA9BD00F3CBFA /* runningmode_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = runningmode_1.png; sourceTree = "<group>"; };
 		5ABBAB37193EA9BD00F3CBFA /* runningmode_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = runningmode_2.png; sourceTree = "<group>"; };
@@ -689,6 +693,8 @@
 		2D7F2A571937714B00E004AE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5AAFEF5019F756E500C31957 /* 120.png */,
+				5AAFEF4E19F7562600C31957 /* 1024.png */,
 				5AF1601D1948533F00324152 /* turbo.plist */,
 				2DEF5270194366B800D4C9B5 /* gecko.plist */,
 				2DE22A43193B049300DC39DC /* Default-568h@2x.png */,
@@ -1199,6 +1205,7 @@
 				2DE22A54193B09AD00DC39DC /* buttonquit_off_2.png in Resources */,
 				2DA9B82F1947463800A2E574 /* escmaxtemp_1.png in Resources */,
 				2D8568B51940C1EB0048F43B /* firmware_on_2.png in Resources */,
+				5AAFEF5119F756E500C31957 /* 120.png in Resources */,
 				2DA9B8471947463800A2E574 /* switchpoint2_1.png in Resources */,
 				2D11542F193ABB770073D1AB /* FlashBackImage.png in Resources */,
 				2D84B98E193DFDC7006A1FE5 /* beast.plist in Resources */,
@@ -1224,6 +1231,7 @@
 				2D8568BA1940C1EB0048F43B /* header_off.png in Resources */,
 				2DA9B8321947463800A2E574 /* initialbrake_2.png in Resources */,
 				5AA76DCF1946C9C800572D74 /* boost_off_2.png in Resources */,
+				5AAFEF4F19F7562600C31957 /* 1024.png in Resources */,
 				2D174263193C046500FA81D4 /* buttonneg_off_1.png in Resources */,
 				2DA251FE193F5BEF001D87A6 /* pb_2.png in Resources */,
 				2DEF529A1944325700D4C9B5 /* svo_2.png in Resources */,
@@ -1411,6 +1419,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "994C4BBE-D2C2-4A22-A076-D286C80421FB";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1422,11 +1431,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Bin Jiang (XDXYB9YLWY)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "moni_te/moni_te-Prefix.pch";
 				INFOPLIST_FILE = "moni_te/moni_te-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "994C4BBE-D2C2-4A22-A076-D286C80421FB";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
