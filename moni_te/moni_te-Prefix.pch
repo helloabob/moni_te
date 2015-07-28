@@ -22,6 +22,9 @@
 #define IsIOS7System  [[UIDevice currentDevice].systemVersion floatValue]>=7.0
 #define IsiPhone5  [UIScreen mainScreen].bounds.size.height>480
 
+#define screenWidth [UIScreen mainScreen].bounds.size.width
+#define screenHeight [UIScreen mainScreen].bounds.size.height
+
 #define kAddObserver(a,b) [[NSNotificationCenter defaultCenter] addObserver:self selector:a name:b object:nil];
 
 #define kPostNotif(a,b) [[NSNotificationCenter defaultCenter] postNotificationName:a object:b userInfo:nil];

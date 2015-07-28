@@ -1418,8 +1418,9 @@
 				INFOPLIST_FILE = "moni_te/moni_te-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chinapay.wifilink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "fa3ba4ad-6361-49a1-b0dd-6ebcdd2fc233";
+				PROVISIONING_PROFILE = "62b74ec8-8d4e-44a2-842a-1107cb7662df";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1436,8 +1437,9 @@
 				GCC_PREFIX_HEADER = "moni_te/moni_te-Prefix.pch";
 				INFOPLIST_FILE = "moni_te/moni_te-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chinapay.wifilink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "fa3ba4ad-6361-49a1-b0dd-6ebcdd2fc233";
+				PROVISIONING_PROFILE = "62b74ec8-8d4e-44a2-842a-1107cb7662df";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};

@@ -68,7 +68,7 @@
 -(BOOL)didReceiveData:(NSData *)data{
     if (data.length==1) {
         if (logo==nil) {
-            logo=[[UIImageView alloc]initWithFrame:CGRectMake(50, self.contentView.bounds.size.height/2-48, 220, 81)];
+            logo=[[UIImageView alloc]initWithFrame:CGRectMake(50, self.contentView.bounds.size.height/2-48, screenWidth-100, 81)];
         }
         unsigned char a;
         [data getBytes:&a];

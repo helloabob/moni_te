@@ -103,6 +103,12 @@ static ParamButtonView *g_pbv;
     
     int contentCenterY=self.contentView.bounds.size.height/2;
     
+    
+    int pbvWidth = 100;
+    if (screenWidth == ) {
+//        <#statements#>
+//    }
+    
     /*tab 1*/
     UIView *view=[tabView viewForIndex:0];
     ParamButtonView *pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(1, contentCenterY-60, 100, 65) withImageName:@"device" withDelegate:self]autorelease];
