@@ -80,64 +80,64 @@ static unsigned char result[9];
     
     /*tab 1*/
     UIView *view=[tabView viewForIndex:0];
-    ParamButtonView *pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110, 50, 100, 65) withImageName:@"device" withDelegate:self]autorelease];
+    ParamButtonView *pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake([self.offsetXArray[1] intValue], 50, self.pbvWidth, 65) withImageName:@"device" withDelegate:self]autorelease];
     pbv.tag=500;
     [view addSubview:pbv];
     pbv.valueString=@"GECKO PLANE";
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110, 120, 100, 65) withImageName:@"hardware" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake([self.offsetXArray[1] intValue], 120, self.pbvWidth, 65) withImageName:@"hardware" withDelegate:self]autorelease];
     pbv.tag=501;
     [view addSubview:pbv];
     pbv.valueString=@"ZTW GECKO";
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110, 190, 100, 65) withImageName:@"software" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake([self.offsetXArray[1] intValue], 190, self.pbvWidth, 65) withImageName:@"software" withDelegate:self]autorelease];
     pbv.tag=502;
     [view addSubview:pbv];
     pbv.valueString=@"V1.01";
     
     /*tab 2*/
     view=[tabView viewForIndex:1];
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5-4, 100-41, 100, 65) withImageName:@"brake" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake([self.offsetXArray[0] intValue], 100-41, self.pbvWidth, 65) withImageName:@"brake" withDelegate:self]autorelease];
     pbv.tag=1000;
     [view addSubview:pbv];
     pbv.valueString=@"Brake Off";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110-4, 100-41, 100, 65) withImageName:@"battery" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake([self.offsetXArray[1] intValue], 100-41, self.pbvWidth, 65) withImageName:@"battery" withDelegate:self]autorelease];
     pbv.tag=1001;
     [view addSubview:pbv];
     pbv.valueString=@"LiPo";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(215-4, 100-41, 100, 65) withImageName:@"covt" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake([self.offsetXArray[2] intValue], 100-41, self.pbvWidth, 65) withImageName:@"covt" withDelegate:self]autorelease];
     pbv.tag=1002;
     [view addSubview:pbv];
     pbv.valueString=@"3.0V/60%";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5-4, 170-41, 100, 65) withImageName:@"mt" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake([self.offsetXArray[0] intValue], 170-41, self.pbvWidth, 65) withImageName:@"mt" withDelegate:self]autorelease];
     pbv.tag=1005;
     [view addSubview:pbv];
     pbv.valueString=@"Auto";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110-4, 170-41, 100, 65) withImageName:@"svo" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake([self.offsetXArray[1] intValue], 170-41, self.pbvWidth, 65) withImageName:@"svo" withDelegate:self]autorelease];
     pbv.tag=1006;
 //    pbv.tag = 1004;
     [view addSubview:pbv];
     pbv.valueString=@"5.0V";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(215-4, 170-41, 100, 65) withImageName:@"gm" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake([self.offsetXArray[2] intValue], 170-41, self.pbvWidth, 65) withImageName:@"gm" withDelegate:self]autorelease];
     pbv.tag=1008;
     [view addSubview:pbv];
     pbv.valueString=@"RPM OFF";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5-4, 240-41, 100, 65) withImageName:@"mr" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake([self.offsetXArray[0] intValue], 240-41, self.pbvWidth, 65) withImageName:@"mr" withDelegate:self]autorelease];
     pbv.tag=1007;
     [view addSubview:pbv];
     pbv.valueString=@"Forward";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110-4, 240-41, 100, 65) withImageName:@"sts" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake([self.offsetXArray[1] intValue], 240-41, self.pbvWidth, 65) withImageName:@"sts" withDelegate:self]autorelease];
     pbv.tag=1004;
 //    pbv.tag = 1006;
     [view addSubview:pbv];
     pbv.valueString=@"10%";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(215-4, 240-41, 100, 65) withImageName:@"lvcot" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake([self.offsetXArray[2] intValue], 240-41, self.pbvWidth, 65) withImageName:@"lvcot" withDelegate:self]autorelease];
     pbv.tag=1003;
     [view addSubview:pbv];
     pbv.valueString=@"Reduce Power";

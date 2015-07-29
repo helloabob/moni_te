@@ -19,6 +19,11 @@
 @property(nonatomic,assign)BOOL isConnected;
 @property(nonatomic,retain)NSMutableData *bufferData;
 @property(nonatomic,assign)int receiveCount;
+
+/*2期*/
+@property(nonatomic,assign)int pbvWidth;
+@property(nonatomic,retain)NSArray *offsetXArray;
+ 
 -(void)sendSetData:(NSData *)data;
 -(void)renderImage;
 -(void)changeSettingY:(int)y;

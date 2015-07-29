@@ -28,6 +28,7 @@ static int old_y;
 -(void)dealloc{
     self.dict=nil;
     self.keyArray=nil;
+    self.offsetXArray = nil;
     [super dealloc];
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -101,6 +102,12 @@ static int old_y;
     _tv = tv;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didEndBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    
+    
+    /*2期*/
+    _pbvWidth = screenWidth/320.0*100.0;
+    self.offsetXArray = @[@1, @(6+_pbvWidth), @(11+_pbvWidth*2), @((screenWidth-10-2*_pbvWidth-5)/2), @((screenWidth-10-2*_pbvWidth-5)/2+_pbvWidth+5)];
+    
 }
 -(void)didEndBackground:(NSNotification *)notif{
     [[NetUtils sharedInstance] closeSocket];

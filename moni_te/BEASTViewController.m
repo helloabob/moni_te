@@ -117,52 +117,52 @@ static unsigned char result[11];
 //    [btn addTarget:self action:@selector(showdefault) forControlEvents:UIControlEventTouchUpInside];
 //    [self.contentView addSubview:btn];
     
-    ParamButtonView *pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110, 30, 100, 65) withImageName:@"runningmode" withDelegate:self]autorelease];
+    ParamButtonView *pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5+[self.offsetXArray[1] intValue], 30, self.pbvWidth, 65) withImageName:@"runningmode" withDelegate:self]autorelease];
     pbv.tag=2;
     [self.contentView addSubview:pbv];
     pbv.valueString=@"";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5, 100, 100, 65) withImageName:@"mt" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5+[self.offsetXArray[0] intValue], 100, self.pbvWidth, 65) withImageName:@"mt" withDelegate:self]autorelease];
     pbv.tag=5;
     [self.contentView addSubview:pbv];
     pbv.valueString=@"Normal";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110, 100, 100, 65) withImageName:@"ic" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5+[self.offsetXArray[1] intValue], 100, self.pbvWidth, 65) withImageName:@"ic" withDelegate:self]autorelease];
     pbv.tag=6;
     [self.contentView addSubview:pbv];
     pbv.valueString=@"High";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(215, 100, 100, 65) withImageName:@"mr" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5+[self.offsetXArray[2] intValue], 100, self.pbvWidth, 65) withImageName:@"mr" withDelegate:self]autorelease];
     pbv.tag=10;
     [self.contentView addSubview:pbv];
     pbv.valueString=@"Normal";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5, 170, 100, 65) withImageName:@"tpr" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5+[self.offsetXArray[0] intValue], 170, self.pbvWidth, 65) withImageName:@"tpr" withDelegate:self]autorelease];
     pbv.tag=8;
     [self.contentView addSubview:pbv];
     pbv.valueString=@"60%";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110, 170, 100, 65) withImageName:@"tl" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5+[self.offsetXArray[1] intValue], 170, self.pbvWidth, 65) withImageName:@"tl" withDelegate:self]autorelease];
     pbv.tag=7;
     [self.contentView addSubview:pbv];
     pbv.valueString=@"50%";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(215, 170, 100, 65) withImageName:@"nr" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5+[self.offsetXArray[2] intValue], 170, self.pbvWidth, 65) withImageName:@"nr" withDelegate:self]autorelease];
     pbv.tag=9;
     [self.contentView addSubview:pbv];
     pbv.valueString=@"4%";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5, 240, 100, 65) withImageName:@"pb" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5+[self.offsetXArray[0] intValue], 240, self.pbvWidth, 65) withImageName:@"pb" withDelegate:self]autorelease];
     pbv.tag=3;
     [self.contentView addSubview:pbv];
     pbv.valueString=@"50%";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(110, 240, 100, 65) withImageName:@"pdb" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5+[self.offsetXArray[1] intValue], 240, self.pbvWidth, 65) withImageName:@"pdb" withDelegate:self]autorelease];
     pbv.tag=4;
     [self.contentView addSubview:pbv];
     pbv.valueString=@"0%";
     
-    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(215, 240, 100, 65) withImageName:@"cov" withDelegate:self]autorelease];
+    pbv=[[[ParamButtonView alloc]initWithFrame:CGRectMake(5+[self.offsetXArray[2] intValue], 240, self.pbvWidth, 65) withImageName:@"cov" withDelegate:self]autorelease];
     pbv.tag=1;
     [self.contentView addSubview:pbv];
     pbv.valueString=@"3.0V/Cell";

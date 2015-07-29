@@ -26,7 +26,7 @@
         btn.onImageName=@"readsetting_on";
         [self addSubview:btn];
         read=btn;
-        btn=[[[UIBaseButton alloc]initWithFrame:CGRectMake(180, 60, 100, 21)]autorelease];
+        btn=[[[UIBaseButton alloc]initWithFrame:CGRectMake(180+screenWidth-320, 60, 100, 21)]autorelease];
         btn.offImageName=@"sendsetting_off";
         btn.onImageName=@"sendsetting_on";
         [self addSubview:btn];

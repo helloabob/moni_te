@@ -23,6 +23,9 @@
 //@property (strong, nonatomic) TSLocation *locate;
 @property (assign, nonatomic) int selectedIndex;
 
+@property (strong, nonatomic) IBOutlet UIImageView *titleView;
+@property (retain, nonatomic) IBOutlet UIButton *locateButton;
+
 - (id)initWithTitle:(NSString *)title delegate:(id /*<UIActionSheetDelegate>*/)delegate;
 
 - (void)showInView:(UIView *)view;

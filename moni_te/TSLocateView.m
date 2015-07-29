@@ -20,6 +20,7 @@
     self.provinces=nil;
     self.titleLabel=nil;
     self.locatePicker=nil;
+    [_locateButton release];
     [super dealloc];
 }
 
@@ -57,7 +58,16 @@
     [self setAlpha:1.0f];
     [self.layer addAnimation:animation forKey:@"DDLocateView"];
     
-    self.frame = CGRectMake(0, view.frame.size.height - self.frame.size.height, self.frame.size.width, self.frame.size.height);
+//    self.frame = CGRectMake(0, view.frame.size.height - self.frame.size.height, self.frame.size.width, self.frame.size.height);
+    self.frame = CGRectMake(0, view.frame.size.height - self.frame.size.height, view.frame.size.width, self.frame.size.height);
+    
+    CGRect rect = self.titleView.frame;
+    rect.size.width = view.frame.size.width;
+    self.titleView.frame = rect;
+    
+    rect = self.locateButton.frame;
+    rect.origin.x = view.frame.size.width - 52;
+    self.locateButton.frame = rect;
     
     [view addSubview:self];
 }

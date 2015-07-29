@@ -209,7 +209,7 @@
         imageView.image=[UIImage imageNamed:@"paramicon"];
         [self addSubview:imageView];
         
-        titleImageView=[[[UIImageView alloc]initWithFrame:CGRectMake(17, 13, 66, 14)]autorelease];
+        titleImageView=[[[UIImageView alloc]initWithFrame:CGRectMake(17, 13, frame.size.width-34, 14)]autorelease];
         titleImageView.contentMode=UIViewContentModeScaleAspectFit;
         [self addSubview:titleImageView];
         
