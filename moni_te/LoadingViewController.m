@@ -165,7 +165,7 @@
 }
 -(void)startConnecting{
     if (lblConnecting==nil) {
-        lblConnecting=[[UILabel alloc]initWithFrame:CGRectMake(0, self.contentView.bounds.size.height/2-20, 320, 40)];
+        lblConnecting=[[UILabel alloc]initWithFrame:CGRectMake(0, self.contentView.bounds.size.height/2-20, screenWidth, 40)];
         lblConnecting.font=[UIFont boldSystemFontOfSize:16];
         lblConnecting.textAlignment=NSTextAlignmentCenter;
         lblConnecting.textColor=[UIColor whiteColor];

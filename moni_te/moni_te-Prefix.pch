@@ -19,6 +19,9 @@
 #import "NetUtils.h"
 #endif
 
+//1表示ZTW  2表示OEM
+#define APP_VERSION 1
+
 #define IsIOS7System  [[UIDevice currentDevice].systemVersion floatValue]>=7.0
 #define IsiPhone5  [UIScreen mainScreen].bounds.size.height>480
 
