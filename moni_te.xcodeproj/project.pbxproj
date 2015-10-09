@@ -218,6 +218,8 @@
 		2DEF52A01944A5EC00D4C9B5 /* blackarea.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF529F1944A5EC00D4C9B5 /* blackarea.png */; };
 		5A5A79E9193AF1BD00C103B1 /* NetUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5A79E8193AF1BD00C103B1 /* NetUtils.m */; };
 		5A7E8FE91991EBE60030A496 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7E8FE81991EBE60030A496 /* MBProgressHUD.m */; };
+		5A9E3F181BC76A0E00FB4800 /* Default-750.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A9E3F161BC76A0E00FB4800 /* Default-750.png */; settings = {ASSET_TAGS = (); }; };
+		5A9E3F191BC76A0E00FB4800 /* Default-1242.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A9E3F171BC76A0E00FB4800 /* Default-1242.png */; settings = {ASSET_TAGS = (); }; };
 		5AA76DB9194696E300572D74 /* TURBOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA76DB8194696E300572D74 /* TURBOViewController.m */; };
 		5AA76DCE1946C9C800572D74 /* boost_off_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DBA1946C9C800572D74 /* boost_off_1.png */; };
 		5AA76DCF1946C9C800572D74 /* boost_off_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA76DBB1946C9C800572D74 /* boost_off_2.png */; };
@@ -491,6 +493,8 @@
 		5A5A79E8193AF1BD00C103B1 /* NetUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetUtils.m; sourceTree = "<group>"; };
 		5A7E8FE71991EBE60030A496 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		5A7E8FE81991EBE60030A496 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		5A9E3F161BC76A0E00FB4800 /* Default-750.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-750.png"; sourceTree = "<group>"; };
+		5A9E3F171BC76A0E00FB4800 /* Default-1242.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-1242.png"; sourceTree = "<group>"; };
 		5AA76DB7194696E300572D74 /* TURBOViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TURBOViewController.h; sourceTree = "<group>"; };
 		5AA76DB8194696E300572D74 /* TURBOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TURBOViewController.m; sourceTree = "<group>"; };
 		5AA76DBA1946C9C800572D74 /* boost_off_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boost_off_1.png; sourceTree = "<group>"; };
@@ -693,6 +697,8 @@
 		2D7F2A571937714B00E004AE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5A9E3F161BC76A0E00FB4800 /* Default-750.png */,
+				5A9E3F171BC76A0E00FB4800 /* Default-1242.png */,
 				5AAFEF5019F756E500C31957 /* 120.png */,
 				5AAFEF4E19F7562600C31957 /* 1024.png */,
 				5AF1601D1948533F00324152 /* turbo.plist */,
@@ -1074,6 +1080,7 @@
 				2DE22A53193B09AD00DC39DC /* buttonquit_off_1.png in Resources */,
 				5AA76DD71946C9C800572D74 /* data_off_2.png in Resources */,
 				2D11543C193ABEA00073D1AB /* readsetting_off_2.png in Resources */,
+				5A9E3F181BC76A0E00FB4800 /* Default-750.png in Resources */,
 				2DEF528E1944325700D4C9B5 /* battery_2.png in Resources */,
 				2DA9B83B1947463800A2E574 /* punchrate2_1.png in Resources */,
 				2DA2520F193F6442001D87A6 /* btn_020.press@2x.png in Resources */,
@@ -1213,6 +1220,7 @@
 				2D8568B31940C1EB0048F43B /* firmware_off_2.png in Resources */,
 				2DA9B8401947463800A2E574 /* slope_2.png in Resources */,
 				2D8568B71940C1EB0048F43B /* general_off_2.png in Resources */,
+				5A9E3F191BC76A0E00FB4800 /* Default-1242.png in Resources */,
 				2DE22A46193B049300DC39DC /* Default-568h@2x.png in Resources */,
 				2DA8A7F2193A2407002E68D9 /* GECKO.png in Resources */,
 				2DA251E0193F5771001D87A6 /* TSLocateView.xib in Resources */,
@@ -1422,7 +1430,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bo.test5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c6d30454-d46d-48f0-b42d-92bdf2e2605d";
+				PROVISIONING_PROFILE = "cfbb212a-e82a-4a26-89de-26d97fe161fb";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1442,7 +1450,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bo.test5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c6d30454-d46d-48f0-b42d-92bdf2e2605d";
+				PROVISIONING_PROFILE = "cfbb212a-e82a-4a26-89de-26d97fe161fb";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
