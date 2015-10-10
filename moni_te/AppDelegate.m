@@ -15,15 +15,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
-    df.dateFormat = @"yyyy-MM-dd";
-    df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:8];
-    NSDate *date = [df dateFromString:@"2016-01-01"];
-    NSLog(@"%@", date);
-    
-    if ([[NSDate date] compare:date] == NSOrderedDescending) {
-        abort();
-    }
+//    NSDateFormatter *df = [[[NSDateFormatter alloc] init] autorelease];
+//    df.dateFormat = @"yyyy-MM-dd";
+//    df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:8];
+//    NSDate *date = [df dateFromString:@"2016-01-01"];
+//    NSLog(@"%@", date);
+//    
+//    if ([[NSDate date] compare:date] == NSOrderedDescending) {
+//        abort();
+//    }
     
     NSString *str=@"0x2d";
     unsigned char a=strtoul([str UTF8String], 0, 16);

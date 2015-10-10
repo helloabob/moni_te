@@ -467,7 +467,7 @@ static ParamButtonView *g_pbv;
         [self showAlert];
         return NO;
     }else if(index==3){
-        [self changeSettingY:20];
+        [self changeSettingY:0];
     }else{
         [self changeSettingY:0];
     }

@@ -53,7 +53,6 @@
 		2D7F2A641937714B00E004AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D7F2A621937714B00E004AE /* Main.storyboard */; };
 		2D7F2A671937714B00E004AE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7F2A661937714B00E004AE /* ViewController.m */; };
 		2D7F2A691937714B00E004AE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D7F2A681937714B00E004AE /* Images.xcassets */; };
-		2D7F2A701937714B00E004AE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D7F2A6F1937714B00E004AE /* XCTest.framework */; };
 		2D7F2A711937714B00E004AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D7F2A501937714B00E004AE /* Foundation.framework */; };
 		2D7F2A721937714B00E004AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D7F2A541937714B00E004AE /* UIKit.framework */; };
 		2D7F2A7A1937714B00E004AE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D7F2A781937714B00E004AE /* InfoPlist.strings */; };
@@ -316,7 +315,6 @@
 		2D7F2A661937714B00E004AE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2D7F2A681937714B00E004AE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2D7F2A6E1937714B00E004AE /* moni_teTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = moni_teTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D7F2A6F1937714B00E004AE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2D7F2A771937714B00E004AE /* moni_teTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "moni_teTests-Info.plist"; sourceTree = "<group>"; };
 		2D7F2A791937714B00E004AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2D7F2A7B1937714B00E004AE /* moni_teTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = moni_teTests.m; sourceTree = "<group>"; };
@@ -544,7 +542,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D7F2A701937714B00E004AE /* XCTest.framework in Frameworks */,
 				2D7F2A721937714B00E004AE /* UIKit.framework in Frameworks */,
 				2D7F2A711937714B00E004AE /* Foundation.framework in Frameworks */,
 			);
@@ -637,7 +634,6 @@
 				2D7F2A501937714B00E004AE /* Foundation.framework */,
 				2D7F2A521937714B00E004AE /* CoreGraphics.framework */,
 				2D7F2A541937714B00E004AE /* UIKit.framework */,
-				2D7F2A6F1937714B00E004AE /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1421,17 +1417,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Bin Jiang (F6225BK68C)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bin Jiang (F6225BK68C)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Bin Jiang (XDXYB9YLWY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bin Jiang (XDXYB9YLWY)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "moni_te/moni_te-Prefix.pch";
 				INFOPLIST_FILE = "moni_te/moni_te-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bo.test5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bo.wifilink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cfbb212a-e82a-4a26-89de-26d97fe161fb";
-				VALID_ARCHS = "armv7 armv7s";
+				PROVISIONING_PROFILE = "7838c8c2-8366-4c9f-9bc7-06ecc307555d";
+				VALID_ARCHS = "armv7 arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1442,16 +1438,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Bin Jiang (F6225BK68C)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bin Jiang (F6225BK68C)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Bin Jiang (XDXYB9YLWY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bin Jiang (XDXYB9YLWY)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "moni_te/moni_te-Prefix.pch";
 				INFOPLIST_FILE = "moni_te/moni_te-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bo.test5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bo.wifilink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cfbb212a-e82a-4a26-89de-26d97fe161fb";
-				VALID_ARCHS = "armv7 armv7s";
+				PROVISIONING_PROFILE = "7838c8c2-8366-4c9f-9bc7-06ecc307555d";
+				VALID_ARCHS = "armv7 arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
