@@ -207,6 +207,7 @@ static unsigned char result[8];
 //    ret[send_length*2]=0xd4;
 //    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:ret length:send_length*2] withDelegate:nil];
     [self sendSetData:[NSData dataWithBytes:ret length:send_length*2]];
+    [super onSet];
 }
 -(void)viewDidChanged:(int)index{
     if (index==0) {

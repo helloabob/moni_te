@@ -89,6 +89,7 @@ static unsigned char result[11];
     
 //    [[NetUtils sharedInstance] sendData:[NSData dataWithBytes:ret length:send_length*2] withDelegate:nil];
     [self sendSetData:[NSData dataWithBytes:ret length:send_length*2]];
+    [super onSet];
 }
 - (void)viewDidLoad
 {
